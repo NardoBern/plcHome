@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpyListVars_0>
+  <ConfigurationInfo>
+    <SpyListName>Luci</SpyListName>
+    <ConfigFileVersion>3</ConfigFileVersion>
+    <ToolWindowPaneIndex>0</ToolWindowPaneIndex>
+    <DefaultRefreshRateMonitoring>500</DefaultRefreshRateMonitoring>
+  </ConfigurationInfo>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.o_stComandiLuci</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stPulsanti</FullName>
+  </Variable>
+</SpyListVars_0>

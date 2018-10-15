@@ -1,0 +1,14 @@
+FUNCTION fcLetturaPulsanti
+(* Funzione di lettura dello stato dei pulsanti *)
+i_stPulsanti.pulLuceVeranda 		:= _IO_EM_DI_00;
+i_stPulsanti.pulLuceCucina			:= _IO_EM_DI_01;
+i_stPulsanti.pulLuceAntibagno		:= _IO_EM_DI_02;
+i_stPulsanti.pulLuceSalaLibreria	:= _IO_EM_DI_03;
+i_stPulsanti.pulLuceCameraLetto		:= _IO_EM_DI_18;
+i_stPulsanti.pulLuceCorridoio		:= _IO_EM_DI_19;
+i_stPulsanti.pulLuceSala			:= _IO_EM_DI_20;
+i_stPulsanti.pulLuceIngresso		:= _IO_EM_DI_21;
+i_stPulsanti.pulLuceBagno			:= _IO_EM_DI_22;
+i_stPulsanti.pulLuceFuoriDavanti	:= _IO_EM_DI_23;
+fcLetturaPulsanti					:= TRUE;
+END_FUNCTION

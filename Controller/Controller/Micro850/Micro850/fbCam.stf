@@ -1,0 +1,107 @@
+FUNCTION_BLOCK fbCam
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmds.iMode*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xManMode*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  FB  [1,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmds.iMode*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xAutoMode*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmds.iMode*) (**)  , (*i2:*)(*2*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xDisableMode*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  
+ BST  XIC  [1,0] (*xManMode*) (**)
+   NXB  XIC  [1,1] (*xAutoMode*) (**)
+ BND
+  XIC  [2,0] (*xManCmd*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  FB  [4,0] (*TON*) (*tonManOffCmdTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#3s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [7,0] (*xManOff*) (**)
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIC  [1,0] (*xManMode*) (**)  XIO  [2,0] (*xDisableMode*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  FB  [4,0] (*TON*) (*tonManOnCmdTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#10s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+ BST  FB  [7,0] (*TP*) (*tpManOnCmdPulse*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#100ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [10,0] (*xManOn*) (**)
+   NXB  FB  [7,2] (*TP*) (*tpManOnFdbkPulse*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#3s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [10,2] (*o_xManCmdFdbk*) (**)
+ BND
+
+EOR [11,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  
+ BST  XIP  [1,0] (*xManOn*) (**)
+   NXB  
+ BST  XIP  [1,1] (*i_stHMICmds.xManCmd*) (**)
+   NXB  XIC  [1,2] (*xManCmd*) (**)
+ BND
+
+ BND
+  XIC  [2,0] (*xManMode*) (**)  XIO  [3,0] (*xManOff*) (**)  XIO  [4,0] (*xDisableMode*) (**)  OTE  [5,0] (*xManCmd*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  XIC  [1,0] (*xAutoMode*) (**)  XIO  [2,0] (*xDisableMode*) (**)  XIC  [3,0] (*i_stHMICmds.axAutoSet[i_diGiorno,i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  XIC  [1,0] (*xManMode*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbks.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,30] (**) (**)  XIC  [1,0] (*xAutoMode*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbks.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,33] (**) (**)  XIC  [1,0] (*xDisableMode*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbks.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,36] (**) (**)  
+ BST  XIC  [1,0] (*xManCmd*) (**)
+   NXB  XIC  [1,1] (*xAutoCmd*) (**)
+ BND
+  OTE  [2,0] (*o_xCamCmd*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,39] (**) (**)  XIO  [1,0] (*o_xCamCmd*) (**)  FB  [2,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbks.iState*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,42] (**) (**)  XIC  [1,0] (*o_xCamCmd*) (**)  FB  [2,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbks.iState*) (**) )
+EOR [5,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=3
+#end_info
+END_FUNCTION_BLOCK

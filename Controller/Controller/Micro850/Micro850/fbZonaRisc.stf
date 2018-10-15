@@ -1,0 +1,103 @@
+FUNCTION_BLOCK fbZonaRisc
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmd.iMode*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xMan*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  FB  [1,0] (*=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmd.iMode*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xAuto*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmd.iMode*) (**)  , (*i2:*)(*2*) (**) ; (*o1:*)(**) (**) )  OTE  [4,0] (*xDisable*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stHMICmd.iManTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tManTimeOut*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIC  [1,0] (*xMan*) (**)  XIC  [2,0] (*xManCmd*) (**)  XIC  [3,0] (*i_xEvState*) (**)  FB  [4,0] (*TON*) (*tonManTime*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tManTimeOut*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [7,0] (*xManTimeOut*) (**)
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  
+ BST  XIP  [1,0] (*i_stHMICmd.xManCmd*) (**)
+   NXB  XIC  [1,1] (*xManCmd*) (**)
+ BND
+  XIC  [2,0] (*xMan*) (**)  XIO  [3,0] (*xManTimeOut*) (**)  XIO  [4,0] (*xDisable*) (**)  OTE  [5,0] (*xManCmd*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  XIC  [1,0] (*xAuto*) (**)  XIO  [2,0] (*xDisable*) (**)  XIC  [3,0] (*i_stHMICmd.axAutoSet[i_diGiorno,i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,24] (**) (**)  
+ BST  XIC  [1,0] (*xManCmd*) (**)
+   NXB  XIC  [1,1] (*xAutoCmd*) (**)
+ BND
+  OTE  [2,0] (*o_xEvCmd*) (**)
+EOR [3,0]
+
+
+(**)
+
+SOR  [0,27] (**) (**)  XIC  [1,0] (*xMan*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,30] (**) (**)  XIC  [1,0] (*xAuto*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,33] (**) (**)  XIC  [1,0] (*xDisable*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,36] (**) (**)  XIO  [1,0] (*o_xEvCmd*) (**)  
+ BST  XIO  [2,0] (*i_xEvState*) (**)  FB  [3,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
+   NXB  XIC  [2,2] (*i_xEvState*) (**)  FB  [3,2] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
+ BND
+
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,41] (**) (**)  XIC  [1,0] (*o_xEvCmd*) (**)  
+ BST  XIO  [2,0] (*i_xEvState*) (**)  FB  [3,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
+   NXB  XIC  [2,2] (*i_xEvState*) (**)  FB  [3,2] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*3*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
+ BND
+
+EOR [6,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=6
+#end_info
+END_FUNCTION_BLOCK

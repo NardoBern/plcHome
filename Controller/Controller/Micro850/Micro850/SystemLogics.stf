@@ -1,0 +1,15 @@
+PROGRAM SystemLogics
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*fbSystem*) (*ifbSystem*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stSystemVar:*)(*o_stSystemVar*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=6
+#end_info
+END_PROGRAM

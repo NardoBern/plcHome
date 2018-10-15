@@ -1,0 +1,34 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : I_XMANCMD with __MEMO__1__I_XMANCMD *)
+__EDTB1 := (I_XMANCMD AND NOT(__MEMO__1__I_XMANCMD)) ;
+; (*Pulse detection on : I_XHMIMANCMD with __MEMO__2__I_XHMIMANCMD *)
+__EDTB2 := (I_XHMIMANCMD AND NOT(__MEMO__2__I_XHMIMANCMD)) ;
+(* FB call: TP *)
+tpCmdPulseTimer((__EDTB1 OR __EDTB2), T#1S) ;
+O_XCANCCMD := tpCmdPulseTimer.Q ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1__I_XMANCMD := I_XMANCMD ; (*Pulse detection on : I_XMANCMD with __MEMO__1__I_XMANCMD *)
+__MEMO__2__I_XHMIMANCMD := I_XHMIMANCMD ; (*Pulse detection on : I_XHMIMANCMD with __MEMO__2__I_XHMIMANCMD *)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __MEMO__1__I_XMANCMD *)
+(* __EDTB1 *)
+(* __MEMO__2__I_XHMIMANCMD *)
+(* __EDTB2 *)
+

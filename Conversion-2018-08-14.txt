@@ -1,0 +1,16 @@
+---------- Modifica controllore avviata: plcHome ----------
+
+---------- Importazione progetto: controller\Controller.acfproj ----------
+Modifica tipo di controllore: da 2080-LC50-48QBB (Versione 8) a 2080-LC50-48QWB (Versione 11)
+Informazioni: Il PTO motion non è supportato e la sua configurazione viene ignorata.
+
+Importazione controllore completata -- 0 errori, 0 avvisi
+
+---------- Fine del progetto di conversione ----------
+
+Il progetto di origine è stato salvato in 
+"C:\Users\USER\Documents\CCW\testMicro\testMicro.ccwsln"
+
+Il file di registro è stato scritto in
+c:\users\user\documents\ccw\plchome\Conversion-2018-08-14.txt
+========== Modifica del controllore: 1 riusciti, 0 non riusciti ==========

@@ -1,0 +1,223 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(*Chiamata della funzione di lettura dei pulsanti*)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+XTEMPBOOL := fcLetturaPulsanti() ;
+END_IF ;
+__MO_FCLETTURAPULSANTI_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE VERANDA*)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceVeranda(I_STPULSANTI.PULLUCEVERANDA, , ) ;
+O_STCOMANDILUCI.CMDLUCEVERANDA := fbLuceVeranda.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_1 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE CUCINA*)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := TRUE ;
+IF __EDTB3 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceCucina(I_STPULSANTI.PULLUCECUCINA, , ) ;
+O_STCOMANDILUCI.CMDLUCECUCINA := fbLuceCucina.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_2 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE ANTIBAGNO*)
+__STEPPRAGMA
+0,14
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceAntibagno(I_STPULSANTI.PULLUCEANTIBAGNO, , ) ;
+O_STCOMANDILUCI.CMDLUCEANTIBAGNO := fbLuceAntibagno.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_3 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE SALA LIBRERIA*)
+__STEPPRAGMA
+0,19
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceSalaLibreria(I_STPULSANTI.PULLUCESALALIBRERIA, , ) ;
+O_STCOMANDILUCI.CMDLUCESALALIBRERIA := fbLuceSalaLibreria.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_4 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE CAMERA LETTO*)
+__STEPPRAGMA
+0,24
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB6 := TRUE ;
+IF __EDTB6 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceCameraLetto(I_STPULSANTI.PULLUCECAMERALETTO, , ) ;
+O_STCOMANDILUCI.CMDLUCECAMERALETTO := fbLuceCameraLetto.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_5 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE CORRIDOIO*)
+__STEPPRAGMA
+0,29
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB7 := TRUE ;
+IF __EDTB7 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceCorridoio(I_STPULSANTI.PULLUCECORRIDOIO, , ) ;
+O_STCOMANDILUCI.CMDLUCECORRIDOIO := fbLuceCorridoio.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_6 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE SALA*)
+__STEPPRAGMA
+0,34
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceSala(I_STPULSANTI.PULLUCESALA, , ) ;
+O_STCOMANDILUCI.CMDLUCESALA := fbLuceSala.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_7 := __EDTB8 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE INGRESSO*)
+__STEPPRAGMA
+0,39
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB9 := TRUE ;
+IF __EDTB9 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceIngresso(I_STPULSANTI.PULLUCEINGRESSO, , ) ;
+O_STCOMANDILUCI.CMDLUCEINGRESSO := fbLuceIngresso.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_8 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE BAGNO*)
+__STEPPRAGMA
+0,44
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceBagno(I_STPULSANTI.PULLUCEBAGNO, , ) ;
+O_STCOMANDILUCI.CMDLUCEBAGNO := fbLuceBagno.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_9 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE FUORI DAVANTI*)
+__STEPPRAGMA
+0,49
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB11 := TRUE ;
+IF __EDTB11 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceFuoriDavanti(I_STPULSANTI.PULLUCEFUORIDAVANTI, , ) ;
+O_STCOMANDILUCI.CMDLUCEFUORIDAVANTI := fbLuceFuoriDavanti.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_10 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+__STEPPRAGMA
+0,54
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB12 := TRUE ;
+IF __EDTB12 THEN
+XTEMPBOOL := fcScritturaLuci() ;
+END_IF ;
+__MO_FCSCRITTURALUCI_1 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+

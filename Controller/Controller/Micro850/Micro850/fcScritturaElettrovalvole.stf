@@ -1,0 +1,7 @@
+FUNCTION fcScritturaElettrovalvole
+/* Funzione di scrittura comandi elettrovalvole */
+_IO_X2_DO_10 := o_stCmdEv.cmdEvZonaA;
+_IO_X2_DO_11 := o_stCmdEv.cmdEvZonaB;
+_IO_X2_DO_12 := o_stCmdEv.cmdEvZonaC;
+fcScritturaElettrovalvole := TRUE;
+END_FUNCTION

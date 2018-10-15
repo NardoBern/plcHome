@@ -1,0 +1,81 @@
+PROGRAM GestioneLuci
+#info= QLD
+BOF
+
+
+(*Chiamata della funzione di lettura dei pulsanti*)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*fcLetturaPulsanti*) (*1*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcLetturaPulsanti:*)(*xTempBool*) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE VERANDA*)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceVeranda*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceVeranda*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceVeranda*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE CUCINA*)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCucina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCucina*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCucina*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE ANTIBAGNO*)
+
+SOR  [0,14] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceAntibagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceAntibagno*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceAntibagno*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE SALA LIBRERIA*)
+
+SOR  [0,19] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSalaLibreria*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSalaLibreria*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSalaLibreria*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE CAMERA LETTO*)
+
+SOR  [0,24] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCameraLetto*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCameraLetto*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCameraLetto*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE CORRIDOIO*)
+
+SOR  [0,29] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCorridoio*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCorridoio*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCorridoio*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE SALA*)
+
+SOR  [0,34] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSala*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSala*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSala*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE INGRESSO*)
+
+SOR  [0,39] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceIngresso*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceIngresso*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceIngresso*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE BAGNO*)
+
+SOR  [0,44] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceBagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceBagno*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceBagno*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Gestione LUCE FUORI DAVANTI*)
+
+SOR  [0,49] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceFuoriDavanti*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceFuoriDavanti*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceFuoriDavanti*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
+(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+
+SOR  [0,54] (**) (**)  FB  [1,0] (*fcScritturaLuci*) (*2*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcScritturaLuci:*)(*xTempBool*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=2
+#end_info
+END_PROGRAM

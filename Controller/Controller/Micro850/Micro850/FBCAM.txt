@@ -1,0 +1,242 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+(* Operator output on : = with __EDTB1 *)
+__EDTB1 := (I_STHMICMDS.IMODE = 0) ;
+ELSE
+__EDTB1 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB1 ;
+XMANMODE := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,5
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
+(* Operator output on : = with __EDTB3 *)
+__EDTB3 := (I_STHMICMDS.IMODE = 1) ;
+ELSE
+__EDTB3 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB3 ;
+XAUTOMODE := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,9
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB6 := TRUE ;
+IF __EDTB6 THEN
+(* Operator output on : = with __EDTB5 *)
+__EDTB5 := (I_STHMICMDS.IMODE = 2) ;
+ELSE
+__EDTB5 := FALSE ;
+END_IF ;
+__MO_EQUAL_3 := __EDTB5 ;
+XDISABLEMODE := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB7 := XMANMODE ;
+__EDTB8 := XAUTOMODE ;
+(* FB call: TON *)
+tonManOffCmdTimer((__EDTB7 OR __EDTB8) AND XMANCMD AND I_XMANCMD, T#3S) ;
+XMANOFF := tonManOffCmdTimer.Q ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+tonManOnCmdTimer(XMANMODE AND NOT(XDISABLEMODE) AND I_XMANCMD, T#10S) ;
+__EDTB9 := tonManOnCmdTimer.Q ;
+(* FB call: TP *)
+tpManOnCmdPulse(__EDTB9, T#100MS) ;
+XMANON := tpManOnCmdPulse.Q ;
+(* FB call: TP *)
+tpManOnFdbkPulse(__EDTB9, T#3S) ;
+O_XMANCMDFDBK := tpManOnFdbkPulse.Q ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,21
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : XMANON with __MEMO__1__XMANON *)
+__EDTB10 := (XMANON AND NOT(__MEMO__1__XMANON)) ;
+; (*Pulse detection on : I_STHMICMDS.XMANCMD with __MEMO__2__I_STHMICMDS_XMANCMD *)
+__EDTB11 := (I_STHMICMDS.XMANCMD AND NOT(__MEMO__2__I_STHMICMDS_XMANCMD)) ;
+__EDTB12 := XMANCMD ;
+__EDTB13 := (__EDTB11 OR __EDTB12) ;
+XMANCMD := (__EDTB10 OR __EDTB13) AND XMANMODE AND NOT(XMANOFF) AND NOT(XDISABLEMODE) ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1__XMANON := XMANON ; (*Pulse detection on : XMANON with __MEMO__1__XMANON *)
+__MEMO__2__I_STHMICMDS_XMANCMD := I_STHMICMDS.XMANCMD ; (*Pulse detection on : I_STHMICMDS.XMANCMD with __MEMO__2__I_STHMICMDS_XMANCMD *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+XAUTOCMD := XAUTOMODE AND NOT(XDISABLEMODE) AND I_STHMICMDS.AXAUTOSET[I_DIGIORNO,I_DIORA] ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,27
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB14 := XMANMODE ;
+IF __EDTB14 THEN
+O_STHMIFDBKS.IMODE := (  0) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,30
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB15 := XAUTOMODE ;
+IF __EDTB15 THEN
+O_STHMIFDBKS.IMODE := (  1) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB15 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,33
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB16 := XDISABLEMODE ;
+IF __EDTB16 THEN
+O_STHMIFDBKS.IMODE := (  2) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB16 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,36
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB17 := XMANCMD ;
+__EDTB18 := XAUTOCMD ;
+O_XCAMCMD := (__EDTB17 OR __EDTB18) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,39
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB19 := NOT(O_XCAMCMD) ;
+IF __EDTB19 THEN
+O_STHMIFDBKS.ISTATE := (  0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB19 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,42
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB20 := O_XCAMCMD ;
+IF __EDTB20 THEN
+O_STHMIFDBKS.ISTATE := (  1) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB20 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __MEMO__1__XMANON *)
+(* __EDTB10 *)
+(* __MEMO__2__I_STHMICMDS_XMANCMD *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+

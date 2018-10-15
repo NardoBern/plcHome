@@ -1,0 +1,17 @@
+FUNCTION fcScritturaLuci
+(* Funzione di gestione della scrittura delle uscite di tipo LUCE *)
+_IO_X2_DO_00 := o_stComandiLuci.cmdLuceVeranda;
+_IO_X2_DO_01 := o_stComandiLuci.cmdLuceCucina;
+_IO_X2_DO_02 := o_stComandiLuci.cmdLuceAntibagno;
+_IO_X2_DO_03 := o_stComandiLuci.cmdLuceSalaLibreria;
+_IO_X2_DO_04 := o_stComandiLuci.cmdLuceCameraLetto;
+_IO_X2_DO_05 := o_stComandiLuci.cmdLuceCorridoio;
+_IO_X2_DO_06 := o_stComandiLuci.cmdLuceSala;
+_IO_X2_DO_07 := o_stComandiLuci.cmdLuceIngresso;
+_IO_X2_DO_08 := o_stComandiLuci.cmdLuceBagno;
+_IO_X2_DO_09 := o_stComandiLuci.cmdLuceFuoriDavanti;
+fcScritturaLuci := TRUE;
+
+
+
+END_FUNCTION

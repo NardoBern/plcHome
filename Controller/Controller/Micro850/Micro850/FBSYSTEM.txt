@@ -1,0 +1,92 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TIMER_500mS_UP(NOT(O_STSYSTEMVAR.XCLOCK1S), T#500MS) ;
+__EDTB1 := TIMER_500mS_UP.Q ;
+IF __EDTB1 THEN
+(*Set coil*)
+O_STSYSTEMVAR.XCLOCK1S := TRUE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+TIMER_500mS_DN(O_STSYSTEMVAR.XCLOCK1S, T#500MS) ;
+__EDTB2 := TIMER_500mS_DN.Q ;
+IF __EDTB2 THEN
+(*Reset coil*)
+O_STSYSTEMVAR.XCLOCK1S := FALSE ;
+END_IF ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : O_STSYSTEMVAR.XCLOCK1S with __MEMO__1__O_STSYSTEMVAR_XCLOCK1S *)
+__EDTB3 := (O_STSYSTEMVAR.XCLOCK1S AND NOT(__MEMO__1__O_STSYSTEMVAR_XCLOCK1S)) ;
+IF __EDTB3 THEN
+O_STSYSTEMVAR.IWDCOUNTER := (O_STSYSTEMVAR.IWDCOUNTER + 1) ;
+END_IF ;
+__MO_PLUS_1 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1__O_STSYSTEMVAR_XCLOCK1S := O_STSYSTEMVAR.XCLOCK1S ; (*Pulse detection on : O_STSYSTEMVAR.XCLOCK1S with __MEMO__1__O_STSYSTEMVAR_XCLOCK1S *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,11
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* Operator output on : >= with __EDTB4 *)
+__EDTB4 := (O_STSYSTEMVAR.IWDCOUNTER >= 500) ;
+ELSE
+__EDTB4 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB4 ;
+__EDTB6 := __EDTB4 ;
+IF __EDTB6 THEN
+O_STSYSTEMVAR.IWDCOUNTER := (  0) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __MEMO__1__O_STSYSTEMVAR_XCLOCK1S *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+

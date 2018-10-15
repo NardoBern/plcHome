@@ -1,0 +1,30 @@
+FUNCTION_BLOCK fbSystem
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIO  [1,0] (*o_stSystemVar.xClock1s*) (**)  FB  [2,0] (*TON*) (*TIMER_500mS_UP*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTS  [5,0] (*o_stSystemVar.xClock1s*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*o_stSystemVar.xClock1s*) (**)  FB  [2,0] (*TON*) (*TIMER_500mS_DN*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#500ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTR  [5,0] (*o_stSystemVar.xClock1s*) (**)
+EOR [6,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIP  [1,0] (*o_stSystemVar.xClock1s*) (**)  FB  [2,0] (*+*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stSystemVar.iWdCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stSystemVar.iWdCounter*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,11] (**) (**)  FB  [1,0] (*>=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stSystemVar.iWdCounter*) (**)  , (*i2:*)(*500*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stSystemVar.iWdCounter*) (**) )
+EOR [7,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

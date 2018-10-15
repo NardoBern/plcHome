@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectElements>
+  <AcfElementGuid Guid="0b7a30ee-c35f-4321-8278-98b1ae3d65cf">
+    <File>fcLetturaElettrovalvole.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="1b415bff-878d-4f45-8629-b5c4c0770e2a">
+    <File>fbSystem.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="1ff83392-27ae-400f-ab19-8a2017704cf9">
+    <File>fbZonaRisc.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="238727c4-5b21-45cc-a0ea-5999e5959523">
+    <File>GestioneLuci.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="253a9c56-e8ed-498e-9a71-225eb225cb65">
+    <File>SystemLogics.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="3b4234e0-587e-4803-822a-71f0ebd23426">
+    <File>fbPuntoLuce.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="44610952-5df2-4954-9e9c-1715814cf15f">
+    <File>fbCam.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="52f89823-232c-4dc3-8ed4-f30b98b1a2db">
+    <File>fcScritturaElettrovalvole.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="989d6593-7fab-4598-ae58-665ea1c31756">
+    <File>fcScritturaLuci.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="b20eb2c7-2e3f-4c3f-9f77-f6dbea2162da">
+    <File>fcLetturaPulsanti.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="ef5e4b5e-c5a6-41a1-b431-5091615ba8c0">
+    <File>fbCanc.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="f4e08239-415d-4ac5-9433-70d9e4cd5caf">
+    <File>GestioneRiscaldamento.AcfMlge</File>
+  </AcfElementGuid>
+</ProjectElements>
