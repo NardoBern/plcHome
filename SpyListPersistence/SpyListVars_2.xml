@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpyListVars_2>
+  <ConfigurationInfo>
+    <SpyListName>SystemVar</SpyListName>
+    <ConfigFileVersion>3</ConfigFileVersion>
+    <ToolWindowPaneIndex>2</ToolWindowPaneIndex>
+    <DefaultRefreshRateMonitoring>500</DefaultRefreshRateMonitoring>
+  </ConfigurationInfo>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stHmiSystemVar</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.o_stSystemVar</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stData</FullName>
+  </Variable>
+</SpyListVars_2>
