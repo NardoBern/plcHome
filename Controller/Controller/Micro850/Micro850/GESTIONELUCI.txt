@@ -188,16 +188,33 @@ __MO_FBPUNTOLUCE_10 := __EDTB11 ;
 
 
 (*************** Rung **********************************)
-(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+(*Gestione LUCE CANTINA*)
 __STEPPRAGMA
 0,54
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB12 := TRUE ;
 IF __EDTB12 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceCantina(I_STPULSANTI.PULLUCECANTINA, , ) ;
+O_STCOMANDILUCI.CMDLUCECANTINA := fbLuceCantina.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_11 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+__STEPPRAGMA
+0,59
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := TRUE ;
+IF __EDTB13 THEN
 XTEMPBOOL := fcScritturaLuci() ;
 END_IF ;
-__MO_FCSCRITTURALUCI_1 := __EDTB12 ;
+__MO_FCSCRITTURALUCI_1 := __EDTB13 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -220,4 +237,5 @@ __GL __LG0000 ;
 (* __EDTB10 *)
 (* __EDTB11 *)
 (* __EDTB12 *)
+(* __EDTB13 *)
 

@@ -69,9 +69,15 @@ SOR  [0,49] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceFuoriDavanti*) ( (*EN:E
 EOR [4,0]
 
 
+(*Gestione LUCE CANTINA*)
+
+SOR  [0,54] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCantina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCantina*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCantina*) (**)  , (*stHmiPlFdbk:*)(**) (**) )
+EOR [4,0]
+
+
 (*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
 
-SOR  [0,54] (**) (**)  FB  [1,0] (*fcScritturaLuci*) (*2*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcScritturaLuci:*)(*xTempBool*) (**) )
+SOR  [0,59] (**) (**)  FB  [1,0] (*fcScritturaLuci*) (*2*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcScritturaLuci:*)(*xTempBool*) (**) )
 EOR [4,0]
 EOF
 #end_info
