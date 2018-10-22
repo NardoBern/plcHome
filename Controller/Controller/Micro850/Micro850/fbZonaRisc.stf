@@ -29,7 +29,11 @@ EOR [4,0]
 
 (**)
 
-SOR  [0,16] (**) (**)  XIC  [1,0] (*xMan*) (**)  XIC  [2,0] (*xManCmd*) (**)  XIC  [3,0] (*i_xEvState*) (**)  FB  [4,0] (*TON*) (*tonManTime*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tManTimeOut*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [7,0] (*xManTimeOut*) (**)
+SOR  [0,16] (**) (**)  XIC  [1,0] (*xMan*) (**)  XIC  [2,0] (*xManCmd*) (**)  
+ BST  XIC  [3,0] (*i_xEvState*) (**)
+   NXB  XIO  [3,1] (*i_xEvState*) (**)
+ BND
+  FB  [4,0] (*TON*) (*tonManTime*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tManTimeOut*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [7,0] (*xManTimeOut*) (**)
 EOR [8,0]
 
 

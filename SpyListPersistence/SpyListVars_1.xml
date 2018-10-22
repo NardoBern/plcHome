@@ -12,4 +12,16 @@
   <Variable>
     <FullName>Controller.Micro850.Micro850.i_stElettrovalvole</FullName>
   </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.GestioneLuci.fbLuceSalaLibreria.o_xRiscCmd</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_X2_DO_10</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_X2_DO_11</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_X2_DO_12</FullName>
+  </Variable>
 </SpyListVars_1>

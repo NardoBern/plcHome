@@ -45,6 +45,7 @@ IF __EDTB3 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceCucina(I_STPULSANTI.PULLUCECUCINA, , ) ;
 O_STCOMANDILUCI.CMDLUCECUCINA := fbLuceCucina.o_xLampCmd ;
+I_STZONABMANCMD.XMANCMD := fbLuceCucina.o_xRiscCmd ;
 END_IF ;
 __MO_FBPUNTOLUCE_2 := __EDTB3 ;
 
@@ -79,6 +80,7 @@ IF __EDTB5 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceSalaLibreria(I_STPULSANTI.PULLUCESALALIBRERIA, , ) ;
 O_STCOMANDILUCI.CMDLUCESALALIBRERIA := fbLuceSalaLibreria.o_xLampCmd ;
+I_STZONAAMANCMD.XMANCMD := fbLuceSalaLibreria.o_xRiscCmd ;
 END_IF ;
 __MO_FBPUNTOLUCE_4 := __EDTB5 ;
 
@@ -164,6 +166,7 @@ IF __EDTB10 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceBagno(I_STPULSANTI.PULLUCEBAGNO, , ) ;
 O_STCOMANDILUCI.CMDLUCEBAGNO := fbLuceBagno.o_xLampCmd ;
+I_STZONACMANCMD.XMANCMD := fbLuceBagno.o_xRiscCmd ;
 END_IF ;
 __MO_FBPUNTOLUCE_9 := __EDTB10 ;
 
