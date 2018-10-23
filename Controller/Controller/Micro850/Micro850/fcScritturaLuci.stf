@@ -10,6 +10,7 @@ _IO_X2_DO_06 := o_stComandiLuci.cmdLuceSala;
 _IO_X2_DO_07 := o_stComandiLuci.cmdLuceIngresso;
 _IO_X2_DO_08 := o_stComandiLuci.cmdLuceBagno;
 _IO_X2_DO_09 := o_stComandiLuci.cmdLuceFuoriDavanti;
+_IO_EM_DO_01 := o_stComandiLuci.cmdLuceCantina;
 fcScritturaLuci := TRUE;
 
 

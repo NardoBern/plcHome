@@ -188,16 +188,78 @@ __MO_FBPUNTOLUCE_10 := __EDTB11 ;
 
 
 (*************** Rung **********************************)
-(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+(*Gestione LUCE CANTINA*)
 __STEPPRAGMA
 0,54
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB12 := TRUE ;
 IF __EDTB12 THEN
+(* FB call: fbPuntoLuce *)
+fbLuceCantina(I_STPULSANTI.PULLUCECANTINA, , ) ;
+O_STCOMANDILUCI.CMDLUCECANTINA := fbLuceCantina.o_xLampCmd ;
+END_IF ;
+__MO_FBPUNTOLUCE_11 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Comando riscaldamento Zona A -- Zona Notte*)
+__STEPPRAGMA
+0,59
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := FBLUCESALALIBRERIA.O_XRISCCMD ;
+__EDTB14 := FBLUCECAMERALETTO.O_XRISCCMD ;
+__EDTB15 := FBLUCEINGRESSO.O_XRISCCMD ;
+__EDTB16 := (__EDTB14 OR __EDTB15) ;
+I_STZONAAMANCMD.XMANCMD := (__EDTB13 OR __EDTB16) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Comando riscaldamento Zona B -- Zona Bagno*)
+__STEPPRAGMA
+0,63
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB17 := FBLUCEANTIBAGNO.O_XRISCCMD ;
+__EDTB18 := FBLUCEBAGNO.O_XRISCCMD ;
+I_STZONABMANCMD.XMANCMD := (__EDTB17 OR __EDTB18) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Comando riscaldamento Zona C -- Zona Giorno*)
+__STEPPRAGMA
+0,66
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB19 := FBLUCEVERANDA.O_XRISCCMD ;
+__EDTB20 := FBLUCECUCINA.O_XRISCCMD ;
+__EDTB21 := FBLUCECORRIDOIO.O_XRISCCMD ;
+__EDTB22 := FBLUCESALA.O_XRISCCMD ;
+__EDTB23 := (__EDTB21 OR __EDTB22) ;
+__EDTB24 := (__EDTB20 OR __EDTB23) ;
+I_STZONACMANCMD.XMANCMD := (__EDTB19 OR __EDTB24) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
+__STEPPRAGMA
+0,71
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB25 := TRUE ;
+IF __EDTB25 THEN
 XTEMPBOOL := fcScritturaLuci() ;
 END_IF ;
-__MO_FCSCRITTURALUCI_1 := __EDTB12 ;
+__MO_FCSCRITTURALUCI_1 := __EDTB25 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -220,4 +282,17 @@ __GL __LG0000 ;
 (* __EDTB10 *)
 (* __EDTB11 *)
 (* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
 

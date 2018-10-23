@@ -5,7 +5,7 @@ BOF
 
 (**)
 
-SOR  [0,1] (**) (**)  FB  [1,0] (*fbSystem*) (*ifbSystem*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stSystemVar:*)(*o_stSystemVar*) (**) )
+SOR  [0,1] (**) (**)  FB  [1,0] (*fbSystem*) (*ifbSystem*) ( (*EN:EN*)(**) (**)  , (*i_stHmiSystemVar:*)(*i_stHmiSystemVar*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stSystemVar:*)(*o_stSystemVar*) (**) )
 EOR [4,0]
 EOF
 #end_info

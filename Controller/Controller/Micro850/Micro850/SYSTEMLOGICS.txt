@@ -11,7 +11,7 @@ __ENDSTEPPRAGMA
 __EDTB1 := TRUE ;
 IF __EDTB1 THEN
 (* FB call: fbSystem *)
-ifbSystem() ;
+ifbSystem(I_STHMISYSTEMVAR) ;
 O_STSYSTEMVAR := ifbSystem.o_stSystemVar ;
 END_IF ;
 __MO_FBSYSTEM_1 := __EDTB1 ;

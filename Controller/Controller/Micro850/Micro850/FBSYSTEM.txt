@@ -76,6 +76,91 @@ __MO_1GAIN_1 := __EDTB6 ;
 (*************** Code for the end of Rung **************)
 
 
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,15
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* Operator output on : = with __EDTB7 *)
+__EDTB7 := (I_STHMISYSTEMVAR.IWATCHDOG = IHMIWATCHDOGOLD) ;
+ELSE
+__EDTB7 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB7 ;
+(* FB call: TON *)
+HmiWatchDogDelay(__EDTB7, T#3S) ;
+XHMICONNOK := HmiWatchDogDelay.Q ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,19
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+(* Operator output on : <> with __EDTB9 *)
+__EDTB9 := (I_STHMISYSTEMVAR.IWATCHDOG <> IHMIWATCHDOGOLD) ;
+ELSE
+__EDTB9 := FALSE ;
+END_IF ;
+__MO_DIFF_1 := __EDTB9 ;
+__EDTB11 := __EDTB9 ;
+__EDTB12 := O_STSYSTEMVAR.XHMICONOK ;
+O_STSYSTEMVAR.XHMICONOK := (__EDTB11 OR __EDTB12) AND NOT(XHMICONNOK) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,24
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB13 := TRUE ;
+IF __EDTB13 THEN
+O_STSYSTEMVAR.IHMIWDCOUNTER := (  I_STHMISYSTEMVAR.IWATCHDOG) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB13 ;
+__EDTB14 := __EDTB13 ;
+IF __EDTB14 THEN
+IHMIWATCHDOGOLD := (  I_STHMISYSTEMVAR.IWATCHDOG) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,27
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB16 := TRUE ;
+IF __EDTB16 THEN
+(* Operator output on : >= with __EDTB15 *)
+__EDTB15 := (I_STHMISYSTEMVAR.IWATCHDOG >= 500) ;
+ELSE
+__EDTB15 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_2 := __EDTB15 ;
+__EDTB17 := __EDTB15 ;
+IF __EDTB17 THEN
+O_STSYSTEMVAR.IHMIWDCOUNTER := (  0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB17 ;
+
+(*************** Code for the end of Rung **************)
+
+
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
@@ -89,4 +174,15 @@ __GL __LG0000 ;
 (* __EDTB4 *)
 (* __EDTB5 *)
 (* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
+(* __EDTB11 *)
+(* __EDTB12 *)
+(* __EDTB13 *)
+(* __EDTB14 *)
+(* __EDTB15 *)
+(* __EDTB16 *)
+(* __EDTB17 *)
 
