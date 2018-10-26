@@ -17,25 +17,25 @@ EOR [10,0]
 
 (*Gestione riscaldamento Zona A*)
 
-SOR  [0,7] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_A*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaA*) (**)  , (*i_stHMICmd:*)(*i_stZonaAManCmd*) (**)  , (*i_diGiorno:*)(**) (**)  , (*i_diOra:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaA*) (**) )
+SOR  [0,7] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_A*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaA*) (**)  , (*i_stHMICmd:*)(*i_stZonaAManCmd*) (**)  , (*i_diOra:*)(*i_stData.diOra*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaA*) (**) )
 EOR [4,0]
 
 
 (*Gestione Riscaldamento Zona B*)
 
-SOR  [0,13] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_B*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaB*) (**)  , (*i_stHMICmd:*)(*i_stZonaBManCmd*) (**)  , (*i_diGiorno:*)(**) (**)  , (*i_diOra:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaB*) (**) )
+SOR  [0,12] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_B*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaB*) (**)  , (*i_stHMICmd:*)(*i_stZonaBManCmd*) (**)  , (*i_diOra:*)(*i_stData.diOra*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaB*) (**) )
 EOR [4,0]
 
 
 (*Gestione Riscaldamento Zona C*)
 
-SOR  [0,19] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_C*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaC*) (**)  , (*i_stHMICmd:*)(*i_stZonaCManCmd*) (**)  , (*i_diGiorno:*)(**) (**)  , (*i_diOra:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaC*) (**) )
+SOR  [0,17] (**) (**)  FB  [1,0] (*fbZonaRisc*) (*fbZonaRisc_C*) ( (*EN:EN*)(**) (**)  , (*i_xEvState:*)(*i_stElettrovalvole.evZonaC*) (**)  , (*i_stHMICmd:*)(*i_stZonaCManCmd*) (**)  , (*i_diOra:*)(*i_stData.diOra*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stHMIFdbk:*)(**) (**)  , (*o_xEvCmd:*)(*o_stCmdEv.cmdEvZonaC*) (**) )
 EOR [4,0]
 
 
 (**)
 
-SOR  [0,25] (**) (**)  FB  [1,0] (*fcScritturaElettrovalvole*) (*4*) ( (*EN:EN*)(**) (**) ; (*fcScritturaElettrovalvole:*)(**) (**) )
+SOR  [0,22] (**) (**)  FB  [1,0] (*fcScritturaElettrovalvole*) (*4*) ( (*EN:EN*)(**) (**) ; (*fcScritturaElettrovalvole:*)(**) (**) )
 EOR [4,0]
 EOF
 #end_info

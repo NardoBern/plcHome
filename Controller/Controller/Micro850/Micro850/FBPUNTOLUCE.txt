@@ -144,7 +144,7 @@ __EDTB24 := (__EDTB22 OR __EDTB23) ;
 __EDTB25 := (I_XAUTCMD AND NOT(__MEMO__5__I_XAUTCMD)) AND XMODEAUT ;
 __EDTB26 := XLAMPCMD ;
 __EDTB27 := (__EDTB25 OR __EDTB26) ;
-XLAMPCMD := (__EDTB24 OR __EDTB27) AND NOT(XSTOPLAMP) ;
+XLAMPCMD := (__EDTB24 OR __EDTB27) AND NOT(XSTOPLAMP) AND NOT(XCONFIGMODE) ;
 
 (*************** Code for the end of Rung **************)
 __MEMO__3__I_XMANCMD := I_XMANCMD ; (*Fall detection on  : I_XMANCMD with __MEMO__3__I_XMANCMD *)

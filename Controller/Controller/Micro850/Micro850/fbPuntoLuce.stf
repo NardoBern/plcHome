@@ -69,8 +69,8 @@ SOR  [0,26] (**) (**)
  BND
 
  BND
-  XIO  [3,0] (*xStopLamp*) (**)  OTE  [4,0] (*xLampCmd*) (**)
-EOR [5,0]
+  XIO  [3,0] (*xStopLamp*) (**)  XIO  [4,0] (*xConfigMode*) (**)  OTE  [5,0] (*xLampCmd*) (**)
+EOR [6,0]
 
 
 (**)
