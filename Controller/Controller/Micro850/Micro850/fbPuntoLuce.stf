@@ -23,7 +23,7 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,13] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiAutoTimValue*) (**) )  FB  [5,0] (*ANY_TO_TIME*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iSemiAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiSemiAutoTimValue*) (**) )
+SOR  [0,13] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiAutoTimValue*) (**) )  FB  [5,0] (*ANY_TO_TIME*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diSemiAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiSemiAutoTimValue*) (**) )
 EOR [8,0]
 
 

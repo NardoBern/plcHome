@@ -19,6 +19,28 @@ __MO_FBSYSTEM_1 := __EDTB1 ;
 (*************** Code for the end of Rung **************)
 
 
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := O_STSYSTEMVAR.XHMICONOK ;
+I_STLUCEVERANDAHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCECUCINAHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCEANTIBAGNOHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCESALALIBRERIAHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCECAMERALETTOHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCECORRIDOIOHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCESALAHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCEINGRESSOHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCEBAGNOHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCEFUORIDAVANTIHMICMDS.XHMIOK := __EDTB2 ;
+I_STLUCECANTINAHMICMDS.XHMIOK := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
@@ -26,4 +48,5 @@ __GL __LG0000 ;
 
 (*************** Local Symbols table *******************)
 (* __EDTB1 *)
+(* __EDTB2 *)
 

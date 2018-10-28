@@ -1,7 +1,7 @@
 FUNCTION fcLetturaElettrovalvole
 /* Lettura stati elettrovalvole */
-i_stElettrovalvole.evZonaA := _IO_X1_DI_01;
-i_stElettrovalvole.evZonaB := _IO_X1_DI_02;
+i_stElettrovalvole.evZonaB := _IO_X1_DI_01;
+i_stElettrovalvole.evZonaA := _IO_X1_DI_02;
 i_stElettrovalvole.evZonaC := _IO_X1_DI_03;
 fcLetturaElettrovalvole := TRUE;
 END_FUNCTION

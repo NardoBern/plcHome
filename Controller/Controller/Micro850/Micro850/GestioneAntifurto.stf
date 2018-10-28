@@ -1,0 +1,15 @@
+PROGRAM GestioneAntifurto
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*fcLetturaSensoriAntifurto*) (*2*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcLetturaSensoriAntifurto:*)(*xTempBool*) (**) )
+EOR [4,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=2
+#end_info
+END_PROGRAM

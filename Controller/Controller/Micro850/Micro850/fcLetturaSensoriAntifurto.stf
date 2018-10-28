@@ -1,0 +1,10 @@
+FUNCTION fcLetturaSensoriAntifurto
+i_stSensAntif.xPresBagno 		:= NOT(_IO_EM_DI_11);
+i_stSensAntif.xPresAntiBagno 	:= NOT(_IO_EM_DI_12);
+i_stSensAntif.xPresCorridoio 	:= NOT(_IO_EM_DI_13);
+i_stSensAntif.xPresSala 		:= NOT(_IO_EM_DI_14);
+i_stSensAntif.xPresCucina 		:= NOT(_IO_EM_DI_15);
+i_stSensAntif.xPresVeranda 		:= NOT(_IO_EM_DI_16);
+i_stSensAntif.xPresIngresso 	:= NOT(_IO_EM_DI_17);
+fcLetturaSensoriAntifurto 		:= TRUE;
+END_FUNCTION

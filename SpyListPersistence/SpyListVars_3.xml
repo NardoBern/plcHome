@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpyListVars_3>
+  <ConfigurationInfo>
+    <SpyListName>Sensori antifurto</SpyListName>
+    <ConfigFileVersion>3</ConfigFileVersion>
+    <ToolWindowPaneIndex>3</ToolWindowPaneIndex>
+    <DefaultRefreshRateMonitoring>500</DefaultRefreshRateMonitoring>
+  </ConfigurationInfo>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_11</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_12</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_13</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_14</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_15</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_16</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_17</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_18</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850._IO_EM_DI_19</FullName>
+  </Variable>
+</SpyListVars_3>
