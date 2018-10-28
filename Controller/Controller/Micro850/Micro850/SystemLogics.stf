@@ -7,6 +7,52 @@ BOF
 
 SOR  [0,1] (**) (**)  FB  [1,0] (*fbSystem*) (*ifbSystem*) ( (*EN:EN*)(**) (**)  , (*i_stHmiSystemVar:*)(*i_stHmiSystemVar*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_stSystemVar:*)(*o_stSystemVar*) (**) )
 EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*o_stSystemVar.xHmiConOk*) (**)  
+ BST  OTE  [2,0] (*i_stLuceVerandaHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,1] (*i_stLuceCucinaHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,2] (*i_stLuceAntibagnoHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,3] (*i_stLuceSalaLibreriaHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,4] (*i_stLuceCameraLettoHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,5] (*i_stLuceCorridoioHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,6] (*i_stLuceSalaHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,7] (*i_stLuceIngressoHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,8] (*i_stLuceBagnoHmiCmds.xHmiOk*) (**)
+   NXB  
+ BST  OTE  [2,9] (*i_stLuceFuoriDavantiHmiCmds.xHmiOk*) (**)
+   NXB  OTE  [2,10] (*i_stLuceCantinaHmiCmds.xHmiOk*) (**)
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+ BND
+
+EOR [3,0]
 EOF
 #end_info
 #info= ID_MAX

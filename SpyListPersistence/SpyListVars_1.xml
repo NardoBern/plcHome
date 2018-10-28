@@ -24,4 +24,22 @@
   <Variable>
     <FullName>Controller.Micro850.Micro850._IO_X2_DO_12</FullName>
   </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stZonaAManCmd</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stZonaBManCmd</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.i_stZonaCManCmd</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.o_stHMIZonaARisc</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.o_stHMIZonaBRisc</FullName>
+  </Variable>
+  <Variable>
+    <FullName>Controller.Micro850.Micro850.o_stHMIZonaCRisc</FullName>
+  </Variable>
 </SpyListVars_1>

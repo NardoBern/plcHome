@@ -49,7 +49,7 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,22] (**) (**)  XIC  [1,0] (*xAuto*) (**)  XIO  [2,0] (*xDisable*) (**)  XIC  [3,0] (*i_stHMICmd.axAutoSet[i_diGiorno,i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
+SOR  [0,22] (**) (**)  XIC  [1,0] (*xAuto*) (**)  XIO  [2,0] (*xDisable*) (**)  XIC  [3,0] (*i_stHMICmd.axAutoSet[i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
 EOR [5,0]
 
 
