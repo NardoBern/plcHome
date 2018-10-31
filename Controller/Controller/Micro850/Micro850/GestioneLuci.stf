@@ -9,8 +9,7 @@ SOR  [0,1] (**) (**)  FB  [1,0] (*fcLetturaPulsanti*) (*1*) ( (*EN:EN*)(**) (**)
 EOR [4,0]
 
 
-(*Abilitazione modalità automatica luci in funzione dell'orario
-*)
+(*Abilitazione modalità automatica luci in funzione dell'orario*)
 
 SOR  [0,4] (**) (**)  
  BST  FB  [1,0] (*>=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*18*) (**) ; (*o1:*)(**) (**) )
@@ -48,67 +47,67 @@ EOR [10,0]
 
 (*Gestione LUCE VERANDA*)
 
-SOR  [0,18] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceVeranda*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceVeranda*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresVeranda*) (**)  , (*stHmiPlCmd:*)(*i_stLuceVerandaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceVeranda*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,18] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceVeranda*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceVeranda*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresVeranda*) (**)  , (*stHmiPlCmd:*)(*i_stLuceVerandaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceVeranda*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceVerandaFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE CUCINA*)
 
-SOR  [0,23] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCucina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCucina*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresCucina*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCucinaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCucina*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,23] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCucina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCucina*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresCucina*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCucinaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCucina*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceCucinaFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE ANTIBAGNO*)
 
-SOR  [0,28] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceAntibagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceAntibagno*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresAntiBagno*) (**)  , (*stHmiPlCmd:*)(*i_stLuceAntibagnoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceAntibagno*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,28] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceAntibagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceAntibagno*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresAntiBagno*) (**)  , (*stHmiPlCmd:*)(*i_stLuceAntibagnoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceAntibagno*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceAntibagnoFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE SALA LIBRERIA*)
 
-SOR  [0,33] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSalaLibreria*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSalaLibreria*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPreSalaLibreria*) (**)  , (*stHmiPlCmd:*)(*i_stLuceSalaLibreriaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSalaLibreria*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,33] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSalaLibreria*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSalaLibreria*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPreSalaLibreria*) (**)  , (*stHmiPlCmd:*)(*i_stLuceSalaLibreriaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSalaLibreria*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceSalaLibreriaFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE CAMERA LETTO*)
 
-SOR  [0,38] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCameraLetto*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCameraLetto*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresLetto*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCameraLettoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCameraLetto*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,38] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCameraLetto*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCameraLetto*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresLetto*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCameraLettoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCameraLetto*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceCameraLettoFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE CORRIDOIO*)
 
-SOR  [0,43] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCorridoio*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCorridoio*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresCorridoio*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCorridoioHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCorridoio*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,43] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCorridoio*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCorridoio*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresCorridoio*) (**)  , (*stHmiPlCmd:*)(*i_stLuceCorridoioHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCorridoio*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceCorridoioFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE SALA*)
 
-SOR  [0,48] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSala*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSala*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresSala*) (**)  , (*stHmiPlCmd:*)(*i_stLuceSalaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSala*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,48] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceSala*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceSala*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresSala*) (**)  , (*stHmiPlCmd:*)(*i_stLuceSalaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceSala*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceSalaFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE INGRESSO*)
 
-SOR  [0,53] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceIngresso*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceIngresso*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresIngresso*) (**)  , (*stHmiPlCmd:*)(*i_stLuceIngressoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceIngresso*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,53] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceIngresso*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceIngresso*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresIngresso*) (**)  , (*stHmiPlCmd:*)(*i_stLuceIngressoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceIngresso*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceIngressoFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE BAGNO*)
 
-SOR  [0,58] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceBagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceBagno*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresBagno*) (**)  , (*stHmiPlCmd:*)(*i_stLuceBagnoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceBagno*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,58] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceBagno*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceBagno*) (**)  , (*i_xAutCmd:*)(*i_stSensAntif.xPresBagno*) (**)  , (*stHmiPlCmd:*)(*i_stLuceBagnoHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceBagno*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceBagnoFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE FUORI DAVANTI*)
 
-SOR  [0,63] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceFuoriDavanti*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceFuoriDavanti*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(*i_stLuceFuoriDavantiHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceFuoriDavanti*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,63] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceFuoriDavanti*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceFuoriDavanti*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(*i_stLuceFuoriDavantiHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceFuoriDavanti*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceFuoriDavantiFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 
 (*Gestione LUCE CANTINA*)
 
-SOR  [0,68] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCantina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCantina*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(*i_stLuceCantinaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCantina*) (**)  , (*stHmiPlFdbk:*)(**) (**)  , (*o_xRiscCmd:*)(**) (**) )
+SOR  [0,68] (**) (**)  FB  [1,0] (*fbPuntoLuce*) (*fbLuceCantina*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_stPulsanti.pulLuceCantina*) (**)  , (*i_xAutCmd:*)(**) (**)  , (*stHmiPlCmd:*)(*i_stLuceCantinaHmiCmds*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xLampCmd:*)(*o_stComandiLuci.cmdLuceCantina*) (**)  , (*stHmiPlFdbk:*)(*o_stLuceCantinaFdbk*) (**)  , (*o_xRiscCmd:*)(**) (**) )
 EOR [4,0]
 
 

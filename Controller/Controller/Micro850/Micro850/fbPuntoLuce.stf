@@ -36,7 +36,11 @@ EOR [8,0]
 (**)
 
 SOR  [0,19] (**) (**)  XIC  [1,0] (*xLampCmd*) (**)  
- BST  XIC  [2,0] (*xModeMan*) (**)  
+ BST  
+ BST  XIC  [2,0] (*xModeMan*) (**)
+   NXB  XIC  [2,1] (*xModeAut*) (**)
+ BND
+  
  BST  XIF  [3,0] (*i_xManCmd*) (**)
    NXB  XIP  [3,1] (*stHmiPlCmd.xManCmd*) (**)
  BND
@@ -60,12 +64,16 @@ SOR  [0,26] (**) (**)
  BND
   
  BST  XIC  [2,0] (*xModeMan*) (**)
-   NXB  XIC  [2,1] (*xModeSemiAut*) (**)
+   NXB  
+ BST  XIC  [2,1] (*xModeSemiAut*) (**)
+   NXB  XIC  [2,2] (*xModeAut*) (**)
+ BND
+
  BND
 
    NXB  
- BST  XIP  [1,2] (*i_xAutCmd*) (**)  XIC  [2,2] (*xModeAut*) (**)
-   NXB  XIC  [1,3] (*xLampCmd*) (**)
+ BST  XIP  [1,3] (*i_xAutCmd*) (**)  XIC  [2,3] (*xModeAut*) (**)
+   NXB  XIC  [1,4] (*xLampCmd*) (**)
  BND
 
  BND
@@ -75,7 +83,7 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,31] (**) (**)  XIO  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  
+SOR  [0,32] (**) (**)  XIO  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  
  BST  XIC  [4,0] (*xModeMan*) (**)  FB  [5,0] (*TON*) (*tSemiAutoSelTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [8,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
    NXB  
  BST  XIC  [4,2] (*xModeSemiAut*) (**)  FB  [5,2] (*TON*) (*tAutoSelTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [8,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
@@ -89,7 +97,7 @@ EOR [11,0]
 
 (**)
 
-SOR  [0,38] (**) (**)  
+SOR  [0,39] (**) (**)  
  BST  XIC  [1,0] (*i_xManCmd*) (**)  FB  [2,0] (*TON*) (*tonConfigSelector*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#10s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
    NXB  XIC  [1,2] (*xConfigMode*) (**)
  BND
@@ -99,7 +107,7 @@ EOR [7,0]
 
 (**)
 
-SOR  [0,42] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*TON*) (*tonDisableConfig*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+SOR  [0,43] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*TON*) (*tonDisableConfig*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
  BST  OTE  [6,0] (*xDisableConfig*) (**)
    NXB  FB  [6,1] (*>=*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*5*) (**) ; (*o1:*)(**) (**) )  
  BST  OTE  [9,1] (*o_xRiscCmd*) (**)
@@ -113,19 +121,19 @@ EOR [12,0]
 
 (**)
 
-SOR  [0,47] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIP  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*+*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iPulseCounter*) (**) )
+SOR  [0,48] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIP  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*+*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iPulseCounter*) (**) )
 EOR [6,0]
 
 
 (**)
 
-SOR  [0,51] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
+SOR  [0,52] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,54] (**) (**)  
+SOR  [0,55] (**) (**)  
  BST  XIC  [1,0] (*xLampCmd*) (**)
    NXB  XIC  [1,1] (*xConfigMode*) (**)
  BND
@@ -139,7 +147,7 @@ EOR [3,0]
 
 (**)
 
-SOR  [0,57] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iModeState*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*stHmiPlFdbk.iMode*) (**) )
+SOR  [0,58] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iModeState*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*stHmiPlFdbk.iMode*) (**) )
 EOR [4,0]
 EOF
 #end_info
