@@ -17,6 +17,159 @@ __MO_FCLETTURASENSORIANTIFURTO_1 := __EDTB1 ;
 (*************** Code for the end of Rung **************)
 
 
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB2 := TRUE ;
+IF __EDTB2 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterVeranda(I_STSENSANTIF.XPRESVERANDA) ;
+XFILTEREDSENSANTIF.XPRESVERANDA := fbDigitalFilterVeranda.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_1 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := TRUE ;
+IF __EDTB3 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterCucina(I_STSENSANTIF.XPRESCUCINA) ;
+XFILTEREDSENSANTIF.XPRESCUCINA := fbDigitalFilterCucina.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_2 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterSala(I_STSENSANTIF.XPRESSALA) ;
+XFILTEREDSENSANTIF.XPRESSALA := fbDigitalFilterSala.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_3 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterIngresso(I_STSENSANTIF.XPRESINGRESSO) ;
+XFILTEREDSENSANTIF.XPRESINGRESSO := fbDigitalFilterIngresso.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_4 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB6 := TRUE ;
+IF __EDTB6 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterCorridoio(I_STSENSANTIF.XPRESCORRIDOIO) ;
+XFILTEREDSENSANTIF.XPRESCORRIDOIO := fbDigitalFilterCorridoio.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_5 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,19
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB7 := TRUE ;
+IF __EDTB7 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterSalaLibreria(I_STSENSANTIF.XPRESALALIBRERIA) ;
+XFILTEREDSENSANTIF.XPRESALALIBRERIA := fbDigitalFilterSalaLibreria.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_6 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterLetto(I_STSENSANTIF.XPRESLETTO) ;
+XFILTEREDSENSANTIF.XPRESLETTO := fbDigitalFilterLetto.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_7 := __EDTB8 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB9 := TRUE ;
+IF __EDTB9 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterAntibagno(I_STSENSANTIF.XPRESANTIBAGNO) ;
+XFILTEREDSENSANTIF.XPRESANTIBAGNO := fbDigitalFilterAntibagno.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_8 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,28
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+(* FB call: fbDigitalFilter *)
+fbDigitalFilterBagno(I_STSENSANTIF.XPRESBAGNO) ;
+XFILTEREDSENSANTIF.XPRESBAGNO := fbDigitalFilterBagno.o_xOutput ;
+END_IF ;
+__MO_FBDIGITALFILTER_9 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+
+
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
@@ -24,4 +177,13 @@ __GL __LG0000 ;
 
 (*************** Local Symbols table *******************)
 (* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
 

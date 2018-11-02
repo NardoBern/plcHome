@@ -1,0 +1,41 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(*Filtro per segnali digitali *)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := I_XINPUT ;
+__EDTB2 := O_XOUTPUT ;
+(* FB call: TON *)
+tOnDelay((__EDTB1 OR __EDTB2), T#300MS) ;
+O_XOUTPUT := tOnDelay.Q AND NOT(XOFFOUTPUT) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+tOffDelay(O_XOUTPUT AND NOT(I_XINPUT), T#300MS) ;
+XOFFOUTPUT := tOffDelay.Q ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+(* __EDTB2 *)
+

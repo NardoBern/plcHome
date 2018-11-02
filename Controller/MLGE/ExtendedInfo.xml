@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProjectElements>
+  <AcfElementGuid Guid="076e1902-a6a4-4f99-9efa-997483d3e623">
+    <File>fbDigitalFilter.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="0b7a30ee-c35f-4321-8278-98b1ae3d65cf">
     <File>fcLetturaElettrovalvole.AcfMlge</File>
   </AcfElementGuid>

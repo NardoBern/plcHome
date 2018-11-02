@@ -1,0 +1,23 @@
+FUNCTION_BLOCK fbDigitalFilter
+#info= QLD
+BOF
+
+
+(*Filtro per segnali digitali
+*)
+
+SOR  [0,1] (**) (**)  
+ BST  XIC  [1,0] (*i_xInput*) (**)
+   NXB  XIC  [1,1] (*o_xOutput*) (**)
+ BND
+  FB  [2,0] (*TON*) (*tOnDelay*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#300ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  XIO  [5,0] (*xOffOutput*) (**)  OTE  [6,0] (*o_xOutput*) (**)
+EOR [7,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIC  [1,0] (*o_xOutput*) (**)  XIO  [2,0] (*i_xInput*) (**)  FB  [3,0] (*TON*) (*tOffDelay*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#300ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [6,0] (*xOffOutput*) (**)
+EOR [7,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

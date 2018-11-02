@@ -60,7 +60,7 @@ EOR [8,0]
 SOR  [0,26] (**) (**)  
  BST  
  BST  XIF  [1,0] (*i_xManCmd*) (**)
-   NXB  XIP  [1,1] (*stHmiPlCmd.xManCmd*) (**)
+   NXB  XIF  [1,1] (*stHmiPlCmd.xManCmd*) (**)
  BND
   
  BST  XIC  [2,0] (*xModeMan*) (**)

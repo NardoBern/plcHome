@@ -7,6 +7,60 @@ BOF
 
 SOR  [0,1] (**) (**)  FB  [1,0] (*fcLetturaSensoriAntifurto*) (*2*) ( (*EN:EN*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*fcLetturaSensoriAntifurto:*)(*xTempBool*) (**) )
 EOR [4,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterVeranda*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresVeranda*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresVeranda*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterCucina*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresCucina*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresCucina*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterSala*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresSala*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresSala*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterIngresso*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresIngresso*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresIngresso*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterCorridoio*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresCorridoio*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresCorridoio*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterSalaLibreria*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPreSalaLibreria*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPreSalaLibreria*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterLetto*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresLetto*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresLetto*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterAntibagno*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresAntiBagno*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresAntiBagno*) (**) )
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,28] (**) (**)  FB  [1,0] (*fbDigitalFilter*) (*fbDigitalFilterBagno*) ( (*EN:EN*)(**) (**)  , (*i_xInput:*)(*i_stSensAntif.xPresBagno*) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xOutput:*)(*xFilteredSensAntif.xPresBagno*) (**) )
+EOR [4,0]
 EOF
 #end_info
 #info= ID_MAX
