@@ -20,8 +20,8 @@ SOR  [0,4] (**) (**)
    NXB  
  BST  FB  [4,2] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceIngressoHmiCmds.iModeSel*) (**) )
    NXB  
- BST  FB  [4,4] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*15000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceVerandaHmiCmds.diAutoTime*) (**) )
-   NXB  FB  [4,6] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*60000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceIngressoHmiCmds.diAutoTime*) (**) )
+ BST  FB  [4,4] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*15*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceVerandaHmiCmds.diAutoTime*) (**) )
+   NXB  FB  [4,6] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*60*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceIngressoHmiCmds.diAutoTime*) (**) )
  BND
 
  BND
