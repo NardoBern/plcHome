@@ -121,7 +121,7 @@ SOR  [0,73] (**) (**)
  BND
 
  BND
-  OTE  [2,0] (*i_stZonaAManCmd.xManCmd*) (**)
+  OTE  [2,0] (*i_stZonaAManCmd.xPulsCmd*) (**)
 EOR [3,0]
 
 
@@ -131,7 +131,7 @@ SOR  [0,77] (**) (**)
  BST  XIC  [1,0] (*fbLuceAntibagno.o_xRiscCmd*) (**)
    NXB  XIC  [1,1] (*fbLuceBagno.o_xRiscCmd*) (**)
  BND
-  OTE  [2,0] (*i_stZonaBManCmd.xManCmd*) (**)
+  OTE  [2,0] (*i_stZonaBManCmd.xPulsCmd*) (**)
 EOR [3,0]
 
 
@@ -149,7 +149,7 @@ SOR  [0,80] (**) (**)
  BND
 
  BND
-  OTE  [2,0] (*i_stZonaCManCmd.xManCmd*) (**)
+  OTE  [2,0] (*i_stZonaCManCmd.xPulsCmd*) (**)
 EOR [3,0]
 
 
