@@ -27,6 +27,9 @@
   <AcfElementGuid Guid="52f89823-232c-4dc3-8ed4-f30b98b1a2db">
     <File>fcScritturaElettrovalvole.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="85aa2cc4-61fb-4949-8443-b5f704040f26">
+    <File>GestioneCancelli.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="88fd134d-b181-499c-b457-193a7a12295a">
     <File>GestioneAntifurto.AcfMlge</File>
   </AcfElementGuid>

@@ -42,12 +42,16 @@ SOR  [0,20] (**) (**)  XIC  [1,0] (*xLampCmd*) (**)
  BND
   
  BST  XIF  [3,0] (*i_xManCmd*) (**)
-   NXB  XIF  [3,1] (*stHmiPlCmd.xManCmd*) (**)
+   NXB  
+ BST  XIF  [3,1] (*stHmiPlCmd.xManCmd*) (**)
+   NXB  XIP  [3,2] (*stHmiPlCmd.xManCmd*) (**)
+ BND
+
  BND
 
    NXB  
- BST  XIC  [2,2] (*xModeAut*) (**)  XIO  [3,2] (*i_xAutCmd*) (**)  FB  [4,2] (*TON*) (*tAutoTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiAutoTimValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
-   NXB  XIC  [2,4] (*xModeSemiAut*) (**)  FB  [3,4] (*TON*) (*tSemiAutoTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiSemiAutoTimValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+ BST  XIC  [2,3] (*xModeAut*) (**)  XIO  [3,3] (*i_xAutCmd*) (**)  FB  [4,3] (*TON*) (*tAutoTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiAutoTimValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  XIC  [2,5] (*xModeSemiAut*) (**)  FB  [3,5] (*TON*) (*tSemiAutoTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiSemiAutoTimValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
  BND
 
  BND
@@ -57,16 +61,20 @@ EOR [8,0]
 
 (**)
 
-SOR  [0,27] (**) (**)  
+SOR  [0,28] (**) (**)  
  BST  
  BST  XIF  [1,0] (*i_xManCmd*) (**)
-   NXB  XIP  [1,1] (*stHmiPlCmd.xManCmd*) (**)
- BND
-  
- BST  XIC  [2,0] (*xModeMan*) (**)
    NXB  
- BST  XIC  [2,1] (*xModeSemiAut*) (**)
-   NXB  XIC  [2,2] (*xModeAut*) (**)
+ BST  XIP  [1,1] (*stHmiPlCmd.xManCmd*) (**)
+   NXB  XIF  [1,2] (*stHmiPlCmd.xManCmd*) (**)
+ BND
+
+ BND
+  XIO  [2,0] (*xLampCmd*) (**)  
+ BST  XIC  [3,0] (*xModeMan*) (**)
+   NXB  
+ BST  XIC  [3,1] (*xModeSemiAut*) (**)
+   NXB  XIC  [3,2] (*xModeAut*) (**)
  BND
 
  BND
@@ -77,13 +85,13 @@ SOR  [0,27] (**) (**)
  BND
 
  BND
-  XIO  [3,0] (*xStopLamp*) (**)  XIO  [4,0] (*xConfigMode*) (**)  OTE  [5,0] (*xLampCmd*) (**)
-EOR [6,0]
+  XIO  [4,0] (*xStopLamp*) (**)  XIO  [5,0] (*xConfigMode*) (**)  OTE  [6,0] (*xLampCmd*) (**)
+EOR [7,0]
 
 
 (**)
 
-SOR  [0,33] (**) (**)  XIO  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  
+SOR  [0,34] (**) (**)  XIO  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  XIC  [3,0] (*i_xManCmd*) (**)  
  BST  XIC  [4,0] (*xModeMan*) (**)  FB  [5,0] (*TON*) (*tSemiAutoSelTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [8,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
    NXB  
  BST  XIC  [4,2] (*xModeSemiAut*) (**)  FB  [5,2] (*TON*) (*tAutoSelTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  FB  [8,2] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
@@ -97,7 +105,7 @@ EOR [11,0]
 
 (**)
 
-SOR  [0,40] (**) (**)  
+SOR  [0,41] (**) (**)  
  BST  XIC  [1,0] (*i_xManCmd*) (**)  FB  [2,0] (*TON*) (*tonConfigSelector*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#10s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
    NXB  XIC  [1,2] (*xConfigMode*) (**)
  BND
@@ -107,7 +115,7 @@ EOR [7,0]
 
 (**)
 
-SOR  [0,44] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*TON*) (*tonDisableConfig*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+SOR  [0,45] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIO  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*TON*) (*tonDisableConfig*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
  BST  OTE  [6,0] (*xDisableConfig*) (**)
    NXB  FB  [6,1] (*>=*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*5*) (**) ; (*o1:*)(**) (**) )  
  BST  OTE  [9,1] (*o_xRiscCmd*) (**)
@@ -121,19 +129,19 @@ EOR [12,0]
 
 (**)
 
-SOR  [0,49] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIP  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*+*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iPulseCounter*) (**) )
+SOR  [0,50] (**) (**)  XIC  [1,0] (*xConfigMode*) (**)  XIP  [2,0] (*i_xManCmd*) (**)  FB  [3,0] (*+*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iPulseCounter*) (**)  , (*i2:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iPulseCounter*) (**) )
 EOR [6,0]
 
 
 (**)
 
-SOR  [0,53] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
+SOR  [0,54] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,56] (**) (**)  
+SOR  [0,57] (**) (**)  
  BST  XIC  [1,0] (*xLampCmd*) (**)
    NXB  XIC  [1,1] (*xConfigMode*) (**)
  BND
@@ -147,7 +155,7 @@ EOR [3,0]
 
 (**)
 
-SOR  [0,59] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iModeState*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*stHmiPlFdbk.iMode*) (**) )
+SOR  [0,60] (**) (**)  FB  [1,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*iModeState*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*stHmiPlFdbk.iMode*) (**) )
 EOR [4,0]
 EOF
 #end_info

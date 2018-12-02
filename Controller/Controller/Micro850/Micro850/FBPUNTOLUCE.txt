@@ -118,81 +118,89 @@ __EDTB15 := (__EDTB13 OR __EDTB14) ;
 __EDTB16 := __EDTB15 AND (__MEMO__1__I_XMANCMD AND NOT(I_XMANCMD)) ;
 ; (*Fall detection on  : STHMIPLCMD.XMANCMD with __MEMO__2__STHMIPLCMD_XMANCMD *)
 __EDTB17 := __EDTB15 AND (__MEMO__2__STHMIPLCMD_XMANCMD AND NOT(STHMIPLCMD.XMANCMD)) ;
-__EDTB18 := (__EDTB16 OR __EDTB17) ;
+; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__3__STHMIPLCMD_XMANCMD *)
+__EDTB18 := __EDTB15 AND (STHMIPLCMD.XMANCMD AND NOT(__MEMO__3__STHMIPLCMD_XMANCMD)) ;
+__EDTB19 := (__EDTB17 OR __EDTB18) ;
+__EDTB20 := (__EDTB16 OR __EDTB19) ;
 (* FB call: TON *)
 tAutoTimer(__EDTB12 AND XMODEAUT AND NOT(I_XAUTCMD), TIAUTOTIMVALUE) ;
-__EDTB19 := tAutoTimer.Q ;
+__EDTB21 := tAutoTimer.Q ;
 (* FB call: TON *)
 tSemiAutoTimer(__EDTB12 AND XMODESEMIAUT, TISEMIAUTOTIMVALUE) ;
-__EDTB20 := tSemiAutoTimer.Q ;
-__EDTB21 := (__EDTB19 OR __EDTB20) ;
-XSTOPLAMP := (__EDTB18 OR __EDTB21) ;
+__EDTB22 := tSemiAutoTimer.Q ;
+__EDTB23 := (__EDTB21 OR __EDTB22) ;
+XSTOPLAMP := (__EDTB20 OR __EDTB23) ;
 
 (*************** Code for the end of Rung **************)
 __MEMO__1__I_XMANCMD := I_XMANCMD ; (*Fall detection on  : I_XMANCMD with __MEMO__1__I_XMANCMD *)
 __MEMO__2__STHMIPLCMD_XMANCMD := STHMIPLCMD.XMANCMD ; (*Fall detection on  : STHMIPLCMD.XMANCMD with __MEMO__2__STHMIPLCMD_XMANCMD *)
+__MEMO__3__STHMIPLCMD_XMANCMD := STHMIPLCMD.XMANCMD ; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__3__STHMIPLCMD_XMANCMD *)
 
 
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,27
+0,28
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-; (*Fall detection on  : I_XMANCMD with __MEMO__3__I_XMANCMD *)
-__EDTB22 := (__MEMO__3__I_XMANCMD AND NOT(I_XMANCMD)) ;
-; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__4__STHMIPLCMD_XMANCMD *)
-__EDTB23 := (STHMIPLCMD.XMANCMD AND NOT(__MEMO__4__STHMIPLCMD_XMANCMD)) ;
-__EDTB24 := (__EDTB22 OR __EDTB23) ;
-__EDTB25 := __EDTB24 AND XMODEMAN ;
-__EDTB26 := __EDTB24 AND XMODESEMIAUT ;
-__EDTB27 := __EDTB24 AND XMODEAUT ;
-__EDTB28 := (__EDTB26 OR __EDTB27) ;
-__EDTB29 := (__EDTB25 OR __EDTB28) ;
-; (*Pulse detection on : I_XAUTCMD with __MEMO__5__I_XAUTCMD *)
-__EDTB30 := (I_XAUTCMD AND NOT(__MEMO__5__I_XAUTCMD)) AND XMODEAUT ;
-__EDTB31 := XLAMPCMD ;
+; (*Fall detection on  : I_XMANCMD with __MEMO__4__I_XMANCMD *)
+__EDTB24 := (__MEMO__4__I_XMANCMD AND NOT(I_XMANCMD)) ;
+; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__5__STHMIPLCMD_XMANCMD *)
+__EDTB25 := (STHMIPLCMD.XMANCMD AND NOT(__MEMO__5__STHMIPLCMD_XMANCMD)) ;
+; (*Fall detection on  : STHMIPLCMD.XMANCMD with __MEMO__6__STHMIPLCMD_XMANCMD *)
+__EDTB26 := (__MEMO__6__STHMIPLCMD_XMANCMD AND NOT(STHMIPLCMD.XMANCMD)) ;
+__EDTB27 := (__EDTB25 OR __EDTB26) ;
+__EDTB28 := (__EDTB24 OR __EDTB27) AND NOT(XLAMPCMD) ;
+__EDTB29 := __EDTB28 AND XMODEMAN ;
+__EDTB30 := __EDTB28 AND XMODESEMIAUT ;
+__EDTB31 := __EDTB28 AND XMODEAUT ;
 __EDTB32 := (__EDTB30 OR __EDTB31) ;
-XLAMPCMD := (__EDTB29 OR __EDTB32) AND NOT(XSTOPLAMP) AND NOT(XCONFIGMODE) ;
+__EDTB33 := (__EDTB29 OR __EDTB32) ;
+; (*Pulse detection on : I_XAUTCMD with __MEMO__7__I_XAUTCMD *)
+__EDTB34 := (I_XAUTCMD AND NOT(__MEMO__7__I_XAUTCMD)) AND XMODEAUT ;
+__EDTB35 := XLAMPCMD ;
+__EDTB36 := (__EDTB34 OR __EDTB35) ;
+XLAMPCMD := (__EDTB33 OR __EDTB36) AND NOT(XSTOPLAMP) AND NOT(XCONFIGMODE) ;
 
 (*************** Code for the end of Rung **************)
-__MEMO__3__I_XMANCMD := I_XMANCMD ; (*Fall detection on  : I_XMANCMD with __MEMO__3__I_XMANCMD *)
-__MEMO__4__STHMIPLCMD_XMANCMD := STHMIPLCMD.XMANCMD ; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__4__STHMIPLCMD_XMANCMD *)
-__MEMO__5__I_XAUTCMD := I_XAUTCMD ; (*Pulse detection on : I_XAUTCMD with __MEMO__5__I_XAUTCMD *)
+__MEMO__4__I_XMANCMD := I_XMANCMD ; (*Fall detection on  : I_XMANCMD with __MEMO__4__I_XMANCMD *)
+__MEMO__5__STHMIPLCMD_XMANCMD := STHMIPLCMD.XMANCMD ; (*Pulse detection on : STHMIPLCMD.XMANCMD with __MEMO__5__STHMIPLCMD_XMANCMD *)
+__MEMO__6__STHMIPLCMD_XMANCMD := STHMIPLCMD.XMANCMD ; (*Fall detection on  : STHMIPLCMD.XMANCMD with __MEMO__6__STHMIPLCMD_XMANCMD *)
+__MEMO__7__I_XAUTCMD := I_XAUTCMD ; (*Pulse detection on : I_XAUTCMD with __MEMO__7__I_XAUTCMD *)
 
 
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,33
+0,34
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB33 := NOT(STHMIPLCMD.XHMIOK) AND NOT(I_XMANCMD) AND I_XMANCMD ;
+__EDTB37 := NOT(STHMIPLCMD.XHMIOK) AND NOT(I_XMANCMD) AND I_XMANCMD ;
 (* FB call: TON *)
-tSemiAutoSelTimer(__EDTB33 AND XMODEMAN, T#5S) ;
-__EDTB34 := tSemiAutoSelTimer.Q ;
-IF __EDTB34 THEN
+tSemiAutoSelTimer(__EDTB37 AND XMODEMAN, T#5S) ;
+__EDTB38 := tSemiAutoSelTimer.Q ;
+IF __EDTB38 THEN
 IMODESTATE := (  1) ;
 END_IF ;
-__MO_1GAIN_3 := __EDTB34 ;
-__EDTB35 := __EDTB34 ;
+__MO_1GAIN_3 := __EDTB38 ;
+__EDTB39 := __EDTB38 ;
 (* FB call: TON *)
-tAutoSelTimer(__EDTB33 AND XMODESEMIAUT, T#5S) ;
-__EDTB36 := tAutoSelTimer.Q ;
-IF __EDTB36 THEN
+tAutoSelTimer(__EDTB37 AND XMODESEMIAUT, T#5S) ;
+__EDTB40 := tAutoSelTimer.Q ;
+IF __EDTB40 THEN
 IMODESTATE := (  2) ;
 END_IF ;
-__MO_1GAIN_4 := __EDTB36 ;
-__EDTB37 := __EDTB36 ;
+__MO_1GAIN_4 := __EDTB40 ;
+__EDTB41 := __EDTB40 ;
 (* FB call: TON *)
-tManSelTimer(__EDTB33 AND XMODEAUT, T#5S) ;
-__EDTB38 := tManSelTimer.Q ;
-IF __EDTB38 THEN
+tManSelTimer(__EDTB37 AND XMODEAUT, T#5S) ;
+__EDTB42 := tManSelTimer.Q ;
+IF __EDTB42 THEN
 IMODESTATE := (  0) ;
 END_IF ;
-__MO_1GAIN_5 := __EDTB38 ;
-__EDTB39 := __EDTB38 ;
-__EDTB40 := (__EDTB37 OR __EDTB39) ;
+__MO_1GAIN_5 := __EDTB42 ;
+__EDTB43 := __EDTB42 ;
+__EDTB44 := (__EDTB41 OR __EDTB43) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -200,14 +208,14 @@ __EDTB40 := (__EDTB37 OR __EDTB39) ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,40
+0,41
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: TON *)
 tonConfigSelector(I_XMANCMD, T#10S) ;
-__EDTB41 := tonConfigSelector.Q ;
-__EDTB42 := XCONFIGMODE ;
-XCONFIGMODE := (__EDTB41 OR __EDTB42) AND NOT(XDISABLECONFIG) ;
+__EDTB45 := tonConfigSelector.Q ;
+__EDTB46 := XCONFIGMODE ;
+XCONFIGMODE := (__EDTB45 OR __EDTB46) AND NOT(XDISABLECONFIG) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -215,28 +223,28 @@ XCONFIGMODE := (__EDTB41 OR __EDTB42) AND NOT(XDISABLECONFIG) ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,44
+0,45
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 (* FB call: TON *)
 tonDisableConfig(XCONFIGMODE AND NOT(I_XMANCMD), T#5S) ;
-__EDTB43 := tonDisableConfig.Q ;
-XDISABLECONFIG := __EDTB43 ;
-__EDTB45 := __EDTB43 ;
-IF __EDTB45 THEN
-(* Operator output on : >= with __EDTB44 *)
-__EDTB44 := (IPULSECOUNTER >= 5) ;
+__EDTB47 := tonDisableConfig.Q ;
+XDISABLECONFIG := __EDTB47 ;
+__EDTB49 := __EDTB47 ;
+IF __EDTB49 THEN
+(* Operator output on : >= with __EDTB48 *)
+__EDTB48 := (IPULSECOUNTER >= 5) ;
 ELSE
-__EDTB44 := FALSE ;
+__EDTB48 := FALSE ;
 END_IF ;
-__MO_GREATEQUAL_1 := __EDTB44 ;
-O_XRISCCMD := __EDTB44 ;
-__EDTB46 := __EDTB44 ;
-IF __EDTB46 THEN
+__MO_GREATEQUAL_1 := __EDTB48 ;
+O_XRISCCMD := __EDTB48 ;
+__EDTB50 := __EDTB48 ;
+IF __EDTB50 THEN
 IPULSECOUNTER := (  0) ;
 END_IF ;
-__MO_1GAIN_6 := __EDTB46 ;
-__EDTB47 := __EDTB46 ;
+__MO_1GAIN_6 := __EDTB50 ;
+__EDTB51 := __EDTB50 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -244,31 +252,31 @@ __EDTB47 := __EDTB46 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,49
+0,50
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-; (*Pulse detection on : I_XMANCMD with __MEMO__6__I_XMANCMD *)
-__EDTB48 := XCONFIGMODE AND (I_XMANCMD AND NOT(__MEMO__6__I_XMANCMD)) ;
-IF __EDTB48 THEN
+; (*Pulse detection on : I_XMANCMD with __MEMO__8__I_XMANCMD *)
+__EDTB52 := XCONFIGMODE AND (I_XMANCMD AND NOT(__MEMO__8__I_XMANCMD)) ;
+IF __EDTB52 THEN
 IPULSECOUNTER := (IPULSECOUNTER + 1) ;
 END_IF ;
-__MO_PLUS_1 := __EDTB48 ;
+__MO_PLUS_1 := __EDTB52 ;
 
 (*************** Code for the end of Rung **************)
-__MEMO__6__I_XMANCMD := I_XMANCMD ; (*Pulse detection on : I_XMANCMD with __MEMO__6__I_XMANCMD *)
+__MEMO__8__I_XMANCMD := I_XMANCMD ; (*Pulse detection on : I_XMANCMD with __MEMO__8__I_XMANCMD *)
 
 
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,53
+0,54
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB49 := STHMIPLCMD.XHMIOK ;
-IF __EDTB49 THEN
+__EDTB53 := STHMIPLCMD.XHMIOK ;
+IF __EDTB53 THEN
 IMODESTATE := (  STHMIPLCMD.IMODESEL) ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB49 ;
+__MO_1GAIN_7 := __EDTB53 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -276,14 +284,14 @@ __MO_1GAIN_7 := __EDTB49 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,56
+0,57
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB50 := XLAMPCMD ;
-__EDTB51 := XCONFIGMODE ;
-__EDTB52 := (__EDTB50 OR __EDTB51) ;
-O_XLAMPCMD := __EDTB52 ;
-STHMIPLFDBK.XLAMPSTATE := __EDTB52 ;
+__EDTB54 := XLAMPCMD ;
+__EDTB55 := XCONFIGMODE ;
+__EDTB56 := (__EDTB54 OR __EDTB55) ;
+O_XLAMPCMD := __EDTB56 ;
+STHMIPLFDBK.XLAMPSTATE := __EDTB56 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -291,14 +299,14 @@ STHMIPLFDBK.XLAMPSTATE := __EDTB52 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,59
+0,60
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB53 := TRUE ;
-IF __EDTB53 THEN
+__EDTB57 := TRUE ;
+IF __EDTB57 THEN
 STHMIPLFDBK.IMODE := (  IMODESTATE) ;
 END_IF ;
-__MO_1GAIN_8 := __EDTB53 ;
+__MO_1GAIN_8 := __EDTB57 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -328,25 +336,27 @@ __GL __LG0000 ;
 (* __EDTB16 *)
 (* __MEMO__2__STHMIPLCMD_XMANCMD *)
 (* __EDTB17 *)
+(* __MEMO__3__STHMIPLCMD_XMANCMD *)
 (* __EDTB18 *)
 (* __EDTB19 *)
 (* __EDTB20 *)
 (* __EDTB21 *)
-(* __MEMO__3__I_XMANCMD *)
 (* __EDTB22 *)
-(* __MEMO__4__STHMIPLCMD_XMANCMD *)
 (* __EDTB23 *)
+(* __MEMO__4__I_XMANCMD *)
 (* __EDTB24 *)
+(* __MEMO__5__STHMIPLCMD_XMANCMD *)
 (* __EDTB25 *)
+(* __MEMO__6__STHMIPLCMD_XMANCMD *)
 (* __EDTB26 *)
 (* __EDTB27 *)
 (* __EDTB28 *)
 (* __EDTB29 *)
-(* __MEMO__5__I_XAUTCMD *)
 (* __EDTB30 *)
 (* __EDTB31 *)
 (* __EDTB32 *)
 (* __EDTB33 *)
+(* __MEMO__7__I_XAUTCMD *)
 (* __EDTB34 *)
 (* __EDTB35 *)
 (* __EDTB36 *)
@@ -361,11 +371,15 @@ __GL __LG0000 ;
 (* __EDTB45 *)
 (* __EDTB46 *)
 (* __EDTB47 *)
-(* __MEMO__6__I_XMANCMD *)
 (* __EDTB48 *)
 (* __EDTB49 *)
 (* __EDTB50 *)
 (* __EDTB51 *)
+(* __MEMO__8__I_XMANCMD *)
 (* __EDTB52 *)
 (* __EDTB53 *)
+(* __EDTB54 *)
+(* __EDTB55 *)
+(* __EDTB56 *)
+(* __EDTB57 *)
 

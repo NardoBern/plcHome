@@ -7,7 +7,15 @@ BOF
 
 SOR  [0,1] (**) (**)  
  BST  XIP  [1,0] (*i_xManCmd*) (**)
-   NXB  XIP  [1,1] (*i_xHMIManCmd*) (**)
+   NXB  
+ BST  XIP  [1,1] (*i_xHMIManCmd*) (**)
+   NXB  
+ BST  XIF  [1,2] (*i_xHMIManCmd*) (**)
+   NXB  XIF  [1,3] (*i_xManCmd*) (**)
+ BND
+
+ BND
+
  BND
   FB  [2,0] (*TP*) (*tpCmdPulseTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#1s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [5,0] (*o_xCancCmd*) (**)
 EOR [6,0]

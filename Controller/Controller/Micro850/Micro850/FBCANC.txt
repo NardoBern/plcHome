@@ -12,13 +12,21 @@ __ENDSTEPPRAGMA
 __EDTB1 := (I_XMANCMD AND NOT(__MEMO__1__I_XMANCMD)) ;
 ; (*Pulse detection on : I_XHMIMANCMD with __MEMO__2__I_XHMIMANCMD *)
 __EDTB2 := (I_XHMIMANCMD AND NOT(__MEMO__2__I_XHMIMANCMD)) ;
+; (*Fall detection on  : I_XHMIMANCMD with __MEMO__3__I_XHMIMANCMD *)
+__EDTB3 := (__MEMO__3__I_XHMIMANCMD AND NOT(I_XHMIMANCMD)) ;
+; (*Fall detection on  : I_XMANCMD with __MEMO__4__I_XMANCMD *)
+__EDTB4 := (__MEMO__4__I_XMANCMD AND NOT(I_XMANCMD)) ;
+__EDTB5 := (__EDTB3 OR __EDTB4) ;
+__EDTB6 := (__EDTB2 OR __EDTB5) ;
 (* FB call: TP *)
-tpCmdPulseTimer((__EDTB1 OR __EDTB2), T#1S) ;
+tpCmdPulseTimer((__EDTB1 OR __EDTB6), T#1S) ;
 O_XCANCCMD := tpCmdPulseTimer.Q ;
 
 (*************** Code for the end of Rung **************)
 __MEMO__1__I_XMANCMD := I_XMANCMD ; (*Pulse detection on : I_XMANCMD with __MEMO__1__I_XMANCMD *)
 __MEMO__2__I_XHMIMANCMD := I_XHMIMANCMD ; (*Pulse detection on : I_XHMIMANCMD with __MEMO__2__I_XHMIMANCMD *)
+__MEMO__3__I_XHMIMANCMD := I_XHMIMANCMD ; (*Fall detection on  : I_XHMIMANCMD with __MEMO__3__I_XHMIMANCMD *)
+__MEMO__4__I_XMANCMD := I_XMANCMD ; (*Fall detection on  : I_XMANCMD with __MEMO__4__I_XMANCMD *)
 
 
 (*************** Code for the end of File **************)
@@ -31,4 +39,10 @@ __GL __LG0000 ;
 (* __EDTB1 *)
 (* __MEMO__2__I_XHMIMANCMD *)
 (* __EDTB2 *)
+(* __MEMO__3__I_XHMIMANCMD *)
+(* __EDTB3 *)
+(* __MEMO__4__I_XMANCMD *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __EDTB6 *)
 

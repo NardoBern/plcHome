@@ -1,0 +1,12 @@
+PROGRAM GestioneCancelli
+#info= QLD
+BOF
+
+
+(*Gestione Cancello Automatico Grande*)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*fbCanc*) (*fbCancelloGrande*) ( (*EN:EN*)(**) (**)  , (*i_xManCmd:*)(*i_xHMICancGrande*) (**)  , (*i_xHMIManCmd:*)(**) (**) ; (*ENO:ENO*)(**) (**)  , (*o_xCancCmd:*)(*_IO_X2_DO_14*) (**) )
+EOR [4,0]
+EOF
+#end_info
+END_PROGRAM

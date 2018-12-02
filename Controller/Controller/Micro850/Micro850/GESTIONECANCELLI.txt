@@ -1,0 +1,29 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(*Gestione Cancello Automatico Grande*)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+(* FB call: fbCanc *)
+fbCancelloGrande(I_XHMICANCGRANDE, ) ;
+_IO_X2_DO_14 := fbCancelloGrande.o_xCancCmd ;
+END_IF ;
+__MO_FBCANC_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+
