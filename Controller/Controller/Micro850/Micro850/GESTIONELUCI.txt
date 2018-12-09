@@ -114,19 +114,84 @@ __EDTB29 := __EDTB28 ;
 
 
 (*************** Rung **********************************)
-(*Gestione LUCE VERANDA*)
+(*Abilitazione / disabilitazione luci di Natale*)
 __STEPPRAGMA
 0,18
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB30 := TRUE ;
-IF __EDTB30 THEN
+__EDTB30 := O_STSYSTEMVAR.XHMICONOK ;
+__EDTB32 := __EDTB30 ;
+IF __EDTB32 THEN
+(* Operator output on : = with __EDTB31 *)
+__EDTB31 := (I_STDATA.DIMESE = 12) ;
+ELSE
+__EDTB31 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB31 ;
+__EDTB34 := __EDTB31 ;
+IF __EDTB34 THEN
+(* Operator output on : >= with __EDTB33 *)
+__EDTB33 := (I_STDATA.DIGIORNO >= 8) ;
+ELSE
+__EDTB33 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_2 := __EDTB33 ;
+__EDTB35 := __EDTB33 ;
+__EDTB37 := __EDTB30 ;
+IF __EDTB37 THEN
+(* Operator output on : = with __EDTB36 *)
+__EDTB36 := (I_STDATA.DIMESE = 1) ;
+ELSE
+__EDTB36 := FALSE ;
+END_IF ;
+__MO_EQUAL_2 := __EDTB36 ;
+__EDTB39 := __EDTB36 ;
+IF __EDTB39 THEN
+(* Operator output on : <= with __EDTB38 *)
+__EDTB38 := (I_STDATA.DIGIORNO <= 6) ;
+ELSE
+__EDTB38 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_2 := __EDTB38 ;
+__EDTB40 := __EDTB38 ;
+__EDTB41 := (__EDTB35 OR __EDTB40) ;
+__EDTB43 := __EDTB41 ;
+IF __EDTB43 THEN
+(* Operator output on : >= with __EDTB42 *)
+__EDTB42 := (I_STDATA.DIORA >= 18) ;
+ELSE
+__EDTB42 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_3 := __EDTB42 ;
+__EDTB44 := __EDTB42 ;
+__EDTB46 := __EDTB41 ;
+IF __EDTB46 THEN
+(* Operator output on : <= with __EDTB45 *)
+__EDTB45 := (I_STDATA.DIORA <= 6) ;
+ELSE
+__EDTB45 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_3 := __EDTB45 ;
+__EDTB47 := __EDTB45 ;
+XCHRISTMASLIGHT := (__EDTB44 OR __EDTB47) ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione LUCE VERANDA*)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB48 := TRUE ;
+IF __EDTB48 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceVeranda(I_STPULSANTI.PULLUCEVERANDA, XFILTEREDSENSANTIF.XPRESVERANDA, I_STLUCEVERANDAHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCEVERANDA := fbLuceVeranda.o_xLampCmd ;
 O_STLUCEVERANDAFDBK := fbLuceVeranda.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_1 := __EDTB30 ;
+__MO_FBPUNTOLUCE_1 := __EDTB48 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -134,17 +199,17 @@ __MO_FBPUNTOLUCE_1 := __EDTB30 ;
 (*************** Rung **********************************)
 (*Gestione LUCE CUCINA*)
 __STEPPRAGMA
-0,23
+0,30
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB31 := TRUE ;
-IF __EDTB31 THEN
+__EDTB49 := TRUE ;
+IF __EDTB49 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceCucina(I_STPULSANTI.PULLUCECUCINA, XFILTEREDSENSANTIF.XPRESCUCINA, I_STLUCECUCINAHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCECUCINA := fbLuceCucina.o_xLampCmd ;
 O_STLUCECUCINAFDBK := fbLuceCucina.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_2 := __EDTB31 ;
+__MO_FBPUNTOLUCE_2 := __EDTB49 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -152,17 +217,17 @@ __MO_FBPUNTOLUCE_2 := __EDTB31 ;
 (*************** Rung **********************************)
 (*Gestione LUCE ANTIBAGNO*)
 __STEPPRAGMA
-0,28
+0,35
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB32 := TRUE ;
-IF __EDTB32 THEN
+__EDTB50 := TRUE ;
+IF __EDTB50 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceAntibagno(I_STPULSANTI.PULLUCEANTIBAGNO, XFILTEREDSENSANTIF.XPRESANTIBAGNO, I_STLUCEANTIBAGNOHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCEANTIBAGNO := fbLuceAntibagno.o_xLampCmd ;
 O_STLUCEANTIBAGNOFDBK := fbLuceAntibagno.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_3 := __EDTB32 ;
+__MO_FBPUNTOLUCE_3 := __EDTB50 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -170,17 +235,17 @@ __MO_FBPUNTOLUCE_3 := __EDTB32 ;
 (*************** Rung **********************************)
 (*Gestione LUCE SALA LIBRERIA*)
 __STEPPRAGMA
-0,33
+0,40
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB33 := TRUE ;
-IF __EDTB33 THEN
+__EDTB51 := TRUE ;
+IF __EDTB51 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceSalaLibreria(I_STPULSANTI.PULLUCESALALIBRERIA, XFILTEREDSENSANTIF.XPRESALALIBRERIA, I_STLUCESALALIBRERIAHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCESALALIBRERIA := fbLuceSalaLibreria.o_xLampCmd ;
 O_STLUCESALALIBRERIAFDBK := fbLuceSalaLibreria.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_4 := __EDTB33 ;
+__MO_FBPUNTOLUCE_4 := __EDTB51 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -188,17 +253,17 @@ __MO_FBPUNTOLUCE_4 := __EDTB33 ;
 (*************** Rung **********************************)
 (*Gestione LUCE CAMERA LETTO*)
 __STEPPRAGMA
-0,38
+0,45
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB34 := TRUE ;
-IF __EDTB34 THEN
+__EDTB52 := TRUE ;
+IF __EDTB52 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceCameraLetto(I_STPULSANTI.PULLUCECAMERALETTO, XFILTEREDSENSANTIF.XPRESLETTO, I_STLUCECAMERALETTOHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCECAMERALETTO := fbLuceCameraLetto.o_xLampCmd ;
 O_STLUCECAMERALETTOFDBK := fbLuceCameraLetto.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_5 := __EDTB34 ;
+__MO_FBPUNTOLUCE_5 := __EDTB52 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -206,17 +271,17 @@ __MO_FBPUNTOLUCE_5 := __EDTB34 ;
 (*************** Rung **********************************)
 (*Gestione LUCE CORRIDOIO*)
 __STEPPRAGMA
-0,43
+0,50
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB35 := TRUE ;
-IF __EDTB35 THEN
+__EDTB53 := TRUE ;
+IF __EDTB53 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceCorridoio(I_STPULSANTI.PULLUCECORRIDOIO, XFILTEREDSENSANTIF.XPRESCORRIDOIO, I_STLUCECORRIDOIOHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCECORRIDOIO := fbLuceCorridoio.o_xLampCmd ;
 O_STLUCECORRIDOIOFDBK := fbLuceCorridoio.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_6 := __EDTB35 ;
+__MO_FBPUNTOLUCE_6 := __EDTB53 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -224,17 +289,17 @@ __MO_FBPUNTOLUCE_6 := __EDTB35 ;
 (*************** Rung **********************************)
 (*Gestione LUCE SALA*)
 __STEPPRAGMA
-0,48
+0,55
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB36 := TRUE ;
-IF __EDTB36 THEN
+__EDTB54 := TRUE ;
+IF __EDTB54 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceSala(I_STPULSANTI.PULLUCESALA, XFILTEREDSENSANTIF.XPRESSALA, I_STLUCESALAHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCESALA := fbLuceSala.o_xLampCmd ;
 O_STLUCESALAFDBK := fbLuceSala.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_7 := __EDTB36 ;
+__MO_FBPUNTOLUCE_7 := __EDTB54 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -242,17 +307,17 @@ __MO_FBPUNTOLUCE_7 := __EDTB36 ;
 (*************** Rung **********************************)
 (*Gestione LUCE INGRESSO*)
 __STEPPRAGMA
-0,53
+0,60
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB37 := TRUE ;
-IF __EDTB37 THEN
+__EDTB55 := TRUE ;
+IF __EDTB55 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceIngresso(I_STPULSANTI.PULLUCEINGRESSO, XFILTEREDSENSANTIF.XPRESINGRESSO, I_STLUCEINGRESSOHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCEINGRESSO := fbLuceIngresso.o_xLampCmd ;
 O_STLUCEINGRESSOFDBK := fbLuceIngresso.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_8 := __EDTB37 ;
+__MO_FBPUNTOLUCE_8 := __EDTB55 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -260,17 +325,17 @@ __MO_FBPUNTOLUCE_8 := __EDTB37 ;
 (*************** Rung **********************************)
 (*Gestione LUCE BAGNO*)
 __STEPPRAGMA
-0,58
+0,65
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB38 := TRUE ;
-IF __EDTB38 THEN
+__EDTB56 := TRUE ;
+IF __EDTB56 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceBagno(I_STPULSANTI.PULLUCEBAGNO, XFILTEREDSENSANTIF.XPRESBAGNO, I_STLUCEBAGNOHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCEBAGNO := fbLuceBagno.o_xLampCmd ;
 O_STLUCEBAGNOFDBK := fbLuceBagno.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_9 := __EDTB38 ;
+__MO_FBPUNTOLUCE_9 := __EDTB56 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -278,17 +343,17 @@ __MO_FBPUNTOLUCE_9 := __EDTB38 ;
 (*************** Rung **********************************)
 (*Gestione LUCE FUORI DAVANTI*)
 __STEPPRAGMA
-0,63
+0,70
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB39 := TRUE ;
-IF __EDTB39 THEN
+__EDTB57 := TRUE ;
+IF __EDTB57 THEN
 (* FB call: fbPuntoLuce *)
-fbLuceFuoriDavanti(I_STPULSANTI.PULLUCEFUORIDAVANTI, , I_STLUCEFUORIDAVANTIHMICMDS) ;
+fbLuceFuoriDavanti(I_STPULSANTI.PULLUCEFUORIDAVANTI, XCHRISTMASLIGHT, I_STLUCEFUORIDAVANTIHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCEFUORIDAVANTI := fbLuceFuoriDavanti.o_xLampCmd ;
 O_STLUCEFUORIDAVANTIFDBK := fbLuceFuoriDavanti.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_10 := __EDTB39 ;
+__MO_FBPUNTOLUCE_10 := __EDTB57 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -296,17 +361,17 @@ __MO_FBPUNTOLUCE_10 := __EDTB39 ;
 (*************** Rung **********************************)
 (*Gestione LUCE CANTINA*)
 __STEPPRAGMA
-0,68
+0,75
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB40 := TRUE ;
-IF __EDTB40 THEN
+__EDTB58 := TRUE ;
+IF __EDTB58 THEN
 (* FB call: fbPuntoLuce *)
 fbLuceCantina(I_STPULSANTI.PULLUCECANTINA, , I_STLUCECANTINAHMICMDS) ;
 O_STCOMANDILUCI.CMDLUCECANTINA := fbLuceCantina.o_xLampCmd ;
 O_STLUCECANTINAFDBK := fbLuceCantina.stHmiPlFdbk ;
 END_IF ;
-__MO_FBPUNTOLUCE_11 := __EDTB40 ;
+__MO_FBPUNTOLUCE_11 := __EDTB58 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -314,14 +379,14 @@ __MO_FBPUNTOLUCE_11 := __EDTB40 ;
 (*************** Rung **********************************)
 (*Comando riscaldamento Zona A -- Zona Notte*)
 __STEPPRAGMA
-0,73
+0,80
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB41 := FBLUCESALALIBRERIA.O_XRISCCMD ;
-__EDTB42 := FBLUCECAMERALETTO.O_XRISCCMD ;
-__EDTB43 := FBLUCEINGRESSO.O_XRISCCMD ;
-__EDTB44 := (__EDTB42 OR __EDTB43) ;
-I_STZONAAMANCMD.XPULSCMD := (__EDTB41 OR __EDTB44) ;
+__EDTB59 := FBLUCESALALIBRERIA.O_XRISCCMD ;
+__EDTB60 := FBLUCECAMERALETTO.O_XRISCCMD ;
+__EDTB61 := FBLUCEINGRESSO.O_XRISCCMD ;
+__EDTB62 := (__EDTB60 OR __EDTB61) ;
+I_STZONAAMANCMD.XPULSCMD := (__EDTB59 OR __EDTB62) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -329,12 +394,12 @@ I_STZONAAMANCMD.XPULSCMD := (__EDTB41 OR __EDTB44) ;
 (*************** Rung **********************************)
 (*Comando riscaldamento Zona B -- Zona Bagno*)
 __STEPPRAGMA
-0,77
+0,84
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB45 := FBLUCEANTIBAGNO.O_XRISCCMD ;
-__EDTB46 := FBLUCEBAGNO.O_XRISCCMD ;
-I_STZONABMANCMD.XPULSCMD := (__EDTB45 OR __EDTB46) ;
+__EDTB63 := FBLUCEANTIBAGNO.O_XRISCCMD ;
+__EDTB64 := FBLUCEBAGNO.O_XRISCCMD ;
+I_STZONABMANCMD.XPULSCMD := (__EDTB63 OR __EDTB64) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -342,16 +407,16 @@ I_STZONABMANCMD.XPULSCMD := (__EDTB45 OR __EDTB46) ;
 (*************** Rung **********************************)
 (*Comando riscaldamento Zona C -- Zona Giorno*)
 __STEPPRAGMA
-0,80
+0,87
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB47 := FBLUCEVERANDA.O_XRISCCMD ;
-__EDTB48 := FBLUCECUCINA.O_XRISCCMD ;
-__EDTB49 := FBLUCECORRIDOIO.O_XRISCCMD ;
-__EDTB50 := FBLUCESALA.O_XRISCCMD ;
-__EDTB51 := (__EDTB49 OR __EDTB50) ;
-__EDTB52 := (__EDTB48 OR __EDTB51) ;
-I_STZONACMANCMD.XPULSCMD := (__EDTB47 OR __EDTB52) ;
+__EDTB65 := FBLUCEVERANDA.O_XRISCCMD ;
+__EDTB66 := FBLUCECUCINA.O_XRISCCMD ;
+__EDTB67 := FBLUCECORRIDOIO.O_XRISCCMD ;
+__EDTB68 := FBLUCESALA.O_XRISCCMD ;
+__EDTB69 := (__EDTB67 OR __EDTB68) ;
+__EDTB70 := (__EDTB66 OR __EDTB69) ;
+I_STZONACMANCMD.XPULSCMD := (__EDTB65 OR __EDTB70) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -359,14 +424,14 @@ I_STZONACMANCMD.XPULSCMD := (__EDTB47 OR __EDTB52) ;
 (*************** Rung **********************************)
 (*Chiamata alla funzione di scrittura delle uscite per il comando delle luci*)
 __STEPPRAGMA
-0,85
+0,92
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB53 := TRUE ;
-IF __EDTB53 THEN
+__EDTB71 := TRUE ;
+IF __EDTB71 THEN
 XTEMPBOOL := fcScritturaLuci() ;
 END_IF ;
-__MO_FCSCRITTURALUCI_1 := __EDTB53 ;
+__MO_FCSCRITTURALUCI_1 := __EDTB71 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -430,4 +495,22 @@ __GL __LG0000 ;
 (* __EDTB51 *)
 (* __EDTB52 *)
 (* __EDTB53 *)
+(* __EDTB54 *)
+(* __EDTB55 *)
+(* __EDTB56 *)
+(* __EDTB57 *)
+(* __EDTB58 *)
+(* __EDTB59 *)
+(* __EDTB60 *)
+(* __EDTB61 *)
+(* __EDTB62 *)
+(* __EDTB63 *)
+(* __EDTB64 *)
+(* __EDTB65 *)
+(* __EDTB66 *)
+(* __EDTB67 *)
+(* __EDTB68 *)
+(* __EDTB69 *)
+(* __EDTB70 *)
+(* __EDTB71 *)
 

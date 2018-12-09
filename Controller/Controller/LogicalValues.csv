@@ -1,6 +1,14 @@
 [Version1]
 FullName,Value
 
+Controller.<=.i1,
+Controller.<=.i2,
+Controller.<=.o1,
+Controller.>=.i1,
+Controller.>=.i2,
+Controller.>=.o1,
+Controller.ANY_TO_DINT.i1,
+Controller.ANY_TO_DINT.o1,
 Controller.Micro850.Micro850.__SYSVA_ABORT_CYCLE,
 Controller.Micro850.Micro850.__SYSVA_CCEXEC,
 Controller.Micro850.Micro850.__SYSVA_CYCLECNT,
@@ -979,6 +987,7 @@ Controller.Micro850.Micro850.GestioneLuci.fbLuceVeranda.xModeAut,
 Controller.Micro850.Micro850.GestioneLuci.fbLuceVeranda.xModeMan,
 Controller.Micro850.Micro850.GestioneLuci.fbLuceVeranda.xModeSemiAut,
 Controller.Micro850.Micro850.GestioneLuci.fbLuceVeranda.xStopLamp,
+Controller.Micro850.Micro850.GestioneLuci.xChristmasLight,
 Controller.Micro850.Micro850.GestioneLuci.xTempBool,
 Controller.Micro850.Micro850.GestioneRiscaldamento.fbZonaRisc_A.i_diOra,
 Controller.Micro850.Micro850.GestioneRiscaldamento.fbZonaRisc_A.i_stHMICmd.axAutoSet[0],
