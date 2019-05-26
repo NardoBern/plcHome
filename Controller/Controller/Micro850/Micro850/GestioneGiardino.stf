@@ -1,0 +1,12 @@
+PROGRAM GestioneGiardino
+#info= QLD
+BOF
+
+
+(*Gestione pompa irrigazione*)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*fbPumpSimple*) (*ifbPompaIrrigazione*) ( (*EN:EN*)(**) (**)  , (*i_xStart:*)(*_IO_X1_DI_04*) (**)  , (*i_iTimeOutVal:*)(*600*) (**) ; (*ENO:ENO*)(**) (**)  , (*q_xPmpCmd:*)(*_IO_EM_DO_02*) (**) )
+EOR [4,0]
+EOF
+#end_info
+END_PROGRAM

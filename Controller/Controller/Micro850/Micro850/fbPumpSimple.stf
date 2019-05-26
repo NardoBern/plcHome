@@ -1,0 +1,39 @@
+FUNCTION_BLOCK fbPumpSimple
+#info= QLD
+BOF
+
+
+(*Comando di start pompa
+*)
+
+SOR  [0,1] (**) (**)  
+ BST  XIP  [1,0] (*i_xStart*) (**)
+   NXB  XIC  [1,1] (*xStart*) (**)
+ BND
+  XIO  [2,0] (*xStop*) (**)  OTE  [3,0] (*xStart*) (**)
+EOR [4,0]
+
+
+(*Conversione del valore di time-out*)
+
+SOR  [0,4] (**) (**)  FB  [1,0] (***) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_iTimeOutVal*) (**)  , (*i2:*)(*1000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*diTemp*) (**) )  FB  [4,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*diTemp*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiTimeOutValue*) (**) )
+EOR [7,0]
+
+
+(*Gestione dei time-out*)
+
+SOR  [0,8] (**) (**)  
+ BST  XIC  [1,0] (*xStart*) (**)  FB  [2,0] (*TON*) (*tStopTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiTimeOutValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  XIP  [1,2] (*i_xStart*) (**)  FB  [2,2] (*TON*) (*tAuxTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+ BND
+  OTE  [5,0] (*xStop*) (**)
+EOR [6,0]
+
+
+(*Scrittura dell'uscita*)
+
+SOR  [0,13] (**) (**)  XIC  [1,0] (*xStart*) (**)  OTE  [2,0] (*q_xPmpCmd*) (**)
+EOR [3,0]
+EOF
+#end_info
+END_FUNCTION_BLOCK

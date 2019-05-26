@@ -1,0 +1,84 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(*Comando di start pompa *)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
+__EDTB1 := (I_XSTART AND NOT(__MEMO__1__I_XSTART)) ;
+__EDTB2 := XSTART ;
+XSTART := (__EDTB1 OR __EDTB2) AND NOT(XSTOP) ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
+
+
+(*************** Rung **********************************)
+(*Conversione del valore di time-out*)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB3 := TRUE ;
+IF __EDTB3 THEN
+DITEMP := (I_ITIMEOUTVAL * 1000) ;
+END_IF ;
+__MO_MULT_1 := __EDTB3 ;
+__EDTB4 := __EDTB3 ;
+IF __EDTB4 THEN
+TITIMEOUTVALUE := ANY_TO_TIME(DITEMP) ;
+END_IF ;
+__MO_ANY_TO_TIME_1 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione dei time-out*)
+__STEPPRAGMA
+0,8
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+(* FB call: TON *)
+tStopTimer(XSTART, TITIMEOUTVALUE) ;
+__EDTB5 := tStopTimer.Q ;
+; (*Pulse detection on : I_XSTART with __MEMO__2__I_XSTART *)
+(* FB call: TON *)
+tAuxTimer((I_XSTART AND NOT(__MEMO__2__I_XSTART)), T#5S) ;
+__EDTB6 := tAuxTimer.Q ;
+XSTOP := (__EDTB5 OR __EDTB6) ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__2__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__2__I_XSTART *)
+
+
+(*************** Rung **********************************)
+(*Scrittura dell'uscita*)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+Q_XPMPCMD := XSTART ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __MEMO__1__I_XSTART *)
+(* __EDTB1 *)
+(* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
+(* __EDTB5 *)
+(* __MEMO__2__I_XSTART *)
+(* __EDTB6 *)
+

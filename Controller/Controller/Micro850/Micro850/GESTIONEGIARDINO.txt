@@ -1,0 +1,29 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(*Gestione pompa irrigazione*)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+(* FB call: fbPumpSimple *)
+ifbPompaIrrigazione(_IO_X1_DI_04, 600) ;
+_IO_EM_DO_02 := ifbPompaIrrigazione.q_xPmpCmd ;
+END_IF ;
+__MO_FBPUMPSIMPLE_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __EDTB1 *)
+

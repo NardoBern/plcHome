@@ -6,6 +6,9 @@
   <AcfElementGuid Guid="0b7a30ee-c35f-4321-8278-98b1ae3d65cf">
     <File>fcLetturaElettrovalvole.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="15f3c072-1170-49df-891f-d418f0cc990c">
+    <File>fbPumpSimple.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="1b415bff-878d-4f45-8629-b5c4c0770e2a">
     <File>fbSystem.AcfMlge</File>
   </AcfElementGuid>
@@ -20,6 +23,9 @@
   </AcfElementGuid>
   <AcfElementGuid Guid="3b4234e0-587e-4803-822a-71f0ebd23426">
     <File>fbPuntoLuce.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="44584e54-af93-4a63-bd74-c350890565ff">
+    <File>GestioneGiardino.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="44610952-5df2-4954-9e9c-1715814cf15f">
     <File>fbCam.AcfMlge</File>
