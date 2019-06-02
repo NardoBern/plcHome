@@ -261,6 +261,6 @@ I259=micro850.micro850.gestioneantifurto/fbdigitalfiltersalalibreria.i_xinput,0x
 I260=micro850.micro850.gestioneantifurto/fbdigitalfilterletto.i_xinput,0x3BE3,BOOL
 I261=micro850.micro850.gestioneantifurto/fbdigitalfilterantibagno.i_xinput,0x3BE3,BOOL
 I262=micro850.micro850.gestioneantifurto/fbdigitalfilterbagno.i_xinput,0x3BE3,BOOL
-I263=micro850.micro850.gestioneluci/fblucecantina.i_xautcmd,0x3EF0,BOOL
-I264=micro850.micro850.gestionecancelli/fbcancellogrande.i_xhmimancmd,0x3EF0,BOOL
+I263=micro850.micro850.gestioneluci/fblucecantina.i_xautcmd,0x3C8D,BOOL
+I264=micro850.micro850.gestionecancelli/fbcancellogrande.i_xhmimancmd,0x3C8D,BOOL
 [END]
