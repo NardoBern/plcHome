@@ -3,8 +3,7 @@ FUNCTION_BLOCK fbPumpSimple
 BOF
 
 
-(*Comando di start pompa
-*)
+(*Comando di start pompa*)
 
 SOR  [0,1] (**) (**)  
  BST  XIP  [1,0] (*i_xStart*) (**)
@@ -22,18 +21,51 @@ EOR [7,0]
 
 (*Gestione dei time-out*)
 
-SOR  [0,8] (**) (**)  
- BST  XIC  [1,0] (*xStart*) (**)  FB  [2,0] (*TON*) (*tStopTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiTimeOutValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
-   NXB  XIP  [1,2] (*i_xStart*) (**)  FB  [2,2] (*TON*) (*tAuxTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+SOR  [0,8] (**) (**)  XIC  [1,0] (*xStart*) (**)  
+ BST  FB  [2,0] (*TON*) (*tStopTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiTimeOutValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  FB  [2,2] (*TON*) (*tAuxTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  XIP  [5,2] (*i_xStart*) (**)
  BND
-  OTE  [5,0] (*xStop*) (**)
-EOR [6,0]
+  OTE  [6,0] (*xStop*) (**)
+EOR [7,0]
 
 
-(*Scrittura dell'uscita*)
+(*Comando di start pompa*)
 
-SOR  [0,13] (**) (**)  XIC  [1,0] (*xStart*) (**)  OTE  [2,0] (*q_xPmpCmd*) (**)
+SOR  [0,13] (**) (**)  
+ BST  XIP  [1,0] (*i_xStart*) (**)
+   NXB  XIC  [1,1] (*xStart*) (**)
+ BND
+  XIO  [2,0] (*xStop*) (**)  OTE  [3,0] (*xStart*) (**)
+EOR [4,0]
+
+
+(*Gestione automatica dell'irrigazione del giardino*)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*>=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*22*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*>=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*01*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )  
+ BST  OTE  [10,0] (*xStartAutoPmp*) (**)
+   NXB  FB  [10,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [13,1] (*xStartAutoEv*) (**)
+ BND
+
+EOR [14,0]
+
+
+(*Scrittura dell'uscita di comando pompa*)
+
+SOR  [0,20] (**) (**)  
+ BST  XIC  [1,0] (*xStart*) (**)
+   NXB  XIC  [1,1] (*xStartAutoPmp*) (**)
+ BND
+  OTE  [2,0] (*q_xPmpCmd*) (**)
+EOR [3,0]
+
+
+(*Scrittura dell'uscita di comando elettrovalvola*)
+
+SOR  [0,23] (**) (**)  XIC  [1,0] (*xStartAutoEv*) (**)  OTE  [2,0] (*q_xEvIrrGiard*) (**)
 EOR [3,0]
 EOF
+#end_info
+#info= ID_MAX
+NextId=3
 #end_info
 END_FUNCTION_BLOCK

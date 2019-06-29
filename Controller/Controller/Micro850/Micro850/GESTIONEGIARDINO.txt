@@ -11,8 +11,9 @@ __ENDSTEPPRAGMA
 __EDTB1 := TRUE ;
 IF __EDTB1 THEN
 (* FB call: fbPumpSimple *)
-ifbPompaIrrigazione(_IO_X1_DI_04, 600) ;
-_IO_EM_DO_02 := ifbPompaIrrigazione.q_xPmpCmd ;
+fbIrrigazioneGiardino(_IO_X1_DI_04, 600, I_STDATA) ;
+_IO_EM_DO_02 := fbIrrigazioneGiardino.q_xPmpCmd ;
+_IO_EM_DO_03 := fbIrrigazioneGiardino.q_xEvIrrGiard ;
 END_IF ;
 __MO_FBPUMPSIMPLE_1 := __EDTB1 ;
 
