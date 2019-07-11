@@ -41,7 +41,7 @@ EOR [4,0]
 
 (*Gestione automatica dell'irrigazione del giardino*)
 
-SOR  [0,16] (**) (**)  FB  [1,0] (*>=*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*22*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*>=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*01*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )  
+SOR  [0,16] (**) (**)  FB  [1,0] (*=*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*22*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*>=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*01*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )  
  BST  OTE  [10,0] (*xStartAutoPmp*) (**)
    NXB  FB  [10,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [13,1] (*xStartAutoEv*) (**)
  BND
@@ -66,6 +66,6 @@ EOR [3,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=3
+NextId=4
 #end_info
 END_FUNCTION_BLOCK

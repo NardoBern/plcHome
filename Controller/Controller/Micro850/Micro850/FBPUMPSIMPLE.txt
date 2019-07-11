@@ -80,12 +80,12 @@ __ENDSTEPPRAGMA
 (*Label :*)(**)
 __EDTB11 := TRUE ;
 IF __EDTB11 THEN
-(* Operator output on : >= with __EDTB10 *)
-__EDTB10 := (I_STDATA.DIORA >= 22) ;
+(* Operator output on : = with __EDTB10 *)
+__EDTB10 := (I_STDATA.DIORA = 22) ;
 ELSE
 __EDTB10 := FALSE ;
 END_IF ;
-__MO_GREATEQUAL_1 := __EDTB10 ;
+__MO_EQUAL_1 := __EDTB10 ;
 __EDTB13 := __EDTB10 ;
 IF __EDTB13 THEN
 (* Operator output on : >= with __EDTB12 *)
@@ -93,7 +93,7 @@ __EDTB12 := (I_STDATA.DIMIN >= 01) ;
 ELSE
 __EDTB12 := FALSE ;
 END_IF ;
-__MO_GREATEQUAL_2 := __EDTB12 ;
+__MO_GREATEQUAL_1 := __EDTB12 ;
 __EDTB15 := __EDTB12 ;
 IF __EDTB15 THEN
 (* Operator output on : <= with __EDTB14 *)
