@@ -3,7 +3,7 @@
     <mapping variable="MbIn_xStartIrrigazione" parent="Micro850" dataType="Bool" address="000001" va="0x4de">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbIn_xIrrigazioneAuto" parent="Micro850" dataType="Bool" address="000002" va="0x4e1">
+    <mapping variable="MbIn_xIrrigazioneAuto" parent="Micro850" dataType="Bool" address="000002">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
   </modbusRegister>

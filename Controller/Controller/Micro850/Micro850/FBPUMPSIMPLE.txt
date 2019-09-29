@@ -3,36 +3,26 @@
 (****** ST *********************************************)
 
 (*************** Rung **********************************)
-(*Comando di start pompa*)
+(*Conversione del valore di time-out*)
 __STEPPRAGMA
 0,1
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
-__EDTB1 := (I_XSTART AND NOT(__MEMO__1__I_XSTART)) ;
-__EDTB2 := XSTART ;
-XSTART := (__EDTB1 OR __EDTB2) AND NOT(XSTOP) ;
-
-(*************** Code for the end of Rung **************)
-__MEMO__1__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
-
-
-(*************** Rung **********************************)
-(*Conversione del valore di time-out*)
-__STEPPRAGMA
-0,4
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB3 := TRUE ;
-IF __EDTB3 THEN
-DITEMP := (I_ITIMEOUTVAL * 1000) ;
+__EDTB1 := TRUE ;
+IF __EDTB1 THEN
+DITEMP := ANY_TO_DINT(I_ITIMEOUTVAL) ;
 END_IF ;
-__MO_MULT_1 := __EDTB3 ;
-__EDTB4 := __EDTB3 ;
-IF __EDTB4 THEN
+__MO_ANY_TO_DINT_1 := __EDTB1 ;
+__EDTB2 := __EDTB1 ;
+IF __EDTB2 THEN
+DITEMP := (DITEMP * 1000) ;
+END_IF ;
+__MO_MULT_1 := __EDTB2 ;
+__EDTB3 := __EDTB2 ;
+IF __EDTB3 THEN
 TITIMEOUTVALUE := ANY_TO_TIME(DITEMP) ;
 END_IF ;
-__MO_ANY_TO_TIME_1 := __EDTB4 ;
+__MO_ANY_TO_TIME_1 := __EDTB3 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -40,33 +30,40 @@ __MO_ANY_TO_TIME_1 := __EDTB4 ;
 (*************** Rung **********************************)
 (*Gestione dei time-out*)
 __STEPPRAGMA
-0,8
+0,5
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB5 := XSTART ;
+__EDTB4 := XSTART ;
+__EDTB5 := XSTARTAUTOPMP ;
+__EDTB6 := (__EDTB4 OR __EDTB5) ;
 (* FB call: TON *)
-tStopTimer(__EDTB5, TITIMEOUTVALUE) ;
-__EDTB6 := tStopTimer.Q ;
+tStopTimer(__EDTB6 AND NOT(XSTARTAUTOPMP), TITIMEOUTVALUE) ;
+__EDTB7 := tStopTimer.Q ;
 (* FB call: TON *)
-tAuxTimer(__EDTB5, T#5S) ;
-; (*Pulse detection on : I_XSTART with __MEMO__2__I_XSTART *)
-__EDTB7 := tAuxTimer.Q AND (I_XSTART AND NOT(__MEMO__2__I_XSTART)) ;
-XSTOP := (__EDTB6 OR __EDTB7) ;
+tAuxTimer(__EDTB6, T#5S) ;
+__EDTB8 := tAuxTimer.Q ;
+; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
+__EDTB9 := __EDTB8 AND (I_XSTART AND NOT(__MEMO__1__I_XSTART)) ;
+; (*Pulse detection on : I_XSTARTIRRIGAZIONE with __MEMO__2__I_XSTARTIRRIGAZIONE *)
+__EDTB10 := __EDTB8 AND (I_XSTARTIRRIGAZIONE AND NOT(__MEMO__2__I_XSTARTIRRIGAZIONE)) ;
+__EDTB11 := (__EDTB9 OR __EDTB10) ;
+XSTOP := (__EDTB7 OR __EDTB11) ;
 
 (*************** Code for the end of Rung **************)
-__MEMO__2__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__2__I_XSTART *)
+__MEMO__1__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__1__I_XSTART *)
+__MEMO__2__I_XSTARTIRRIGAZIONE := I_XSTARTIRRIGAZIONE ; (*Pulse detection on : I_XSTARTIRRIGAZIONE with __MEMO__2__I_XSTARTIRRIGAZIONE *)
 
 
 (*************** Rung **********************************)
 (*Comando di start pompa*)
 __STEPPRAGMA
-0,13
+0,10
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 ; (*Pulse detection on : I_XSTART with __MEMO__3__I_XSTART *)
-__EDTB8 := (I_XSTART AND NOT(__MEMO__3__I_XSTART)) ;
-__EDTB9 := XSTART ;
-XSTART := (__EDTB8 OR __EDTB9) AND NOT(XSTOP) ;
+__EDTB12 := (I_XSTART AND NOT(__MEMO__3__I_XSTART)) ;
+__EDTB13 := XSTART ;
+XSTART := (__EDTB12 OR __EDTB13) AND NOT(XSTOP) ;
 
 (*************** Code for the end of Rung **************)
 __MEMO__3__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__3__I_XSTART *)
@@ -75,50 +72,58 @@ __MEMO__3__I_XSTART := I_XSTART ; (*Pulse detection on : I_XSTART with __MEMO__3
 (*************** Rung **********************************)
 (*Gestione automatica dell'irrigazione del giardino*)
 __STEPPRAGMA
-0,16
+0,13
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB11 := TRUE ;
-IF __EDTB11 THEN
-(* Operator output on : = with __EDTB10 *)
-__EDTB10 := (I_STDATA.DIORA = 22) ;
-ELSE
-__EDTB10 := FALSE ;
-END_IF ;
-__MO_EQUAL_1 := __EDTB10 ;
-__EDTB13 := __EDTB10 ;
-IF __EDTB13 THEN
-(* Operator output on : >= with __EDTB12 *)
-__EDTB12 := (I_STDATA.DIMIN >= 01) ;
-ELSE
-__EDTB12 := FALSE ;
-END_IF ;
-__MO_GREATEQUAL_1 := __EDTB12 ;
-__EDTB15 := __EDTB12 ;
+__EDTB15 := I_XAUTO ;
 IF __EDTB15 THEN
-(* Operator output on : <= with __EDTB14 *)
-__EDTB14 := (I_STDATA.DIMIN <= 11) ;
+(* Operator output on : = with __EDTB14 *)
+__EDTB14 := (I_STDATA.DIORA = 22) ;
 ELSE
 __EDTB14 := FALSE ;
 END_IF ;
-__MO_LESSEQUAL_1 := __EDTB14 ;
-XSTARTAUTOPMP := __EDTB14 ;
+__MO_EQUAL_1 := __EDTB14 ;
+__EDTB17 := __EDTB14 ;
+IF __EDTB17 THEN
+(* Operator output on : >= with __EDTB16 *)
+__EDTB16 := (I_STDATA.DIMIN >= 01) ;
+ELSE
+__EDTB16 := FALSE ;
+END_IF ;
+__MO_GREATEQUAL_1 := __EDTB16 ;
+__EDTB19 := __EDTB16 ;
+IF __EDTB19 THEN
+(* Operator output on : <= with __EDTB18 *)
+__EDTB18 := (I_STDATA.DIMIN <= 11) ;
+ELSE
+__EDTB18 := FALSE ;
+END_IF ;
+__MO_LESSEQUAL_1 := __EDTB18 ;
+__EDTB20 := __EDTB18 ;
+__EDTB21 := NOT(I_XAUTO) ;
+; (*Pulse detection on : I_XSTARTIRRIGAZIONE with __MEMO__4__I_XSTARTIRRIGAZIONE *)
+__EDTB22 := __EDTB21 AND (I_XSTARTIRRIGAZIONE AND NOT(__MEMO__4__I_XSTARTIRRIGAZIONE)) ;
+__EDTB23 := __EDTB21 AND XSTARTAUTOPMP ;
+__EDTB24 := (__EDTB22 OR __EDTB23) ;
+__EDTB25 := (__EDTB20 OR __EDTB24) AND NOT(XSTOP) ;
+XSTARTAUTOPMP := __EDTB25 ;
 (* FB call: TON *)
-tDelayEv(__EDTB14, T#5S) ;
+tDelayEv(__EDTB25, T#5S) ;
 XSTARTAUTOEV := tDelayEv.Q ;
 
 (*************** Code for the end of Rung **************)
+__MEMO__4__I_XSTARTIRRIGAZIONE := I_XSTARTIRRIGAZIONE ; (*Pulse detection on : I_XSTARTIRRIGAZIONE with __MEMO__4__I_XSTARTIRRIGAZIONE *)
 
 
 (*************** Rung **********************************)
 (*Scrittura dell'uscita di comando pompa*)
 __STEPPRAGMA
-0,20
+0,19
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB16 := XSTART ;
-__EDTB17 := XSTARTAUTOPMP ;
-Q_XPMPCMD := (__EDTB16 OR __EDTB17) ;
+__EDTB26 := XSTART ;
+__EDTB27 := XSTARTAUTOPMP ;
+Q_XPMPCMD := (__EDTB26 OR __EDTB27) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -126,7 +131,7 @@ Q_XPMPCMD := (__EDTB16 OR __EDTB17) ;
 (*************** Rung **********************************)
 (*Scrittura dell'uscita di comando elettrovalvola*)
 __STEPPRAGMA
-0,23
+0,22
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 Q_XEVIRRGIARD := XSTARTAUTOEV ;
@@ -140,24 +145,35 @@ __GL __LG0000 ;
 
 
 (*************** Local Symbols table *******************)
-(* __MEMO__1__I_XSTART *)
 (* __EDTB1 *)
 (* __EDTB2 *)
 (* __EDTB3 *)
 (* __EDTB4 *)
 (* __EDTB5 *)
 (* __EDTB6 *)
-(* __MEMO__2__I_XSTART *)
 (* __EDTB7 *)
-(* __MEMO__3__I_XSTART *)
 (* __EDTB8 *)
+(* __MEMO__1__I_XSTART *)
 (* __EDTB9 *)
+(* __MEMO__2__I_XSTARTIRRIGAZIONE *)
 (* __EDTB10 *)
 (* __EDTB11 *)
+(* __MEMO__3__I_XSTART *)
 (* __EDTB12 *)
 (* __EDTB13 *)
 (* __EDTB14 *)
 (* __EDTB15 *)
 (* __EDTB16 *)
 (* __EDTB17 *)
+(* __EDTB18 *)
+(* __EDTB19 *)
+(* __EDTB20 *)
+(* __EDTB21 *)
+(* __MEMO__4__I_XSTARTIRRIGAZIONE *)
+(* __EDTB22 *)
+(* __EDTB23 *)
+(* __EDTB24 *)
+(* __EDTB25 *)
+(* __EDTB26 *)
+(* __EDTB27 *)
 

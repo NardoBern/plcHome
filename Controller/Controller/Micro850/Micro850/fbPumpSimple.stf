@@ -3,27 +3,25 @@ FUNCTION_BLOCK fbPumpSimple
 BOF
 
 
-(*Comando di start pompa*)
-
-SOR  [0,1] (**) (**)  
- BST  XIP  [1,0] (*i_xStart*) (**)
-   NXB  XIC  [1,1] (*xStart*) (**)
- BND
-  XIO  [2,0] (*xStop*) (**)  OTE  [3,0] (*xStart*) (**)
-EOR [4,0]
-
-
 (*Conversione del valore di time-out*)
 
-SOR  [0,4] (**) (**)  FB  [1,0] (***) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_iTimeOutVal*) (**)  , (*i2:*)(*1000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*diTemp*) (**) )  FB  [4,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*diTemp*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiTimeOutValue*) (**) )
-EOR [7,0]
+SOR  [0,1] (**) (**)  FB  [1,0] (*ANY_TO_DINT*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_iTimeOutVal*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*diTemp*) (**) )  FB  [4,0] (***) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*diTemp*) (**)  , (*i2:*)(*1000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*diTemp*) (**) )  FB  [7,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*diTemp*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiTimeOutValue*) (**) )
+EOR [10,0]
 
 
 (*Gestione dei time-out*)
 
-SOR  [0,8] (**) (**)  XIC  [1,0] (*xStart*) (**)  
- BST  FB  [2,0] (*TON*) (*tStopTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiTimeOutValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
-   NXB  FB  [2,2] (*TON*) (*tAuxTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  XIP  [5,2] (*i_xStart*) (**)
+SOR  [0,5] (**) (**)  
+ BST  XIC  [1,0] (*xStart*) (**)
+   NXB  XIC  [1,1] (*xStartAutoPmp*) (**)
+ BND
+  
+ BST  XIO  [2,0] (*xStartAutoPmp*) (**)  FB  [3,0] (*TON*) (*tStopTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*tiTimeOutValue*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )
+   NXB  FB  [2,2] (*TON*) (*tAuxTimer*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  
+ BST  XIP  [5,2] (*i_xStart*) (**)
+   NXB  XIP  [5,3] (*i_xStartIrrigazione*) (**)
+ BND
+
  BND
   OTE  [6,0] (*xStop*) (**)
 EOR [7,0]
@@ -31,7 +29,7 @@ EOR [7,0]
 
 (*Comando di start pompa*)
 
-SOR  [0,13] (**) (**)  
+SOR  [0,10] (**) (**)  
  BST  XIP  [1,0] (*i_xStart*) (**)
    NXB  XIC  [1,1] (*xStart*) (**)
  BND
@@ -41,17 +39,25 @@ EOR [4,0]
 
 (*Gestione automatica dell'irrigazione del giardino*)
 
-SOR  [0,16] (**) (**)  FB  [1,0] (*=*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*22*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*>=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*01*) (**) ; (*o1:*)(**) (**) )  FB  [7,0] (*<=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )  
- BST  OTE  [10,0] (*xStartAutoPmp*) (**)
-   NXB  FB  [10,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [13,1] (*xStartAutoEv*) (**)
+SOR  [0,13] (**) (**)  
+ BST  XIC  [1,0] (*i_xAuto*) (**)  FB  [2,0] (*=*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diOra*) (**)  , (*i2:*)(*22*) (**) ; (*o1:*)(**) (**) )  FB  [5,0] (*>=*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*01*) (**) ; (*o1:*)(**) (**) )  FB  [8,0] (*<=*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*i_stData.diMin*) (**)  , (*i2:*)(*11*) (**) ; (*o1:*)(**) (**) )
+   NXB  XIO  [1,3] (*i_xAuto*) (**)  
+ BST  XIP  [2,3] (*i_xStartIrrigazione*) (**)
+   NXB  XIC  [2,4] (*xStartAutoPmp*) (**)
  BND
 
-EOR [14,0]
+ BND
+  XIO  [11,0] (*xStop*) (**)  
+ BST  OTE  [12,0] (*xStartAutoPmp*) (**)
+   NXB  FB  [12,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [15,1] (*xStartAutoEv*) (**)
+ BND
+
+EOR [16,0]
 
 
 (*Scrittura dell'uscita di comando pompa*)
 
-SOR  [0,20] (**) (**)  
+SOR  [0,19] (**) (**)  
  BST  XIC  [1,0] (*xStart*) (**)
    NXB  XIC  [1,1] (*xStartAutoPmp*) (**)
  BND
@@ -61,11 +67,11 @@ EOR [3,0]
 
 (*Scrittura dell'uscita di comando elettrovalvola*)
 
-SOR  [0,23] (**) (**)  XIC  [1,0] (*xStartAutoEv*) (**)  OTE  [2,0] (*q_xEvIrrGiard*) (**)
+SOR  [0,22] (**) (**)  XIC  [1,0] (*xStartAutoEv*) (**)  OTE  [2,0] (*q_xEvIrrGiard*) (**)
 EOR [3,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=4
+NextId=5
 #end_info
 END_FUNCTION_BLOCK

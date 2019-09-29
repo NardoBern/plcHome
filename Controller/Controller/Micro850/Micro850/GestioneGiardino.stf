@@ -3,9 +3,10 @@ PROGRAM GestioneGiardino
 BOF
 
 
-(*Gestione pompa irrigazione*)
+(*Gestione pompa irrigazione - time-out 600
+*)
 
-SOR  [0,1] (**) (**)  FB  [1,0] (*fbPumpSimple*) (*fbIrrigazioneGiardino*) ( (*EN:EN*)(**) (**)  , (*i_xStart:*)(*_IO_X1_DI_04*) (**)  , (*i_iTimeOutVal:*)(*600*) (**)  , (*i_stData:*)(*i_stData*) (**) ; (*ENO:ENO*)(**) (**)  , (*q_xPmpCmd:*)(*_IO_EM_DO_02*) (**)  , (*q_xEvIrrGiard:*)(*_IO_EM_DO_03*) (**) )
+SOR  [0,1] (**) (**)  FB  [1,0] (*fbPumpSimple*) (*fbIrrigazioneGiardino*) ( (*EN:EN*)(**) (**)  , (*i_xStart:*)(*_IO_X1_DI_04*) (**)  , (*i_iTimeOutVal:*)(*MbIn_iTimeOutIrrigazione*) (**)  , (*i_stData:*)(*i_stData*) (**)  , (*i_xStartIrrigazione:*)(*MbIn_xStartIrrigazione*) (**)  , (*i_xAuto:*)(*MbIn_xIrrigazioneAuto*) (**) ; (*ENO:ENO*)(**) (**)  , (*q_xPmpCmd:*)(*_IO_EM_DO_02*) (**)  , (*q_xEvIrrGiard:*)(*_IO_EM_DO_03*) (**) )
 EOR [4,0]
 EOF
 #end_info

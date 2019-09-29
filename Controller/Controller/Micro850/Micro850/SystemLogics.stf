@@ -53,9 +53,15 @@ SOR  [0,4] (**) (**)  XIC  [1,0] (*o_stSystemVar.xHmiConOk*) (**)
  BND
 
 EOR [3,0]
+
+
+(*Modbus watch-dog*)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*1 gain*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MbIn_iWatchDog*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*MbOut_iWatchDog*) (**) )
+EOR [4,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=6
+NextId=7
 #end_info
 END_PROGRAM

@@ -3,7 +3,7 @@
 (****** ST *********************************************)
 
 (*************** Rung **********************************)
-(*Gestione pompa irrigazione*)
+(*Gestione pompa irrigazione - time-out 600 *)
 __STEPPRAGMA
 0,1
 __ENDSTEPPRAGMA
@@ -11,7 +11,7 @@ __ENDSTEPPRAGMA
 __EDTB1 := TRUE ;
 IF __EDTB1 THEN
 (* FB call: fbPumpSimple *)
-fbIrrigazioneGiardino(_IO_X1_DI_04, 600, I_STDATA) ;
+fbIrrigazioneGiardino(_IO_X1_DI_04, MBIN_ITIMEOUTIRRIGAZIONE, I_STDATA, MBIN_XSTARTIRRIGAZIONE, MBIN_XIRRIGAZIONEAUTO) ;
 _IO_EM_DO_02 := fbIrrigazioneGiardino.q_xPmpCmd ;
 _IO_EM_DO_03 := fbIrrigazioneGiardino.q_xEvIrrGiard ;
 END_IF ;
