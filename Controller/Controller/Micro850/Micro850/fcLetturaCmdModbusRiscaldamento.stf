@@ -1,0 +1,51 @@
+FUNCTION fcLetturaCmdModbusRiscaldamento
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaARisc.iMode*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ1RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaAManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,5] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaARisc.iMode*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ1RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaAManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,9] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaBRisc.iMode*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ2RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*3*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaBManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaBRisc.iMode*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ2RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaBManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,17] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaCRisc.iMode*) (**)  , (*i2:*)(*0*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ3RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaCManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,21] (**) (**)  FB  [1,0] (*=*) (*7*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*o_stHMIZonaCRisc.iMode*) (**)  , (*i2:*)(*1*) (**) ; (*o1:*)(**) (**) )  XIP  [4,0] (*MbIn_xZ3RiscAuto*) (**)  FB  [5,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stZonaCManCmd.iMode*) (**) )
+EOR [8,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  OTE  [1,0] (*fcLetturaCmdModbusRiscaldamento*) (**)
+EOR [2,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=7
+#end_info
+END_FUNCTION

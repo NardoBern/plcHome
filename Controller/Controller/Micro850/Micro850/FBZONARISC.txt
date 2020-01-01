@@ -96,40 +96,46 @@ __STEPPRAGMA
 0,19
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-; (*Pulse detection on : I_STHMICMD.XMANCMD with __MEMO__1__I_STHMICMD_XMANCMD *)
-__EDTB11 := (I_STHMICMD.XMANCMD AND NOT(__MEMO__1__I_STHMICMD_XMANCMD)) ;
-__EDTB12 := XMANCMD ;
-; (*Pulse detection on : I_STHMICMD.XPULSCMD with __MEMO__2__I_STHMICMD_XPULSCMD *)
-__EDTB13 := (I_STHMICMD.XPULSCMD AND NOT(__MEMO__2__I_STHMICMD_XPULSCMD)) ;
-__EDTB14 := (__EDTB12 OR __EDTB13) ;
-XMANCMD := (__EDTB11 OR __EDTB14) AND XMAN AND NOT(XMANTIMEOUT) AND NOT(XDISABLE) ;
+__EDTB11 := XMANCMD ;
+; (*Fall detection on  : I_STHMICMD.XMANCMD with __MEMO__1__I_STHMICMD_XMANCMD *)
+__EDTB12 := __EDTB11 AND (__MEMO__1__I_STHMICMD_XMANCMD AND NOT(I_STHMICMD.XMANCMD)) ;
+; (*Pulse detection on : I_XMBMANCMD with __MEMO__2__I_XMBMANCMD *)
+__EDTB13 := __EDTB11 AND (I_XMBMANCMD AND NOT(__MEMO__2__I_XMBMANCMD)) ;
+XMANCMDOFF := (__EDTB12 OR __EDTB13) ;
 
 (*************** Code for the end of Rung **************)
-__MEMO__1__I_STHMICMD_XMANCMD := I_STHMICMD.XMANCMD ; (*Pulse detection on : I_STHMICMD.XMANCMD with __MEMO__1__I_STHMICMD_XMANCMD *)
-__MEMO__2__I_STHMICMD_XPULSCMD := I_STHMICMD.XPULSCMD ; (*Pulse detection on : I_STHMICMD.XPULSCMD with __MEMO__2__I_STHMICMD_XPULSCMD *)
+__MEMO__1__I_STHMICMD_XMANCMD := I_STHMICMD.XMANCMD ; (*Fall detection on  : I_STHMICMD.XMANCMD with __MEMO__1__I_STHMICMD_XMANCMD *)
+__MEMO__2__I_XMBMANCMD := I_XMBMANCMD ; (*Pulse detection on : I_XMBMANCMD with __MEMO__2__I_XMBMANCMD *)
 
 
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,23
+0,22
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-; (*Fall detection on  : I_STHMICMD.XMANCMD with __MEMO__3__I_STHMICMD_XMANCMD *)
-__EDTB15 := (__MEMO__3__I_STHMICMD_XMANCMD AND NOT(I_STHMICMD.XMANCMD)) ;
-IF __EDTB15 THEN
-(*Reset coil*)
-XMANCMD := FALSE ;
-END_IF ;
+__EDTB14 := XMAN ;
+; (*Pulse detection on : I_STHMICMD.XMANCMD with __MEMO__3__I_STHMICMD_XMANCMD *)
+__EDTB15 := __EDTB14 AND (I_STHMICMD.XMANCMD AND NOT(__MEMO__3__I_STHMICMD_XMANCMD)) ;
+; (*Pulse detection on : I_XMBMANCMD with __MEMO__4__I_XMBMANCMD *)
+__EDTB16 := __EDTB14 AND (I_XMBMANCMD AND NOT(__MEMO__4__I_XMBMANCMD)) ;
+__EDTB17 := (__EDTB15 OR __EDTB16) ;
+__EDTB18 := __EDTB14 AND XMANCMD ;
+; (*Pulse detection on : I_STHMICMD.XPULSCMD with __MEMO__5__I_STHMICMD_XPULSCMD *)
+__EDTB19 := __EDTB14 AND (I_STHMICMD.XPULSCMD AND NOT(__MEMO__5__I_STHMICMD_XPULSCMD)) ;
+__EDTB20 := (__EDTB18 OR __EDTB19) ;
+XMANCMD := (__EDTB17 OR __EDTB20) AND NOT(XMANTIMEOUT) AND NOT(XDISABLE) AND NOT(XMANCMDOFF) ;
 
 (*************** Code for the end of Rung **************)
-__MEMO__3__I_STHMICMD_XMANCMD := I_STHMICMD.XMANCMD ; (*Fall detection on  : I_STHMICMD.XMANCMD with __MEMO__3__I_STHMICMD_XMANCMD *)
+__MEMO__3__I_STHMICMD_XMANCMD := I_STHMICMD.XMANCMD ; (*Pulse detection on : I_STHMICMD.XMANCMD with __MEMO__3__I_STHMICMD_XMANCMD *)
+__MEMO__4__I_XMBMANCMD := I_XMBMANCMD ; (*Pulse detection on : I_XMBMANCMD with __MEMO__4__I_XMBMANCMD *)
+__MEMO__5__I_STHMICMD_XPULSCMD := I_STHMICMD.XPULSCMD ; (*Pulse detection on : I_STHMICMD.XPULSCMD with __MEMO__5__I_STHMICMD_XPULSCMD *)
 
 
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,25
+0,27
 __ENDSTEPPRAGMA
 (*Label :*)(**)
 XAUTOCMD := XAUTO AND NOT(XDISABLE) AND I_STHMICMD.AXAUTOSET[I_DIORA] ;
@@ -140,12 +146,12 @@ XAUTOCMD := XAUTO AND NOT(XDISABLE) AND I_STHMICMD.AXAUTOSET[I_DIORA] ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,27
+0,29
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB16 := XMANCMD ;
-__EDTB17 := XAUTOCMD ;
-O_XEVCMD := (__EDTB16 OR __EDTB17) ;
+__EDTB21 := XMANCMD ;
+__EDTB22 := XAUTOCMD ;
+O_XEVCMD := (__EDTB21 OR __EDTB22) ;
 
 (*************** Code for the end of Rung **************)
 
@@ -153,14 +159,14 @@ O_XEVCMD := (__EDTB16 OR __EDTB17) ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,30
+0,32
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB18 := XMAN ;
-IF __EDTB18 THEN
+__EDTB23 := XMAN ;
+IF __EDTB23 THEN
 O_STHMIFDBK.IMODE := (  0) ;
 END_IF ;
-__MO_1GAIN_1 := __EDTB18 ;
+__MO_1GAIN_1 := __EDTB23 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -168,14 +174,14 @@ __MO_1GAIN_1 := __EDTB18 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,33
+0,35
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB19 := XAUTO ;
-IF __EDTB19 THEN
+__EDTB24 := XAUTO ;
+IF __EDTB24 THEN
 O_STHMIFDBK.IMODE := (  1) ;
 END_IF ;
-__MO_1GAIN_2 := __EDTB19 ;
+__MO_1GAIN_2 := __EDTB24 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -183,14 +189,14 @@ __MO_1GAIN_2 := __EDTB19 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,36
+0,38
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB20 := XDISABLE ;
-IF __EDTB20 THEN
+__EDTB25 := XDISABLE ;
+IF __EDTB25 THEN
 O_STHMIFDBK.IMODE := (  2) ;
 END_IF ;
-__MO_1GAIN_3 := __EDTB20 ;
+__MO_1GAIN_3 := __EDTB25 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -198,45 +204,45 @@ __MO_1GAIN_3 := __EDTB20 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,39
+0,41
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB21 := NOT(O_XEVCMD) ;
-__EDTB22 := __EDTB21 AND NOT(I_XEVSTATE) ;
-IF __EDTB22 THEN
-O_STHMIFDBK.ISTATE := (  0) ;
-END_IF ;
-__MO_1GAIN_4 := __EDTB22 ;
-__EDTB23 := __EDTB22 ;
-__EDTB24 := __EDTB21 AND I_XEVSTATE ;
-IF __EDTB24 THEN
-O_STHMIFDBK.ISTATE := (  3) ;
-END_IF ;
-__MO_1GAIN_5 := __EDTB24 ;
-__EDTB25 := __EDTB24 ;
-
-(*************** Code for the end of Rung **************)
-
-
-(*************** Rung **********************************)
-(**)
-__STEPPRAGMA
-0,44
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB26 := O_XEVCMD ;
+__EDTB26 := NOT(O_XEVCMD) ;
 __EDTB27 := __EDTB26 AND NOT(I_XEVSTATE) ;
 IF __EDTB27 THEN
-O_STHMIFDBK.ISTATE := (  2) ;
+O_STHMIFDBK.ISTATE := (  0) ;
 END_IF ;
-__MO_1GAIN_6 := __EDTB27 ;
+__MO_1GAIN_4 := __EDTB27 ;
 __EDTB28 := __EDTB27 ;
 __EDTB29 := __EDTB26 AND I_XEVSTATE ;
 IF __EDTB29 THEN
+O_STHMIFDBK.ISTATE := (  3) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB29 ;
+__EDTB30 := __EDTB29 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,46
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB31 := O_XEVCMD ;
+__EDTB32 := __EDTB31 AND NOT(I_XEVSTATE) ;
+IF __EDTB32 THEN
+O_STHMIFDBK.ISTATE := (  2) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB32 ;
+__EDTB33 := __EDTB32 ;
+__EDTB34 := __EDTB31 AND I_XEVSTATE ;
+IF __EDTB34 THEN
 O_STHMIFDBK.ISTATE := (  1) ;
 END_IF ;
-__MO_1GAIN_7 := __EDTB29 ;
-__EDTB30 := __EDTB29 ;
+__MO_1GAIN_7 := __EDTB34 ;
+__EDTB35 := __EDTB34 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -257,17 +263,19 @@ __GL __LG0000 ;
 (* __EDTB8 *)
 (* __EDTB9 *)
 (* __EDTB10 *)
-(* __MEMO__1__I_STHMICMD_XMANCMD *)
 (* __EDTB11 *)
+(* __MEMO__1__I_STHMICMD_XMANCMD *)
 (* __EDTB12 *)
-(* __MEMO__2__I_STHMICMD_XPULSCMD *)
+(* __MEMO__2__I_XMBMANCMD *)
 (* __EDTB13 *)
 (* __EDTB14 *)
 (* __MEMO__3__I_STHMICMD_XMANCMD *)
 (* __EDTB15 *)
+(* __MEMO__4__I_XMBMANCMD *)
 (* __EDTB16 *)
 (* __EDTB17 *)
 (* __EDTB18 *)
+(* __MEMO__5__I_STHMICMD_XPULSCMD *)
 (* __EDTB19 *)
 (* __EDTB20 *)
 (* __EDTB21 *)
@@ -280,4 +288,9 @@ __GL __LG0000 ;
 (* __EDTB28 *)
 (* __EDTB29 *)
 (* __EDTB30 *)
+(* __EDTB31 *)
+(* __EDTB32 *)
+(* __EDTB33 *)
+(* __EDTB34 *)
+(* __EDTB35 *)
 

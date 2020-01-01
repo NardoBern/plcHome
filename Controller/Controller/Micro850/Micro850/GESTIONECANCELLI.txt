@@ -11,7 +11,7 @@ __ENDSTEPPRAGMA
 __EDTB1 := TRUE ;
 IF __EDTB1 THEN
 (* FB call: fbCanc *)
-fbCancelloGrande(I_XHMICANCGRANDE, ) ;
+fbCancelloGrande(I_XHMICANCGRANDE, , MBIN_XCANCGRANDECMD) ;
 _IO_X2_DO_14 := fbCancelloGrande.o_xCancCmd ;
 END_IF ;
 __MO_FBCANC_1 := __EDTB1 ;

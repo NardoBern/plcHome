@@ -1,14 +1,25 @@
 FUNCTION fcLetturaStatiLuci
-MbOut_xLuceAntibagno 	:= o_stLuceAntibagnoFdbk.xLampState;
-MbOut_xLuceBagno		:= o_stLuceBagnoFdbk.xLampState;
-MbOut_xLuceCantina		:= o_stLuceCantinaFdbk.xLampState;
-MbOut_xLuceCorridoio	:= o_stLuceCorridoioFdbk.xLampState;
-MbOut_xLuceCucina		:= o_stLuceCucinaFdbk.xLampState;
-MbOut_xLuceFuoriDavanti	:= o_stLuceFuoriDavantiFdbk.xLampState;
-MbOut_xLuceIngresso		:= o_stLuceIngressoFdbk.xLampState;
-MbOut_xLuceLetto		:= o_stLuceCameraLettoFdbk.xLampState;
-MbOut_xLuceSala			:= o_stLuceSalaFdbk.xLampState;
-MbOut_xLuceSalaLibreria	:= o_stLuceSalaLibreriaFdbk.xLampState;
-MbOut_xLuceVeranda		:= o_stLuceVerandaFdbk.xLampState;
-fcLetturaStatiLuci		:= TRUE;
+MbOut_xLuceAntibagno 		:= o_stLuceAntibagnoFdbk.xLampState;
+MbOut_xLuceAntibagnoAuto	:= o_stLuceAntibagnoFdbk.iMode = 2;
+MbOut_xLuceBagno			:= o_stLuceBagnoFdbk.xLampState;
+MbOut_xLuceBagnoAuto		:= o_stLuceBagnoFdbk.iMode = 2;
+MbOut_xLuceCantina			:= o_stLuceCantinaFdbk.xLampState;
+MbOut_xLuceCantinaAuto		:= o_stLuceCantinaFdbk.iMode = 2;
+MbOut_xLuceCorridoio		:= o_stLuceCorridoioFdbk.xLampState;
+MbOut_xLuceCorridoioAuto	:= o_stLuceCorridoioFdbk.iMode = 2;
+MbOut_xLuceCucina			:= o_stLuceCucinaFdbk.xLampState;
+MbOut_xLuceCucinaAuto		:= o_stLuceCucinaFdbk.iMode = 2;
+MbOut_xLuceFuoriDavanti		:= o_stLuceFuoriDavantiFdbk.xLampState;
+MbOut_xLuceFuoriDavantiAuto	:= o_stLuceFuoriDavantiFdbk.iMode = 2;
+MbOut_xLuceIngresso			:= o_stLuceIngressoFdbk.xLampState;
+MbOut_xLuceIngressoAuto		:= o_stLuceIngressoFdbk.iMode = 2;
+MbOut_xLuceLetto			:= o_stLuceCameraLettoFdbk.xLampState;
+MbOut_xLuceLettoAuto		:= o_stLuceCameraLettoFdbk.iMode = 2;
+MbOut_xLuceSala				:= o_stLuceSalaFdbk.xLampState;
+MbOut_xLuceSalaAuto			:= o_stLuceSalaFdbk.iMode = 2;
+MbOut_xLuceSalaLibreria		:= o_stLuceSalaLibreriaFdbk.xLampState;
+MbOut_xLuceSalaLibreriaAuto	:= o_stLuceSalaLibreriaFdbk.iMode = 2;
+MbOut_xLuceVeranda			:= o_stLuceVerandaFdbk.xLampState;
+MbOut_xLuceVerandaAuto		:= o_stLuceVerandaFdbk.iMode = 2;
+fcLetturaStatiLuci			:= TRUE;
 END_FUNCTION

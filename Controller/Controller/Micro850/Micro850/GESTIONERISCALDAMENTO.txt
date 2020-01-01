@@ -18,19 +18,37 @@ __MO_FCLETTURAELETTROVALVOLE_1 := __EDTB1 ;
 
 
 (*************** Rung **********************************)
-(*Gestione riscaldamento Zona A*)
+(*Gestione comandi modbus*)
 __STEPPRAGMA
 0,4
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB2 := TRUE ;
-IF __EDTB2 THEN
+__EDTB3 := TRUE ;
+IF __EDTB3 THEN
+(* Function output on : fcLetturaCmdModbusRiscaldamento with __EDTB2 *)
+__EDTB2 := fcLetturaCmdModbusRiscaldamento() ;
+ELSE
+__EDTB2 := FALSE ;
+END_IF ;
+__MO_FCLETTURACMDMODBUSRISCALDAMENTO_1 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(*Gestione riscaldamento Zona A*)
+__STEPPRAGMA
+0,6
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
 (* FB call: fbZonaRisc *)
-fbZonaRisc_A(I_STELETTROVALVOLE.EVZONAA, I_STZONAAMANCMD, I_STDATA.DIORA) ;
+fbZonaRisc_A(I_STELETTROVALVOLE.EVZONAA, I_STZONAAMANCMD, I_STDATA.DIORA, MBIN_XZ1MANON) ;
 O_STHMIZONAARISC := fbZonaRisc_A.o_stHMIFdbk ;
 O_STCMDEV.CMDEVZONAA := fbZonaRisc_A.o_xEvCmd ;
 END_IF ;
-__MO_FBZONARISC_1 := __EDTB2 ;
+__MO_FBZONARISC_1 := __EDTB4 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -38,17 +56,17 @@ __MO_FBZONARISC_1 := __EDTB2 ;
 (*************** Rung **********************************)
 (*Gestione Riscaldamento Zona B*)
 __STEPPRAGMA
-0,9
+0,12
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB3 := TRUE ;
-IF __EDTB3 THEN
+__EDTB5 := TRUE ;
+IF __EDTB5 THEN
 (* FB call: fbZonaRisc *)
-fbZonaRisc_B(I_STELETTROVALVOLE.EVZONAB, I_STZONABMANCMD, I_STDATA.DIORA) ;
+fbZonaRisc_B(I_STELETTROVALVOLE.EVZONAB, I_STZONABMANCMD, I_STDATA.DIORA, MBIN_XZ2MANON) ;
 O_STHMIZONABRISC := fbZonaRisc_B.o_stHMIFdbk ;
 O_STCMDEV.CMDEVZONAB := fbZonaRisc_B.o_xEvCmd ;
 END_IF ;
-__MO_FBZONARISC_2 := __EDTB3 ;
+__MO_FBZONARISC_2 := __EDTB5 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -56,17 +74,17 @@ __MO_FBZONARISC_2 := __EDTB3 ;
 (*************** Rung **********************************)
 (*Gestione Riscaldamento Zona C*)
 __STEPPRAGMA
-0,14
+0,18
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB4 := TRUE ;
-IF __EDTB4 THEN
+__EDTB6 := TRUE ;
+IF __EDTB6 THEN
 (* FB call: fbZonaRisc *)
-fbZonaRisc_C(I_STELETTROVALVOLE.EVZONAC, I_STZONACMANCMD, I_STDATA.DIORA) ;
+fbZonaRisc_C(I_STELETTROVALVOLE.EVZONAC, I_STZONACMANCMD, I_STDATA.DIORA, MBIN_XZ3MANON) ;
 O_STHMIZONACRISC := fbZonaRisc_C.o_stHMIFdbk ;
 O_STCMDEV.CMDEVZONAC := fbZonaRisc_C.o_xEvCmd ;
 END_IF ;
-__MO_FBZONARISC_3 := __EDTB4 ;
+__MO_FBZONARISC_3 := __EDTB6 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -74,17 +92,35 @@ __MO_FBZONARISC_3 := __EDTB4 ;
 (*************** Rung **********************************)
 (**)
 __STEPPRAGMA
-0,19
+0,24
 __ENDSTEPPRAGMA
 (*Label :*)(**)
-__EDTB6 := TRUE ;
-IF __EDTB6 THEN
-(* Function output on : fcScritturaElettrovalvole with __EDTB5 *)
-__EDTB5 := fcScritturaElettrovalvole() ;
+__EDTB8 := TRUE ;
+IF __EDTB8 THEN
+(* Function output on : fcScritturaElettrovalvole with __EDTB7 *)
+__EDTB7 := fcScritturaElettrovalvole() ;
 ELSE
-__EDTB5 := FALSE ;
+__EDTB7 := FALSE ;
 END_IF ;
-__MO_FCSCRITTURAELETTROVALVOLE_1 := __EDTB5 ;
+__MO_FCSCRITTURAELETTROVALVOLE_1 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,26
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB10 := TRUE ;
+IF __EDTB10 THEN
+(* Function output on : fcLetturaStatiRiscaldamento with __EDTB9 *)
+__EDTB9 := fcLetturaStatiRiscaldamento() ;
+ELSE
+__EDTB9 := FALSE ;
+END_IF ;
+__MO_FCLETTURASTATIRISCALDAMENTO_1 := __EDTB9 ;
 
 (*************** Code for the end of Rung **************)
 
@@ -101,4 +137,8 @@ __GL __LG0000 ;
 (* __EDTB4 *)
 (* __EDTB5 *)
 (* __EDTB6 *)
+(* __EDTB7 *)
+(* __EDTB8 *)
+(* __EDTB9 *)
+(* __EDTB10 *)
 

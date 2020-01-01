@@ -39,33 +39,41 @@ EOR [8,0]
 
 (**)
 
-SOR  [0,19] (**) (**)  
- BST  XIP  [1,0] (*i_stHMICmd.xManCmd*) (**)
+SOR  [0,19] (**) (**)  XIC  [1,0] (*xManCmd*) (**)  
+ BST  XIF  [2,0] (*i_stHMICmd.xManCmd*) (**)
+   NXB  XIP  [2,1] (*i_xMbManCmd*) (**)
+ BND
+  OTE  [3,0] (*xManCmdOff*) (**)
+EOR [4,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  XIC  [1,0] (*xMan*) (**)  
+ BST  
+ BST  XIP  [2,0] (*i_stHMICmd.xManCmd*) (**)
+   NXB  XIP  [2,1] (*i_xMbManCmd*) (**)
+ BND
+
    NXB  
- BST  XIC  [1,1] (*xManCmd*) (**)
-   NXB  XIP  [1,2] (*i_stHMICmd.xPulsCmd*) (**)
+ BST  XIC  [2,2] (*xManCmd*) (**)
+   NXB  XIP  [2,3] (*i_stHMICmd.xPulsCmd*) (**)
  BND
 
  BND
-  XIC  [2,0] (*xMan*) (**)  XIO  [3,0] (*xManTimeOut*) (**)  XIO  [4,0] (*xDisable*) (**)  OTE  [5,0] (*xManCmd*) (**)
-EOR [6,0]
+  XIO  [3,0] (*xManTimeOut*) (**)  XIO  [4,0] (*xDisable*) (**)  XIO  [5,0] (*xManCmdOff*) (**)  OTE  [6,0] (*xManCmd*) (**)
+EOR [7,0]
 
 
 (**)
 
-SOR  [0,23] (**) (**)  XIF  [1,0] (*i_stHMICmd.xManCmd*) (**)  OTR  [2,0] (*xManCmd*) (**)
-EOR [3,0]
-
-
-(**)
-
-SOR  [0,25] (**) (**)  XIC  [1,0] (*xAuto*) (**)  XIO  [2,0] (*xDisable*) (**)  XIC  [3,0] (*i_stHMICmd.axAutoSet[i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
+SOR  [0,27] (**) (**)  XIC  [1,0] (*xAuto*) (**)  XIO  [2,0] (*xDisable*) (**)  XIC  [3,0] (*i_stHMICmd.axAutoSet[i_diOra]*) (**)  OTE  [4,0] (*xAutoCmd*) (**)
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,27] (**) (**)  
+SOR  [0,29] (**) (**)  
  BST  XIC  [1,0] (*xManCmd*) (**)
    NXB  XIC  [1,1] (*xAutoCmd*) (**)
  BND
@@ -75,25 +83,25 @@ EOR [3,0]
 
 (**)
 
-SOR  [0,30] (**) (**)  XIC  [1,0] (*xMan*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+SOR  [0,32] (**) (**)  XIC  [1,0] (*xMan*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,33] (**) (**)  XIC  [1,0] (*xAuto*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+SOR  [0,35] (**) (**)  XIC  [1,0] (*xAuto*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,36] (**) (**)  XIC  [1,0] (*xDisable*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
+SOR  [0,38] (**) (**)  XIC  [1,0] (*xDisable*) (**)  FB  [2,0] (*1 gain*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iMode*) (**) )
 EOR [5,0]
 
 
 (**)
 
-SOR  [0,39] (**) (**)  XIO  [1,0] (*o_xEvCmd*) (**)  
+SOR  [0,41] (**) (**)  XIO  [1,0] (*o_xEvCmd*) (**)  
  BST  XIO  [2,0] (*i_xEvState*) (**)  FB  [3,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
    NXB  XIC  [2,2] (*i_xEvState*) (**)  FB  [3,2] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*3*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
  BND
@@ -103,7 +111,7 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,44] (**) (**)  XIC  [1,0] (*o_xEvCmd*) (**)  
+SOR  [0,46] (**) (**)  XIC  [1,0] (*o_xEvCmd*) (**)  
  BST  XIO  [2,0] (*i_xEvState*) (**)  FB  [3,0] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
    NXB  XIC  [2,2] (*i_xEvState*) (**)  FB  [3,2] (*1 gain*) (*6*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*1*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*o_stHMIFdbk.iState*) (**) )
  BND

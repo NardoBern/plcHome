@@ -3,42 +3,162 @@
     <mapping variable="MbOut_xLuceFuoriDavanti" parent="Micro850" dataType="Bool" address="000001" va="0x4f7">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceIngresso" parent="Micro850" dataType="Bool" address="000002" va="0x4f8">
+    <mapping variable="MbOut_xLuceIngresso" parent="Micro850" dataType="Bool" address="000002" va="0x4fa">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceCorridoio" parent="Micro850" dataType="Bool" address="000003" va="0x4f9">
+    <mapping variable="MbOut_xLuceCorridoio" parent="Micro850" dataType="Bool" address="000003" va="0x4fc">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceSalaLibreria" parent="Micro850" dataType="Bool" address="000004" va="0x4fa">
+    <mapping variable="MbOut_xLuceSalaLibreria" parent="Micro850" dataType="Bool" address="000004" va="0x4fe">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceLetto" parent="Micro850" dataType="Bool" address="000005" va="0x4fb">
+    <mapping variable="MbOut_xLuceLetto" parent="Micro850" dataType="Bool" address="000005" va="0x500">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceSala" parent="Micro850" dataType="Bool" address="000006" va="0x4fc">
+    <mapping variable="MbOut_xLuceSala" parent="Micro850" dataType="Bool" address="000006" va="0x501">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceCucina" parent="Micro850" dataType="Bool" address="000007" va="0x4fd">
+    <mapping variable="MbOut_xLuceCucina" parent="Micro850" dataType="Bool" address="000007" va="0x504">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceAntibagno" parent="Micro850" dataType="Bool" address="000008" va="0x4fe">
+    <mapping variable="MbOut_xLuceAntibagno" parent="Micro850" dataType="Bool" address="000008" va="0x506">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceBagno" parent="Micro850" dataType="Bool" address="000009" va="0x4ff">
+    <mapping variable="MbOut_xLuceBagno" parent="Micro850" dataType="Bool" address="000009" va="0x507">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceVeranda" parent="Micro850" dataType="Bool" address="000010" va="0x500">
+    <mapping variable="MbOut_xLuceVeranda" parent="Micro850" dataType="Bool" address="000010" va="0x50a">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbOut_xLuceCantina" parent="Micro850" dataType="Bool" address="000011" va="0x501">
+    <mapping variable="MbOut_xLuceCantina" parent="Micro850" dataType="Bool" address="000011" va="0x50b">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceAntibagnoAuto" parent="Micro850" dataType="Bool" address="000012" va="0x4f8">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceBagnoAuto" parent="Micro850" dataType="Bool" address="000013" va="0x4f9">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCantinaAuto" parent="Micro850" dataType="Bool" address="000014" va="0x4fb">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCorridoioAuto" parent="Micro850" dataType="Bool" address="000015" va="0x4fd">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCucinaAuto" parent="Micro850" dataType="Bool" address="000016" va="0x4ff">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceFuoriDavantiAuto" parent="Micro850" dataType="Bool" address="000017" va="0x502">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceIngressoAuto" parent="Micro850" dataType="Bool" address="000018" va="0x503">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceLettoAuto" parent="Micro850" dataType="Bool" address="000019" va="0x505">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceSalaAuto" parent="Micro850" dataType="Bool" address="000020" va="0x508">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceSalaLibreriaAuto" parent="Micro850" dataType="Bool" address="000021" va="0x509">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceVerandaAuto" parent="Micro850" dataType="Bool" address="000022" va="0x50c">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ1RiscOff" parent="Micro850" dataType="Bool" address="000023" va="0x50d">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ1RiscPowerOff" parent="Micro850" dataType="Bool" address="000024" va="0x517">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ1RiscPowerOn" parent="Micro850" dataType="Bool" address="000025" va="0x514">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ1RiscOn" parent="Micro850" dataType="Bool" address="000026" va="0x511">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ2RiscOff" parent="Micro850" dataType="Bool" address="000027" va="0x50e">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ2RiscPowerOff" parent="Micro850" dataType="Bool" address="000028" va="0x518">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ2RiscPowerOn" parent="Micro850" dataType="Bool" address="000029" va="0x515">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ2RiscOn" parent="Micro850" dataType="Bool" address="000030" va="0x512">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ3RiscOff" parent="Micro850" dataType="Bool" address="000031" va="0x510">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ3RiscPowerOff" parent="Micro850" dataType="Bool" address="000032" va="0x519">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ3RiscPowerOn" parent="Micro850" dataType="Bool" address="000033" va="0x516">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ3RiscOn" parent="Micro850" dataType="Bool" address="000034" va="0x513">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ1RiscAuto" parent="Micro850" dataType="Bool" address="000035" va="0x51a">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ2RiscAuto" parent="Micro850" dataType="Bool" address="000036" va="0x51b">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xZ3RiscAuto" parent="Micro850" dataType="Bool" address="000037" va="0x51c">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
   </modbusRegister>
   <modbusRegister name="HOLDING_REGISTERS">
-    <mapping variable="MbIn_iCmd" parent="Micro850" dataType="Int" address="404002" va="0x532">
+    <mapping variable="MbIn_iCmd" parent="Micro850" dataType="Int" address="404002" va="0x54c">
       <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
     </mapping>
-    <mapping variable="MbIn_iWatchDog" parent="Micro850" dataType="Int" address="404003" va="0x530">
+    <mapping variable="MbIn_iWatchDog" parent="Micro850" dataType="Int" address="404003" va="0x54a">
+      <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
+    </mapping>
+    <mapping variable="MbIn_diVerandaLuxTimeOut" parent="Micro850" dataType="Dint" address="404004" va="0x564">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diCucinaLuxTimeOut" parent="Micro850" dataType="Dint" address="404006" va="0x568">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diAntibagnoLuxTimeOut" parent="Micro850" dataType="Dint" address="404008" va="0x56c">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diSalaLibLuxTimeOut" parent="Micro850" dataType="Dint" address="404010" va="0x570">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diLettoLuxTimeOut" parent="Micro850" dataType="Dint" address="404012" va="0x574">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diCorridoioLuxTimeOut" parent="Micro850" dataType="Dint" address="404014" va="0x578">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diSalaLuxTimeOut" parent="Micro850" dataType="Dint" address="404016" va="0x57c">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diIngressoLuxTimeOut" parent="Micro850" dataType="Dint" address="404018" va="0x580">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diBagnoLuxTimeOut" parent="Micro850" dataType="Dint" address="404020" va="0x584">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diFuoriLuxTimeOut" parent="Micro850" dataType="Dint" address="404022" va="0x588">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbIn_diCantinaLuxTimeOut" parent="Micro850" dataType="Dint" address="404024" va="0x58c">
+      <MBVarInfo ElemType="Dint" SubElemType="Any" DataTypeSize="4" />
+    </mapping>
+    <mapping variable="MbOut_iZ1RiscState" parent="Micro850" dataType="Int" address="404031" va="0x54e">
+      <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
+    </mapping>
+    <mapping variable="MbOut_iZ2RiscState" parent="Micro850" dataType="Int" address="404032" va="0x550">
+      <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
+    </mapping>
+    <mapping variable="MbOut_iZ3RiscState" parent="Micro850" dataType="Int" address="404033" va="0x552">
       <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
     </mapping>
   </modbusRegister>

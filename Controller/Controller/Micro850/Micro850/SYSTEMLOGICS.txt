@@ -41,6 +41,27 @@ I_STLUCECANTINAHMICMDS.XHMIOK := __EDTB2 ;
 (*************** Code for the end of Rung **************)
 
 
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+__EDTB4 := TRUE ;
+IF __EDTB4 THEN
+(* Operator output on : = with __EDTB3 *)
+__EDTB3 := (MBIN_IWATCHDOG = AUXMBIN_IWATCHDOG) ;
+ELSE
+__EDTB3 := FALSE ;
+END_IF ;
+__MO_EQUAL_1 := __EDTB3 ;
+(* FB call: TON *)
+TON_1(__EDTB3, T#3S) ;
+MB_XCOMMERROR := TON_1.Q ;
+
+(*************** Code for the end of Rung **************)
+
+
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
@@ -49,4 +70,6 @@ __GL __LG0000 ;
 (*************** Local Symbols table *******************)
 (* __EDTB1 *)
 (* __EDTB2 *)
+(* __EDTB3 *)
+(* __EDTB4 *)
 

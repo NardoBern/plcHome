@@ -11,7 +11,11 @@ SOR  [0,1] (**) (**)
  BST  XIP  [1,1] (*i_xHMIManCmd*) (**)
    NXB  
  BST  XIF  [1,2] (*i_xHMIManCmd*) (**)
-   NXB  XIF  [1,3] (*i_xManCmd*) (**)
+   NXB  
+ BST  XIF  [1,3] (*i_xManCmd*) (**)
+   NXB  XIP  [1,4] (*i_xModBusManCmd*) (**)
+ BND
+
  BND
 
  BND

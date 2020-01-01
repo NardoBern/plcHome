@@ -12,6 +12,24 @@ CASE MbIn_iCmd OF
 		MbIn_xPbBagno		:= FALSE;
 		MbIn_xPbVeranda		:= FALSE;
 		MbIn_xPbCantina		:= FALSE;
+		MbIn_xAutoAntibagno	:= FALSE;
+		MbIn_xAutoBagno		:= FALSE;
+		MbIn_xAutoCorr		:= FALSE;
+		MbIn_xAutoCucina	:= FALSE;
+		MbIn_xAutoFuoriDav	:= FALSE;
+		MbIn_xAutoIngr		:= FALSE;
+		MbIn_xAutoLetto		:= FALSE;
+		MbIn_xAutoSala		:= FALSE;
+		MbIn_xAutoSalaLib	:= FALSE;
+		MbIn_xAutoVeranda	:= FALSE;
+		MbIn_xAutoCantina	:= FALSE;
+		MbIn_xZ1RiscAuto	:= FALSE;
+		MbIn_xZ2RiscAuto	:= FALSE;
+		MbIn_xZ3RiscAuto	:= FALSE;
+		MbIn_xZ1ManOn		:= FALSE;
+		MbIn_xZ2ManOn		:= FALSE;
+		MbIn_xZ3ManOn		:= FALSE;
+		MbIn_xCancGrandeCmd	:= FALSE;
 	1: (* comando luce fuori davanti*)
 		MbIn_xPbFuoriDav	:= TRUE;
 		MbIn_iCmd		:= 0;
@@ -45,6 +63,60 @@ CASE MbIn_iCmd OF
 	11: (* comando luce cantina *)
 		MbIn_xPbCantina	:= TRUE;
 		MbIn_iCmd		:= 0;
+	20: (* comando automatico/manuale luce antibagno *)
+		MbIn_xAutoAntibagno := TRUE;
+		MbIn_iCmd			:= 0;
+	21: (* comando automatico/manuale luce bagno *)
+		MbIn_xAutoBagno		:= TRUE;
+		MbIn_iCmd			:= 0;
+	22: (* comando automatico/manuale luce cantina *)
+		MbIn_xAutoCantina	:= TRUE;
+		MbIn_iCmd			:= 0;
+	23: (* comando automatico/manuale luce corridoio *)
+		MbIn_xAutoCorr		:= TRUE;
+		MbIn_iCmd			:= 0;
+	24: (* comando automatico/manuale luce cucina *)
+		MbIn_xAutoCucina	:= TRUE;
+		MbIn_iCmd			:= 0;
+	25: (* comando automatico/manuale luce fuori davanti *)
+		MbIn_xAutoFuoriDav	:= TRUE;
+		MbIn_iCmd			:= 0;
+	26: (* comando automatico/manuale luce ingresso *)
+		MbIn_xAutoIngr		:= TRUE;
+		MbIn_iCmd			:= 0;
+	27: (* comando automatico/manuale luce camera letto *)
+		MbIn_xAutoLetto		:= TRUE;
+		MbIn_iCmd			:= 0;
+	28: (* comando automatico/manuale luce sala *)
+		MbIn_xAutoSala		:= TRUE;
+		MbIn_iCmd			:= 0;
+	29: (* comando automatico/manuale luce sala libreria *)
+		MbIn_xAutoSalaLib	:= TRUE;
+		MbIn_iCmd			:= 0;
+	30: (* comando automatico/manuale luce veranda *)
+		MbIn_xAutoVeranda	:= TRUE;
+		MbIn_iCmd			:= 0;
+	50: (* comando automatico/manuale zona 1 riscaldamento *)
+		MbIn_xZ1RiscAuto	:= TRUE;
+		MbIn_iCmd			:= 0;
+	51: (* comando automatico/manuale zona 2 riscaldamento *)
+		MbIn_xZ2RiscAuto	:= TRUE;
+		MbIn_iCmd			:= 0;
+	52: (* comando automatico/manuale zona 3 riscaldamento *)
+		MbIn_xZ3RiscAuto	:= TRUE;
+		MbIn_iCmd			:= 0;
+	53: (* comando manuale riscaldamento zona 1 *)
+		MbIn_xZ1ManOn		:= TRUE;
+		MbIn_iCmd			:= 0;
+	54:	(* comando manuale riscaldamento zona 2 *)
+		MbIn_xZ2ManOn		:= TRUE;
+		MbIn_iCmd			:= 0;
+	55:	(* comando manuale riscaldamento zona 3 *)
+		MbIn_xZ3ManOn		:= TRUE;
+		MbIn_iCmd			:= 0;
+	60: (* comando manuale cancello grande *)
+		MbIn_xCancGrandeCmd	:= TRUE;
+		MbIn_iCmd			:= 0;
 ELSE
 	(* reset di tutti i comandi *)
 	MbIn_xPbFuoriDav	:= FALSE;
@@ -58,6 +130,50 @@ ELSE
 	MbIn_xPbBagno		:= FALSE;
 	MbIn_xPbVeranda		:= FALSE;
 	MbIn_xPbCantina		:= FALSE;
+	MbIn_xAutoAntibagno	:= FALSE;
+	MbIn_xAutoBagno		:= FALSE;
+	MbIn_xAutoCorr		:= FALSE;
+	MbIn_xAutoCucina	:= FALSE;
+	MbIn_xAutoFuoriDav	:= FALSE;
+	MbIn_xAutoIngr		:= FALSE;
+	MbIn_xAutoLetto		:= FALSE;
+	MbIn_xAutoSala		:= FALSE;
+	MbIn_xAutoSalaLib	:= FALSE;
+	MbIn_xAutoVeranda	:= FALSE;
+	MbIn_xAutoCantina	:= FALSE;
+	MbIn_xZ1RiscAuto	:= FALSE;
+	MbIn_xZ2RiscAuto	:= FALSE;
+	MbIn_xZ3RiscAuto	:= FALSE;
+	MbIn_xZ1ManOn		:= FALSE;
+	MbIn_xZ2ManOn		:= FALSE;
+	MbIn_xZ3ManOn		:= FALSE;
+	MbIn_xCancGrandeCmd	:= FALSE;
 END_CASE;
+(* Settings time-out luci *)
+IF NOT Mb_xCommError THEN
+	i_stLuceAntibagnoHmiCmds.diAutoTime		:= MbIn_diAntibagnoLuxTimeOut;
+	i_stLuceBagnoHmiCmds.diAutoTime			:= MbIn_diBagnoLuxTimeOut;
+	i_stLuceCameraLettoHmiCmds.diAutoTime	:= MbIn_diLettoLuxTimeOut;
+	i_stLuceCantinaHmiCmds.diAutoTime		:= MbIn_diCantinaLuxTimeOut;
+	i_stLuceCorridoioHmiCmds.diAutoTime		:= MbIn_diCorridoioLuxTimeOut;
+	i_stLuceCucinaHmiCmds.diAutoTime		:= MbIn_diCucinaLuxTimeOut;
+	i_stLuceFuoriDavantiHmiCmds.diAutoTime	:= MbIn_diFuoriLuxTimeOut;
+	i_stLuceIngressoHmiCmds.diAutoTime		:= MbIn_diIngressoLuxTimeOut;
+	i_stLuceSalaHmiCmds.diAutoTime			:= MbIn_diSalaLuxTimeOut;
+	i_stLuceSalaLibreriaHmiCmds.diAutoTime	:= MbIn_diSalaLibLuxTimeOut;
+	i_stLuceVerandaHmiCmds.diAutoTime		:= MbIn_diVerandaLuxTimeOut;
+ELSE
+	i_stLuceAntibagnoHmiCmds.diAutoTime		:= 120;
+	i_stLuceBagnoHmiCmds.diAutoTime			:= 120;
+	i_stLuceCameraLettoHmiCmds.diAutoTime	:= 120;
+	i_stLuceCantinaHmiCmds.diAutoTime		:= 120;
+	i_stLuceCorridoioHmiCmds.diAutoTime		:= 120;
+	i_stLuceCucinaHmiCmds.diAutoTime		:= 120;
+	i_stLuceFuoriDavantiHmiCmds.diAutoTime	:= 120;
+	i_stLuceIngressoHmiCmds.diAutoTime		:= 60;
+	i_stLuceSalaHmiCmds.diAutoTime			:= 120;
+	i_stLuceSalaLibreriaHmiCmds.diAutoTime	:= 120;
+	i_stLuceVerandaHmiCmds.diAutoTime		:= 15;
+END_IF;
 fcLetturaCmdModbus := TRUE;
 END_FUNCTION

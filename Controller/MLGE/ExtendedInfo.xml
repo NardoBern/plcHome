@@ -21,6 +21,9 @@
   <AcfElementGuid Guid="253a9c56-e8ed-498e-9a71-225eb225cb65">
     <File>SystemLogics.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="3036a80a-93c8-4b19-8eb5-32730edb0b77">
+    <File>fcLetturaCmdModbusRiscaldamento.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="3b4234e0-587e-4803-822a-71f0ebd23426">
     <File>fbPuntoLuce.AcfMlge</File>
   </AcfElementGuid>
@@ -44,6 +47,9 @@
   </AcfElementGuid>
   <AcfElementGuid Guid="9c491e9c-58f1-4e6d-8852-68f0b3bbb4fb">
     <File>fcLetturaStatiLuci.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="ad5b4101-83c5-4d5b-8805-c565c6fc60bd">
+    <File>fcLetturaStatiRiscaldamento.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="b20eb2c7-2e3f-4c3f-9f77-f6dbea2162da">
     <File>fcLetturaPulsanti.AcfMlge</File>

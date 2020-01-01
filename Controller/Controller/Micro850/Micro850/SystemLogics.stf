@@ -53,9 +53,15 @@ SOR  [0,4] (**) (**)  XIC  [1,0] (*o_stSystemVar.xHmiConOk*) (**)
  BND
 
 EOR [3,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  FB  [1,0] (*=*) (*8*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*MbIn_iWatchDog*) (**)  , (*i2:*)(*AuxMbIn_iWatchDog*) (**) ; (*o1:*)(**) (**) )  FB  [4,0] (*TON*) (*TON_1*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*T#3S*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [7,0] (*Mb_xCommError*) (**)
+EOR [8,0]
 EOF
 #end_info
 #info= ID_MAX
-NextId=7
+NextId=8
 #end_info
 END_PROGRAM

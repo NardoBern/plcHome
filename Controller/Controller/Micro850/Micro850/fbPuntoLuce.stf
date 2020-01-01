@@ -23,7 +23,11 @@ EOR [5,0]
 
 (**)
 
-SOR  [0,13] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (***) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diAutoTime*) (**)  , (*i2:*)(*1000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tempDint*) (**) )  FB  [5,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*tempDint*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiAutoTimValue*) (**) )  FB  [8,0] (*ANY_TO_TIME*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diSemiAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiSemiAutoTimValue*) (**) )
+SOR  [0,13] (**) (**)  
+ BST  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)
+   NXB  XIO  [1,1] (*Mb_xCommError*) (**)
+ BND
+  FB  [2,0] (***) (*10*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diAutoTime*) (**)  , (*i2:*)(*1000*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tempDint*) (**) )  FB  [5,0] (*ANY_TO_TIME*) (*4*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*tempDint*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiAutoTimValue*) (**) )  FB  [8,0] (*ANY_TO_TIME*) (*5*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.diSemiAutoTime*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*tiSemiAutoTimValue*) (**) )
 EOR [11,0]
 
 
@@ -143,7 +147,11 @@ EOR [6,0]
 
 (**)
 
-SOR  [0,56] (**) (**)  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
+SOR  [0,56] (**) (**)  
+ BST  XIC  [1,0] (*stHmiPlCmd.xHmiOk*) (**)
+   NXB  XIO  [1,1] (*Mb_xCommError*) (**)
+ BND
+  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*stHmiPlCmd.iModeSel*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*iModeState*) (**) )
 EOR [5,0]
 
 

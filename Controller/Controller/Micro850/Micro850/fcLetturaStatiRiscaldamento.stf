@@ -1,0 +1,27 @@
+FUNCTION fcLetturaStatiRiscaldamento
+MbOut_xZ1RiscOff		:= o_stHMIZonaARisc.iState = 0;
+MbOut_xZ1RiscPowerOff	:= o_stHMIZonaARisc.iState = 1;
+MbOut_xZ1RiscPowerOn	:= o_stHMIZonaARisc.iState = 2;
+MbOut_xZ1RiscOn			:= o_stHMIZonaARisc.iState = 3;
+
+MbOut_xZ2RiscOff		:= o_stHMIZonaBRisc.iState = 0;
+MbOut_xZ2RiscPowerOff	:= o_stHMIZonaBRisc.iState = 1;
+MbOut_xZ2RiscPowerOn	:= o_stHMIZonaBRisc.iState = 2;
+MbOut_xZ2RiscOn			:= o_stHMIZonaBRisc.iState = 3;
+
+MbOut_xZ3RiscOff		:= o_stHMIZonaCRisc.iState = 0;
+MbOut_xZ3RiscPowerOff	:= o_stHMIZonaCRisc.iState = 1;
+MbOut_xZ3RiscPowerOn	:= o_stHMIZonaCRisc.iState = 2;
+MbOut_xZ3RiscOn			:= o_stHMIZonaCRisc.iState = 3;
+
+MbOut_iZ1RiscState		:= o_stHMIZonaARisc.iState;
+MbOut_iZ2RiscState		:= o_stHMIZonaBRisc.iState;
+MbOut_iZ3RiscState		:= o_stHMIZonaCRisc.iState;
+
+MbOut_xZ1RiscAuto		:= o_stHmiZonaARisc.iMode = 1;
+MbOut_xZ2RiscAuto		:= o_stHmiZonaBRisc.iMode = 1;
+MbOut_xZ3RiscAuto		:= o_stHmiZonaCRisc.iMode = 1;
+
+
+fcLetturaStatiRiscaldamento	:= TRUE;
+END_FUNCTION
