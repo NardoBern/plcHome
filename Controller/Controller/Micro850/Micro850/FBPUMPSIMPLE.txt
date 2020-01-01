@@ -108,7 +108,7 @@ __EDTB24 := (__EDTB22 OR __EDTB23) ;
 __EDTB25 := (__EDTB20 OR __EDTB24) AND NOT(XSTOP) ;
 XSTARTAUTOPMP := __EDTB25 ;
 (* FB call: TON *)
-tDelayEv(__EDTB25, T#5S) ;
+tDelayEv(__EDTB25, T#3S) ;
 XSTARTAUTOEV := tDelayEv.Q ;
 
 (*************** Code for the end of Rung **************)

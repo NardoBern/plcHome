@@ -41,21 +41,6 @@ I_STLUCECANTINAHMICMDS.XHMIOK := __EDTB2 ;
 (*************** Code for the end of Rung **************)
 
 
-(*************** Rung **********************************)
-(*Modbus watch-dog*)
-__STEPPRAGMA
-0,16
-__ENDSTEPPRAGMA
-(*Label :*)(**)
-__EDTB3 := TRUE ;
-IF __EDTB3 THEN
-MBOUT_IWATCHDOG := (  MBIN_IWATCHDOG) ;
-END_IF ;
-__MO_1GAIN_1 := __EDTB3 ;
-
-(*************** Code for the end of Rung **************)
-
-
 (*************** Code for the end of File **************)
 __GL __LG0000 ;
 
@@ -64,5 +49,4 @@ __GL __LG0000 ;
 (*************** Local Symbols table *******************)
 (* __EDTB1 *)
 (* __EDTB2 *)
-(* __EDTB3 *)
 

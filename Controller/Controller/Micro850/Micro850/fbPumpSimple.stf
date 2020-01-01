@@ -49,7 +49,7 @@ SOR  [0,13] (**) (**)
  BND
   XIO  [11,0] (*xStop*) (**)  
  BST  OTE  [12,0] (*xStartAutoPmp*) (**)
-   NXB  FB  [12,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#5s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [15,1] (*xStartAutoEv*) (**)
+   NXB  FB  [12,1] (*TON*) (*tDelayEv*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#3s*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  OTE  [15,1] (*xStartAutoEv*) (**)
  BND
 
 EOR [16,0]

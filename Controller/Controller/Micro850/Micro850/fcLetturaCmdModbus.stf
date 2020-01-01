@@ -1,0 +1,63 @@
+FUNCTION fcLetturaCmdModbus
+CASE MbIn_iCmd OF
+	0: (* reset di tutti i comandi *)
+		MbIn_xPbFuoriDav	:= FALSE;
+		MbIn_xPbIngr		:= FALSE;
+		MbIn_xPbCorr		:= FALSE;
+		MbIn_xPbSalaLib 	:= FALSE;
+		MbIn_xPbLetto		:= FALSE;
+		MbIn_xPbSala		:= FALSE;
+		MbIn_xPbCucina		:= FALSE;
+		MbIn_xPbAntibagno	:= FALSE;
+		MbIn_xPbBagno		:= FALSE;
+		MbIn_xPbVeranda		:= FALSE;
+		MbIn_xPbCantina		:= FALSE;
+	1: (* comando luce fuori davanti*)
+		MbIn_xPbFuoriDav	:= TRUE;
+		MbIn_iCmd		:= 0;
+	2: (* comando luce ingresso *)
+		MbIn_xPbIngr	:= TRUE;
+		MbIn_iCmd		:= 0;
+	3: (* comando luce corridoio *)
+		MbIn_xPbCorr	:= TRUE;
+		MbIn_iCmd		:= 0;
+	4: (* comando luce sala libreria *)
+		MbIn_xPbSalaLib := TRUE;
+		MbIn_iCmd		:= 0;
+	5: (* comando luce camera letto *)
+		MbIn_xPbLetto	:= TRUE;
+		MbIn_iCmd		:= 0;
+	6: (* comando luce sala *)
+		MbIn_xPbSala	:= TRUE;
+		MbIn_iCmd		:= 0;
+	7: (* comando luce cucina *)
+		MbIn_xPbCucina	:= TRUE;
+		MbIn_iCmd		:= 0;
+	8: (* comando luce antibagno *)
+		MbIn_xPbAntibagno	:= TRUE;
+		MbIn_iCmd		:= 0;
+	9: (* comando luce bagno *)
+		MbIn_xPbBagno	:= TRUE;
+		MbIn_iCmd		:= 0;
+	10: (* comando luce veranda *)
+		MbIn_xPbVeranda	:= TRUE;
+		MbIn_iCmd		:= 0;
+	11: (* comando luce cantina *)
+		MbIn_xPbCantina	:= TRUE;
+		MbIn_iCmd		:= 0;
+ELSE
+	(* reset di tutti i comandi *)
+	MbIn_xPbFuoriDav	:= FALSE;
+	MbIn_xPbIngr		:= FALSE;
+	MbIn_xPbCorr		:= FALSE;
+	MbIn_xPbSalaLib 	:= FALSE;
+	MbIn_xPbLetto		:= FALSE;
+	MbIn_xPbSala		:= FALSE;
+	MbIn_xPbCucina		:= FALSE;
+	MbIn_xPbAntibagno	:= FALSE;
+	MbIn_xPbBagno		:= FALSE;
+	MbIn_xPbVeranda		:= FALSE;
+	MbIn_xPbCantina		:= FALSE;
+END_CASE;
+fcLetturaCmdModbus := TRUE;
+END_FUNCTION

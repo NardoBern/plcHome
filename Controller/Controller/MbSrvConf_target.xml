@@ -1,20 +1,44 @@
 <modbusServer Version="2.0">
   <modbusRegister name="COILS">
-    <mapping variable="MbIn_xStartIrrigazione" parent="Micro850" dataType="Bool" address="000001" va="0x4de">
+    <mapping variable="MbOut_xLuceFuoriDavanti" parent="Micro850" dataType="Bool" address="000001" va="0x4f7">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
-    <mapping variable="MbIn_xIrrigazioneAuto" parent="Micro850" dataType="Bool" address="000002" va="0x4e1">
+    <mapping variable="MbOut_xLuceIngresso" parent="Micro850" dataType="Bool" address="000002" va="0x4f8">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCorridoio" parent="Micro850" dataType="Bool" address="000003" va="0x4f9">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceSalaLibreria" parent="Micro850" dataType="Bool" address="000004" va="0x4fa">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceLetto" parent="Micro850" dataType="Bool" address="000005" va="0x4fb">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceSala" parent="Micro850" dataType="Bool" address="000006" va="0x4fc">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCucina" parent="Micro850" dataType="Bool" address="000007" va="0x4fd">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceAntibagno" parent="Micro850" dataType="Bool" address="000008" va="0x4fe">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceBagno" parent="Micro850" dataType="Bool" address="000009" va="0x4ff">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceVeranda" parent="Micro850" dataType="Bool" address="000010" va="0x500">
+      <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
+    </mapping>
+    <mapping variable="MbOut_xLuceCantina" parent="Micro850" dataType="Bool" address="000011" va="0x501">
       <MBVarInfo ElemType="Bool" SubElemType="Any" DataTypeSize="1" />
     </mapping>
   </modbusRegister>
   <modbusRegister name="HOLDING_REGISTERS">
-    <mapping variable="MbIn_iWatchDog" parent="Micro850" dataType="Int" address="404001" va="0x4f0">
+    <mapping variable="MbIn_iCmd" parent="Micro850" dataType="Int" address="404002" va="0x532">
       <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
     </mapping>
-    <mapping variable="MbOut_iWatchDog" parent="Micro850" dataType="Int" address="404002" va="0x4f2">
-      <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
-    </mapping>
-    <mapping variable="MbIn_iTimeOutIrrigazione" parent="Micro850" dataType="Int" address="404003" va="0x4ee">
+    <mapping variable="MbIn_iWatchDog" parent="Micro850" dataType="Int" address="404003" va="0x530">
       <MBVarInfo ElemType="Int" SubElemType="Any" DataTypeSize="2" />
     </mapping>
   </modbusRegister>

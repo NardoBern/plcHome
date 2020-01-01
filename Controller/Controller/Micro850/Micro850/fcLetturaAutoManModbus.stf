@@ -1,0 +1,183 @@
+FUNCTION fcLetturaAutoManModbus
+#info= QLD
+BOF
+
+
+(**)
+
+SOR  [0,1] (**) (**)  XIP  [1,0] (*MbIn_xAutoVeranda*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceVerandaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,4] (**) (**)  XIF  [1,0] (*MbIn_xAutoVeranda*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceVerandaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,7] (**) (**)  XIP  [1,0] (*MbIn_xAutoSalaLib*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceSalaLibreriaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,10] (**) (**)  XIF  [1,0] (*MbIn_xAutoSalaLib*) (**)  FB  [2,0] (*1 gain*) (*2*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceSalaLibreriaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,13] (**) (**)  XIP  [1,0] (*MbIn_xAutoSala*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceSalaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,16] (**) (**)  XIF  [1,0] (*MbIn_xAutoSala*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceSalaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,19] (**) (**)  XIP  [1,0] (*MbIn_xAutoLetto*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCameraLettoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,22] (**) (**)  XIF  [1,0] (*MbIn_xAutoLetto*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCameraLettoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,25] (**) (**)  XIP  [1,0] (*MbIn_xAutoIngr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceIngressoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,28] (**) (**)  XIF  [1,0] (*MbIn_xAutoIngr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceIngressoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,31] (**) (**)  XIP  [1,0] (*MbIn_xAutoFuoriDav*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceFuoriDavantiHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,34] (**) (**)  XIF  [1,0] (*MbIn_xAutoFuoriDav*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceFuoriDavantiHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,37] (**) (**)  XIP  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,40] (**) (**)  XIF  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,43] (**) (**)  XIP  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,46] (**) (**)  XIF  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,49] (**) (**)  XIP  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,52] (**) (**)  XIF  [1,0] (*MbIn_xAutoCucina*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCucinaHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,55] (**) (**)  XIP  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,58] (**) (**)  XIF  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,61] (**) (**)  XIP  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,64] (**) (**)  XIF  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,67] (**) (**)  XIP  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,70] (**) (**)  XIF  [1,0] (*MbIn_xAutoCorr*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceCorridoioHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,73] (**) (**)  XIP  [1,0] (*MbIn_xAutoBagno*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceBagnoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,76] (**) (**)  XIF  [1,0] (*MbIn_xAutoBagno*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceBagnoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,79] (**) (**)  XIP  [1,0] (*MbIn_xAutoAntibagno*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*2*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceAntibagnoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,82] (**) (**)  XIF  [1,0] (*MbIn_xAutoAntibagno*) (**)  FB  [2,0] (*1 gain*) (*1*) ( (*EN:EN*)(**) (**)  , (*i1:*)(*0*) (**) ; (*ENO:ENO*)(**) (**)  , (*o1:*)(*i_stLuceAntibagnoHmiCmds.iModeSel*) (**) )
+EOR [5,0]
+
+
+(**)
+
+SOR  [0,85] (**) (**)  OTE  [1,0] (*fcLetturaAutoManModbus*) (**)
+EOR [2,0]
+EOF
+#end_info
+#info= ID_MAX
+NextId=2
+#end_info
+END_FUNCTION

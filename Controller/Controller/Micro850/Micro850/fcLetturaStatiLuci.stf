@@ -1,0 +1,14 @@
+FUNCTION fcLetturaStatiLuci
+MbOut_xLuceAntibagno 	:= o_stLuceAntibagnoFdbk.xLampState;
+MbOut_xLuceBagno		:= o_stLuceBagnoFdbk.xLampState;
+MbOut_xLuceCantina		:= o_stLuceCantinaFdbk.xLampState;
+MbOut_xLuceCorridoio	:= o_stLuceCorridoioFdbk.xLampState;
+MbOut_xLuceCucina		:= o_stLuceCucinaFdbk.xLampState;
+MbOut_xLuceFuoriDavanti	:= o_stLuceFuoriDavantiFdbk.xLampState;
+MbOut_xLuceIngresso		:= o_stLuceIngressoFdbk.xLampState;
+MbOut_xLuceLetto		:= o_stLuceCameraLettoFdbk.xLampState;
+MbOut_xLuceSala			:= o_stLuceSalaFdbk.xLampState;
+MbOut_xLuceSalaLibreria	:= o_stLuceSalaLibreriaFdbk.xLampState;
+MbOut_xLuceVeranda		:= o_stLuceVerandaFdbk.xLampState;
+fcLetturaStatiLuci		:= TRUE;
+END_FUNCTION

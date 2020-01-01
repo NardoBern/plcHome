@@ -42,8 +42,14 @@
   <AcfElementGuid Guid="989d6593-7fab-4598-ae58-665ea1c31756">
     <File>fcScritturaLuci.AcfMlge</File>
   </AcfElementGuid>
+  <AcfElementGuid Guid="9c491e9c-58f1-4e6d-8852-68f0b3bbb4fb">
+    <File>fcLetturaStatiLuci.AcfMlge</File>
+  </AcfElementGuid>
   <AcfElementGuid Guid="b20eb2c7-2e3f-4c3f-9f77-f6dbea2162da">
     <File>fcLetturaPulsanti.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="c877784b-3209-4e64-af3b-00d9cc87bf6d">
+    <File>fcLetturaCmdModbus.AcfMlge</File>
   </AcfElementGuid>
   <AcfElementGuid Guid="ef5e4b5e-c5a6-41a1-b431-5091615ba8c0">
     <File>fbCanc.AcfMlge</File>
@@ -53,5 +59,8 @@
   </AcfElementGuid>
   <AcfElementGuid Guid="f51174a5-9b11-4a1e-8df5-749abd14982a">
     <File>fcLetturaSensoriAntifurto.AcfMlge</File>
+  </AcfElementGuid>
+  <AcfElementGuid Guid="f5f544b9-a8a3-4468-abbe-5edaac077a69">
+    <File>fcLetturaAutoManModbus.AcfMlge</File>
   </AcfElementGuid>
 </ProjectElements>

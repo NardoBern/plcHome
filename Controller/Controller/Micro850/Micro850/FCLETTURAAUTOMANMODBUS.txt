@@ -1,0 +1,554 @@
+(****** QuickLD compiler *******************************)
+(****** Copyright Rockwell Automation Canada, Ltd ******)
+(****** ST *********************************************)
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,1
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOVERANDA with __MEMO__1__MBIN_XAUTOVERANDA *)
+__EDTB1 := (MBIN_XAUTOVERANDA AND NOT(__MEMO__1__MBIN_XAUTOVERANDA)) ;
+IF __EDTB1 THEN
+I_STLUCEVERANDAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_1 := __EDTB1 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1__MBIN_XAUTOVERANDA := MBIN_XAUTOVERANDA ; (*Pulse detection on : MBIN_XAUTOVERANDA with __MEMO__1__MBIN_XAUTOVERANDA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,4
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOVERANDA with __MEMO__2__MBIN_XAUTOVERANDA *)
+__EDTB2 := (__MEMO__2__MBIN_XAUTOVERANDA AND NOT(MBIN_XAUTOVERANDA)) ;
+IF __EDTB2 THEN
+I_STLUCEVERANDAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_2 := __EDTB2 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__2__MBIN_XAUTOVERANDA := MBIN_XAUTOVERANDA ; (*Fall detection on  : MBIN_XAUTOVERANDA with __MEMO__2__MBIN_XAUTOVERANDA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,7
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOSALALIB with __MEMO__3__MBIN_XAUTOSALALIB *)
+__EDTB3 := (MBIN_XAUTOSALALIB AND NOT(__MEMO__3__MBIN_XAUTOSALALIB)) ;
+IF __EDTB3 THEN
+I_STLUCESALALIBRERIAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_3 := __EDTB3 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__3__MBIN_XAUTOSALALIB := MBIN_XAUTOSALALIB ; (*Pulse detection on : MBIN_XAUTOSALALIB with __MEMO__3__MBIN_XAUTOSALALIB *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,10
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOSALALIB with __MEMO__4__MBIN_XAUTOSALALIB *)
+__EDTB4 := (__MEMO__4__MBIN_XAUTOSALALIB AND NOT(MBIN_XAUTOSALALIB)) ;
+IF __EDTB4 THEN
+I_STLUCESALALIBRERIAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_4 := __EDTB4 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__4__MBIN_XAUTOSALALIB := MBIN_XAUTOSALALIB ; (*Fall detection on  : MBIN_XAUTOSALALIB with __MEMO__4__MBIN_XAUTOSALALIB *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,13
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOSALA with __MEMO__5__MBIN_XAUTOSALA *)
+__EDTB5 := (MBIN_XAUTOSALA AND NOT(__MEMO__5__MBIN_XAUTOSALA)) ;
+IF __EDTB5 THEN
+I_STLUCESALAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_5 := __EDTB5 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__5__MBIN_XAUTOSALA := MBIN_XAUTOSALA ; (*Pulse detection on : MBIN_XAUTOSALA with __MEMO__5__MBIN_XAUTOSALA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,16
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOSALA with __MEMO__6__MBIN_XAUTOSALA *)
+__EDTB6 := (__MEMO__6__MBIN_XAUTOSALA AND NOT(MBIN_XAUTOSALA)) ;
+IF __EDTB6 THEN
+I_STLUCESALAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_6 := __EDTB6 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__6__MBIN_XAUTOSALA := MBIN_XAUTOSALA ; (*Fall detection on  : MBIN_XAUTOSALA with __MEMO__6__MBIN_XAUTOSALA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,19
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOLETTO with __MEMO__7__MBIN_XAUTOLETTO *)
+__EDTB7 := (MBIN_XAUTOLETTO AND NOT(__MEMO__7__MBIN_XAUTOLETTO)) ;
+IF __EDTB7 THEN
+I_STLUCECAMERALETTOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_7 := __EDTB7 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__7__MBIN_XAUTOLETTO := MBIN_XAUTOLETTO ; (*Pulse detection on : MBIN_XAUTOLETTO with __MEMO__7__MBIN_XAUTOLETTO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,22
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOLETTO with __MEMO__8__MBIN_XAUTOLETTO *)
+__EDTB8 := (__MEMO__8__MBIN_XAUTOLETTO AND NOT(MBIN_XAUTOLETTO)) ;
+IF __EDTB8 THEN
+I_STLUCECAMERALETTOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_8 := __EDTB8 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__8__MBIN_XAUTOLETTO := MBIN_XAUTOLETTO ; (*Fall detection on  : MBIN_XAUTOLETTO with __MEMO__8__MBIN_XAUTOLETTO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,25
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOINGR with __MEMO__9__MBIN_XAUTOINGR *)
+__EDTB9 := (MBIN_XAUTOINGR AND NOT(__MEMO__9__MBIN_XAUTOINGR)) ;
+IF __EDTB9 THEN
+I_STLUCEINGRESSOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_9 := __EDTB9 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__9__MBIN_XAUTOINGR := MBIN_XAUTOINGR ; (*Pulse detection on : MBIN_XAUTOINGR with __MEMO__9__MBIN_XAUTOINGR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,28
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOINGR with __MEMO__A__MBIN_XAUTOINGR *)
+__EDTB10 := (__MEMO__A__MBIN_XAUTOINGR AND NOT(MBIN_XAUTOINGR)) ;
+IF __EDTB10 THEN
+I_STLUCEINGRESSOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_10 := __EDTB10 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__A__MBIN_XAUTOINGR := MBIN_XAUTOINGR ; (*Fall detection on  : MBIN_XAUTOINGR with __MEMO__A__MBIN_XAUTOINGR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,31
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOFUORIDAV with __MEMO__B__MBIN_XAUTOFUORIDAV *)
+__EDTB11 := (MBIN_XAUTOFUORIDAV AND NOT(__MEMO__B__MBIN_XAUTOFUORIDAV)) ;
+IF __EDTB11 THEN
+I_STLUCEFUORIDAVANTIHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_11 := __EDTB11 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__B__MBIN_XAUTOFUORIDAV := MBIN_XAUTOFUORIDAV ; (*Pulse detection on : MBIN_XAUTOFUORIDAV with __MEMO__B__MBIN_XAUTOFUORIDAV *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,34
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOFUORIDAV with __MEMO__C__MBIN_XAUTOFUORIDAV *)
+__EDTB12 := (__MEMO__C__MBIN_XAUTOFUORIDAV AND NOT(MBIN_XAUTOFUORIDAV)) ;
+IF __EDTB12 THEN
+I_STLUCEFUORIDAVANTIHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_12 := __EDTB12 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__C__MBIN_XAUTOFUORIDAV := MBIN_XAUTOFUORIDAV ; (*Fall detection on  : MBIN_XAUTOFUORIDAV with __MEMO__C__MBIN_XAUTOFUORIDAV *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,37
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__D__MBIN_XAUTOCUCINA *)
+__EDTB13 := (MBIN_XAUTOCUCINA AND NOT(__MEMO__D__MBIN_XAUTOCUCINA)) ;
+IF __EDTB13 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_13 := __EDTB13 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__D__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__D__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,40
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__E__MBIN_XAUTOCUCINA *)
+__EDTB14 := (__MEMO__E__MBIN_XAUTOCUCINA AND NOT(MBIN_XAUTOCUCINA)) ;
+IF __EDTB14 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_14 := __EDTB14 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__E__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__E__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,43
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__F__MBIN_XAUTOCUCINA *)
+__EDTB15 := (MBIN_XAUTOCUCINA AND NOT(__MEMO__F__MBIN_XAUTOCUCINA)) ;
+IF __EDTB15 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_15 := __EDTB15 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__F__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__F__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,46
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__10__MBIN_XAUTOCUCINA *)
+__EDTB16 := (__MEMO__10__MBIN_XAUTOCUCINA AND NOT(MBIN_XAUTOCUCINA)) ;
+IF __EDTB16 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_16 := __EDTB16 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__10__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__10__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,49
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__11__MBIN_XAUTOCUCINA *)
+__EDTB17 := (MBIN_XAUTOCUCINA AND NOT(__MEMO__11__MBIN_XAUTOCUCINA)) ;
+IF __EDTB17 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_17 := __EDTB17 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__11__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Pulse detection on : MBIN_XAUTOCUCINA with __MEMO__11__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,52
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__12__MBIN_XAUTOCUCINA *)
+__EDTB18 := (__MEMO__12__MBIN_XAUTOCUCINA AND NOT(MBIN_XAUTOCUCINA)) ;
+IF __EDTB18 THEN
+I_STLUCECUCINAHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_18 := __EDTB18 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__12__MBIN_XAUTOCUCINA := MBIN_XAUTOCUCINA ; (*Fall detection on  : MBIN_XAUTOCUCINA with __MEMO__12__MBIN_XAUTOCUCINA *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,55
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__13__MBIN_XAUTOCORR *)
+__EDTB19 := (MBIN_XAUTOCORR AND NOT(__MEMO__13__MBIN_XAUTOCORR)) ;
+IF __EDTB19 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_19 := __EDTB19 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__13__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__13__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,58
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__14__MBIN_XAUTOCORR *)
+__EDTB20 := (__MEMO__14__MBIN_XAUTOCORR AND NOT(MBIN_XAUTOCORR)) ;
+IF __EDTB20 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_20 := __EDTB20 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__14__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__14__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,61
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__15__MBIN_XAUTOCORR *)
+__EDTB21 := (MBIN_XAUTOCORR AND NOT(__MEMO__15__MBIN_XAUTOCORR)) ;
+IF __EDTB21 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_21 := __EDTB21 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__15__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__15__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,64
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__16__MBIN_XAUTOCORR *)
+__EDTB22 := (__MEMO__16__MBIN_XAUTOCORR AND NOT(MBIN_XAUTOCORR)) ;
+IF __EDTB22 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_22 := __EDTB22 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__16__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__16__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,67
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__17__MBIN_XAUTOCORR *)
+__EDTB23 := (MBIN_XAUTOCORR AND NOT(__MEMO__17__MBIN_XAUTOCORR)) ;
+IF __EDTB23 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_23 := __EDTB23 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__17__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Pulse detection on : MBIN_XAUTOCORR with __MEMO__17__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,70
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__18__MBIN_XAUTOCORR *)
+__EDTB24 := (__MEMO__18__MBIN_XAUTOCORR AND NOT(MBIN_XAUTOCORR)) ;
+IF __EDTB24 THEN
+I_STLUCECORRIDOIOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_24 := __EDTB24 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__18__MBIN_XAUTOCORR := MBIN_XAUTOCORR ; (*Fall detection on  : MBIN_XAUTOCORR with __MEMO__18__MBIN_XAUTOCORR *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,73
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOBAGNO with __MEMO__19__MBIN_XAUTOBAGNO *)
+__EDTB25 := (MBIN_XAUTOBAGNO AND NOT(__MEMO__19__MBIN_XAUTOBAGNO)) ;
+IF __EDTB25 THEN
+I_STLUCEBAGNOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_25 := __EDTB25 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__19__MBIN_XAUTOBAGNO := MBIN_XAUTOBAGNO ; (*Pulse detection on : MBIN_XAUTOBAGNO with __MEMO__19__MBIN_XAUTOBAGNO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,76
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOBAGNO with __MEMO__1A__MBIN_XAUTOBAGNO *)
+__EDTB26 := (__MEMO__1A__MBIN_XAUTOBAGNO AND NOT(MBIN_XAUTOBAGNO)) ;
+IF __EDTB26 THEN
+I_STLUCEBAGNOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_26 := __EDTB26 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1A__MBIN_XAUTOBAGNO := MBIN_XAUTOBAGNO ; (*Fall detection on  : MBIN_XAUTOBAGNO with __MEMO__1A__MBIN_XAUTOBAGNO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,79
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Pulse detection on : MBIN_XAUTOANTIBAGNO with __MEMO__1B__MBIN_XAUTOANTIBAGNO *)
+__EDTB27 := (MBIN_XAUTOANTIBAGNO AND NOT(__MEMO__1B__MBIN_XAUTOANTIBAGNO)) ;
+IF __EDTB27 THEN
+I_STLUCEANTIBAGNOHMICMDS.IMODESEL := (  2) ;
+END_IF ;
+__MO_1GAIN_27 := __EDTB27 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1B__MBIN_XAUTOANTIBAGNO := MBIN_XAUTOANTIBAGNO ; (*Pulse detection on : MBIN_XAUTOANTIBAGNO with __MEMO__1B__MBIN_XAUTOANTIBAGNO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,82
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+; (*Fall detection on  : MBIN_XAUTOANTIBAGNO with __MEMO__1C__MBIN_XAUTOANTIBAGNO *)
+__EDTB28 := (__MEMO__1C__MBIN_XAUTOANTIBAGNO AND NOT(MBIN_XAUTOANTIBAGNO)) ;
+IF __EDTB28 THEN
+I_STLUCEANTIBAGNOHMICMDS.IMODESEL := (  0) ;
+END_IF ;
+__MO_1GAIN_28 := __EDTB28 ;
+
+(*************** Code for the end of Rung **************)
+__MEMO__1C__MBIN_XAUTOANTIBAGNO := MBIN_XAUTOANTIBAGNO ; (*Fall detection on  : MBIN_XAUTOANTIBAGNO with __MEMO__1C__MBIN_XAUTOANTIBAGNO *)
+
+
+(*************** Rung **********************************)
+(**)
+__STEPPRAGMA
+0,85
+__ENDSTEPPRAGMA
+(*Label :*)(**)
+FCLETTURAAUTOMANMODBUS := TRUE ;
+
+(*************** Code for the end of Rung **************)
+
+
+(*************** Code for the end of File **************)
+__GL __LG0000 ;
+
+
+
+(*************** Local Symbols table *******************)
+(* __MEMO__1__MBIN_XAUTOVERANDA *)
+(* __EDTB1 *)
+(* __MEMO__2__MBIN_XAUTOVERANDA *)
+(* __EDTB2 *)
+(* __MEMO__3__MBIN_XAUTOSALALIB *)
+(* __EDTB3 *)
+(* __MEMO__4__MBIN_XAUTOSALALIB *)
+(* __EDTB4 *)
+(* __MEMO__5__MBIN_XAUTOSALA *)
+(* __EDTB5 *)
+(* __MEMO__6__MBIN_XAUTOSALA *)
+(* __EDTB6 *)
+(* __MEMO__7__MBIN_XAUTOLETTO *)
+(* __EDTB7 *)
+(* __MEMO__8__MBIN_XAUTOLETTO *)
+(* __EDTB8 *)
+(* __MEMO__9__MBIN_XAUTOINGR *)
+(* __EDTB9 *)
+(* __MEMO__A__MBIN_XAUTOINGR *)
+(* __EDTB10 *)
+(* __MEMO__B__MBIN_XAUTOFUORIDAV *)
+(* __EDTB11 *)
+(* __MEMO__C__MBIN_XAUTOFUORIDAV *)
+(* __EDTB12 *)
+(* __MEMO__D__MBIN_XAUTOCUCINA *)
+(* __EDTB13 *)
+(* __MEMO__E__MBIN_XAUTOCUCINA *)
+(* __EDTB14 *)
+(* __MEMO__F__MBIN_XAUTOCUCINA *)
+(* __EDTB15 *)
+(* __MEMO__10__MBIN_XAUTOCUCINA *)
+(* __EDTB16 *)
+(* __MEMO__11__MBIN_XAUTOCUCINA *)
+(* __EDTB17 *)
+(* __MEMO__12__MBIN_XAUTOCUCINA *)
+(* __EDTB18 *)
+(* __MEMO__13__MBIN_XAUTOCORR *)
+(* __EDTB19 *)
+(* __MEMO__14__MBIN_XAUTOCORR *)
+(* __EDTB20 *)
+(* __MEMO__15__MBIN_XAUTOCORR *)
+(* __EDTB21 *)
+(* __MEMO__16__MBIN_XAUTOCORR *)
+(* __EDTB22 *)
+(* __MEMO__17__MBIN_XAUTOCORR *)
+(* __EDTB23 *)
+(* __MEMO__18__MBIN_XAUTOCORR *)
+(* __EDTB24 *)
+(* __MEMO__19__MBIN_XAUTOBAGNO *)
+(* __EDTB25 *)
+(* __MEMO__1A__MBIN_XAUTOBAGNO *)
+(* __EDTB26 *)
+(* __MEMO__1B__MBIN_XAUTOANTIBAGNO *)
+(* __EDTB27 *)
+(* __MEMO__1C__MBIN_XAUTOANTIBAGNO *)
+(* __EDTB28 *)
+

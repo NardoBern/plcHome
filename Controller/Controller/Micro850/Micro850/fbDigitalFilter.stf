@@ -3,14 +3,13 @@ FUNCTION_BLOCK fbDigitalFilter
 BOF
 
 
-(*Filtro per segnali digitali
-*)
+(*Filtro per segnali digitali*)
 
 SOR  [0,1] (**) (**)  
  BST  XIC  [1,0] (*i_xInput*) (**)
    NXB  XIC  [1,1] (*o_xOutput*) (**)
  BND
-  FB  [2,0] (*TON*) (*tOnDelay*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#300ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  XIO  [5,0] (*xOffOutput*) (**)  OTE  [6,0] (*o_xOutput*) (**)
+  FB  [2,0] (*TON*) (*tOnDelay*) ( (*IN:IN*)(**) (**)  , (*PT:PT*)(*t#800ms*) (**) ; (*Q:Q*)(**) (**)  , (*ET:ET*)(**) (**) )  XIO  [5,0] (*xOffOutput*) (**)  OTE  [6,0] (*o_xOutput*) (**)
 EOR [7,0]
 
 
